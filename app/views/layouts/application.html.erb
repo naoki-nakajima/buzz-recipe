@@ -12,6 +12,7 @@
   </head>
 
   <body>
+    <%= render 'partial/navbar'  if current_user %>
     <%= yield %>
   </body>
 </html>

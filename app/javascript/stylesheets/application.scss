@@ -1,1 +1,22 @@
+@import 'reset.scss';
 @import '~bootstrap/scss/bootstrap';
+@import "layouts/navbar";
+@import "layouts/footer";
+@import "users/devise";
+@import "users/show";
+@import "users/edit";
+@import "posts/index";
+@import "posts/show.scss";
+@import "posts/comment.scss";
+
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+#wrapper {
+  background: #f6f7f8;
+}
+

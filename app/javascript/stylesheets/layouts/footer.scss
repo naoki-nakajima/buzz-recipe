@@ -1,0 +1,30 @@
+footer#glb_footer {
+  padding: 40px;
+  background: #fff;
+  border-top: 1px #ddd solid   ;
+  .glb_footer_inner {
+    width: 895px;
+    margin: 0 auto;
+    .footer_list {
+      width: 20%;
+      float: left;
+      h4.title {
+        font-size: 14px;
+        font-weight: bold;
+        color: #666;
+      }
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        li {
+          font-size: 13px;
+          padding-bottom: 3px;
+          a {
+            color: #666;
+          }
+        }
+      }
+    }
+  }
+}

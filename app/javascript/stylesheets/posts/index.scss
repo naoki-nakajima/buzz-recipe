@@ -1,0 +1,111 @@
+#glb_main {
+  width: 100%;
+  padding-top: 54px; 
+  #glb_body {
+    width: 100%;
+    #content_container {
+      margin: 30px auto 0 auto;
+      padding: 0 0 50px 0;
+      width: 990px;
+      overflow: scroll;
+      .content {
+        float: right;
+        width: 800px;
+        section#recommend {
+          h2.title {
+            font-size: 18px;
+            color: #333;
+          }
+          ul.top_images {
+            margin: -8px 0 0 -55px;
+            li {
+              float: left;
+              margin: 18px 0 0 18px;
+              border: 1px #ddd solid;
+              background: #fff;
+              border-radius: 3px;
+              list-style: none;
+              .image_container {
+                p.img {
+                  .img_top {
+                    width: 248px;
+                    height: 328px;
+                  }
+                }
+              }
+              .profile {
+                padding-left: 10px;
+                .content {
+                  width: 156px;
+                  float: left;
+                  .left_icon {
+                    width: 32px;
+                    float: left;
+                    .profile_icon {
+                      width: 32px;
+                      height: 32px;
+                      border-radius: 50%;
+                    }
+                  }
+                  .right_name {
+                    width: 114px;
+                    float: right;
+                    .name {
+                      font-size: 13px;
+                      line-height: 2.4;
+                      font-weight: bold;
+                      a {
+                        color: #333;
+                      }
+                    }
+                  }
+                }
+                .btn_block {
+                  float: right;
+                  .btn_like {
+                    font-size:16px;
+                    .btn {
+                      font-size: 9px;
+                      padding-top: 1px;
+                      padding-bottom: 4px;
+                      a {
+                        display: block;
+                        padding: 8px 0 8px 0;
+                        text-align: center;
+                        text-decoration: none;
+                        background: #999;
+                        color: #fff;
+                        font-weight: bold;
+                        border: 1px #999 solid;
+                        border-radius: 2px;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      #side_bar {
+        width: 180px;
+        float: left;
+        padding-left: 10px;
+        h3.title {
+          font-size: 14px;
+          font-weight: bold;
+          color: #666;
+        }
+        ul {
+          li {
+            list-style: none;
+            a {
+              font-size: 13px;
+              color: #666;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+#comment_container {
+  width: 600px;
+  margin-top: 50px;
+  padding: 25px 25px 25px 25px;
+  border: 1px solid #ddd;
+  background: #fff;
+  float: left;
+  .comment_post { 
+    min-width: 200px;
+    min-height: 50px;
+    .comment_box {
+      display: flex;
+      margin-bottom: 10px;
+      min-height: 30px;
+      line-height: 30px;
+      .delete_comment {
+        color: #999;
+        font-size: 9px;
+        padding-right: 5px;
+      }
+      .comment_user_name {
+        color: #666;
+        font-size: 16px;
+        padding-right: 5px;
+      }
+      .comment_comment {
+        color: #666;
+        max-width: 400px;
+        font-size: 16px;
+        overflow-wrap: break-word;
+      }
+    }
+
+  }
+  .comment_form_post {
+    .form_post {
+      .form_control {
+        width: 300px;
+        height: 31px;
+      }
+    }
+    
+  }
+}
+
+#like_container {
+  width: 357px;
+  height: 57px;
+  border: 1px solid #ddd;
+  background: #fff;
+  margin-left: 33px;
+  margin-top: 50px;
+  padding-top: 5px;
+  padding-left: 25px;
+  float: left;
+}

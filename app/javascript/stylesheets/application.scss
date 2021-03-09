@@ -1,13 +1,13 @@
-@import 'reset.scss';
-@import '~bootstrap/scss/bootstrap';
+@import "reset.scss";
+@import "~bootstrap/scss/bootstrap";
 @import "layouts/navbar";
 @import "layouts/footer";
 @import "users/devise";
 @import "users/show";
 @import "users/edit";
 @import "posts/index";
-@import "posts/show.scss";
-@import "posts/comment.scss";
+@import "posts/show";
+@import "posts/comment";
 
 
 .clearfix::after {

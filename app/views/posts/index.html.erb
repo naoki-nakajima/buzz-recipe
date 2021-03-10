@@ -1,1 +1,4 @@
-<%= link_to "仮のボタンです", "#", class: "btn btn-primary" %>
+<% @posts.each do |post| %>
+  <p><%= post.caption %></p>
+  <%= image_tag post.photos.first.image.url(:medium) %>
+<% end %>

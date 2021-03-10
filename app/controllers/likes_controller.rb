@@ -22,4 +22,3 @@ class LikesController < ApplicationController
       params.permit(:post_id)
     end
 end
-end

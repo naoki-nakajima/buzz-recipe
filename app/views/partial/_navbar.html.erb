@@ -1,17 +1,25 @@
-<nav class="navbar navbar-expand-lg navbar-light">
-  <div class="container">
-    <%= link_to "", root_path, class: "navbar__brand" %>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-md-auto align-items-center">
-        <li>
-          <%= link_to "投稿", "#", class: "btn btn-primary" %>
-        </li>
-        <li>
-          <%= link_to "", user_path(current_user), class: "nav-link commonNavIcon profile-icon" %>
-        </li>
-      </ul>
+<nav id="glb_header">
+  <div id="glb_header_bar">
+    <div id="container">
+      <div id="hdr_search">
+        <div id="search_form">検索する</div>
+      </div>
+      <h1 class="logo">
+        <%= link_to "COOCING", root_path %>
+      </h1>
+      <div class="no_login">
+        <p class="login">
+          <% if user_signed_in? %>
+            <%= link_to "ログアウト",  destroy_user_session_path, method: :delete %>
+          <% else %>
+            <%= link_to "ログイン", new_user_session_path %>
+          <% end %>
+        </p>
+        <p class="regist">
+          <%= link_to "新規登録", new_user_registration_path, method: :get %>
+        </p>
+      </div>    
     </div>
   </div>
 </nav>
+

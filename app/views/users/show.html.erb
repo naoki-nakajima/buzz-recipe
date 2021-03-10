@@ -1,11 +1,11 @@
-<div class="profile-wrap">
+<div class="profile_container">
   <div class="row">
     <div class="col-md-4 text-center">
-      <%= image_tag avatar_url(@user), class: "round-img" %>
+      <%= image_tag avatar_url(@user), class: "float-left round-img" %>
     </div>
     <div class="col-md-8">
-      <div class="row">
-        <h1><%= @user.name %></h1>
+      <div class="profile_main row">
+        <h1><%= @user.username %></h1>
         <% if @user == current_user %>
           <%= link_to "プロフィールを編集", edit_user_registration_path, class: "btn btn-outline-dark edit-profile-btn" %>
           <button type="button" class="setting" data-toggle="modal" data-target="#exampleModal"></button>
@@ -28,13 +28,25 @@
           </div>
         </div>
       </div>
-      <% if @user == current_user %>
-        <div class="row">
-          <p>
-            <%= @user.email %>
-          </p>
-        </div>
-      <% end %>
+      <ul class="row">
+          <li class="profile_post">投稿77件</li>
+          <li class="profile_follower">フォロワー777人</li>
+          <li class="profile_follow">フォロー中7777人</li>
+      </ul>
+      <div class="row">
+        <p>
+          <%= @user.name %>
+        </p>
+      </div>
     </div>
+  </div>
+  <div class="row py-5" style="width: 1000px;">
+    <% @posts.each do |post| %>
+      <div class="col-sm" >
+        <%= link_to(post_path(post)) do %>
+          <%= image_tag post.photos.first.image.url(:medium), class: "img_top  mx-auto" %>
+        <% end %>
+      </div>
+    <% end %>
   </div>
 </div>

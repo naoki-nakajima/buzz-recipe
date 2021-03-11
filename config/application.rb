@@ -9,6 +9,7 @@ Bundler.require(*Rails.groups)
 module BuzzRecipe
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
+    config.assets.initialize_on_precompile = false
     config.load_defaults 6.0
     config.i18n.default_locale = :ja
     # Settings in config/environments/* take precedence over those specified here.

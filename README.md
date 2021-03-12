@@ -11,6 +11,7 @@
 - Ruby 2.7.2
 - Ruby on Rails 6.0.3.5
 - MySQL 5.6.47
+- jQuery 4.4.0
 - HEROKU
 
 <!--# AWS構成図-->

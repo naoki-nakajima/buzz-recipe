@@ -1,8 +1,8 @@
 # The-View
- 料理の写真、レシピの投稿サイトです。<br>
- レスポンシブ対応しているのでスマホからもご確認いただけます。
- <img width="1400" alt="" src="">
+ 料理の写真、レシピの投稿サイトです。
+ <!--<img width="1400" alt="" src="">
  <img width="350" height="700" src="">
+  -->
 # URL
  https://git.heroku.com/buzz-recipe.git
  <br >

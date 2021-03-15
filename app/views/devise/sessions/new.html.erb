@@ -17,6 +17,10 @@
         <div class="actions">
           <%= f.submit "サインインする", class: "btn btn-primary w-100" %>
         </div>
+        
+        <div class="form-group">
+          <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post %>
+        </div>
       <% end %>
 
       <br>

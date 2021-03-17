@@ -16,16 +16,14 @@
 
   <body>
     <div id="wrapper">
-      <%= render 'partial/navbar' if current_user %>
+      <%= render partial: "partial/navbar" if current_user %>
 
-      <%= render 'partial/flash' %>
       
       <div class="container">
         <%= yield %>
       </div>
 
-      <%= render 'partial/footer' %>
-
+      <%= render partial: "partial/footer" if current_user %>
     </div>
   </body>
 </html>

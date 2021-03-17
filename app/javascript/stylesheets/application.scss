@@ -20,3 +20,12 @@
   background: #f6f7f8;
 }
 
+.alert-notice {
+  @extend .alert-info;
+}
+
+.alert-alert {
+  @extend .alert-danger;
+}
+
+

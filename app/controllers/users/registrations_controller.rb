@@ -1,10 +1,13 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   before_action :check_guest, only: %i[update destroy]
 
-  def check_guest
-    if resouces.email == "guest@example.com"
-      redirect_to root_path
-      flash[:alert] = "ゲストユーザーの編集・削除はできません"
-    end
+  protected
+
+  def update_resource(resource, params)
+    resource.update_without_current_password(params)
+  end
+
+  def after_update_path_for(resource)
+    user_path(resource)
   end
 end

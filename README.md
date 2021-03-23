@@ -4,7 +4,7 @@
  <img width="350" height="700" src="">
   -->
 # URL
- https://git.heroku.com/buzz-recipe.git
+ https://buzz-recipe.herokuapp.com/
  <br >
 画面中部のゲストログインボタンから、メールアドレスとパスワードを入力せずにログインできます。
 # 使用技術

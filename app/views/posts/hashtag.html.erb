@@ -1,11 +1,17 @@
-<h2>ハッシュタグ #<%= @tag.hashname %></h2>
-  <ul>
-    <% @posts.each do |post| %>
-       <%= render_with_hashtags(@post.caption) %>
-      <li>
-        <%= link_to post_path(post.id) do %>
-          <%= image_tag post.image.variant(gravity: :center, resize:"640x640^", crop:"640x640+0+0"), if post.image.attached? %>
+<div id="glb_main">
+  <div id="glb_body" class="clearfix">
+    <div id="content_container">
+      <h2>ハッシュタグ #<%= @tag.hashname %></h2>
+      <ul>
+        <% @posts.each do |post| %>
+            <%= render_with_hashtags(post.caption) %>
+          <li>
+            <%= link_to post_path(post.id) do %>
+              <%= image_tag post.photos.first.image.url, size: '240x240' %>
+            <% end %>
+          </li>
         <% end %>
-      </li>
-    <% end %>
-  </ul>
+      </ul>
+    </div>
+  </div>
+</div>

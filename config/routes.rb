@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   root "posts#index"
   
   get '/users/:id', to: 'users#show', as: 'user'
-  get '/post/hashtag/:name', to: 'posts#hashtag'
+  get '/photo/hashtag/:name', to: 'posts#hashtag'
 
   resources :posts do
     resources :photos, only: %i(create)

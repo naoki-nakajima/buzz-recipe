@@ -245,6 +245,7 @@ DEPENDENCIES
   carrierwave (~> 2.0)
   cocoon
   devise
+  image_processing
   jbuilder (~> 2.7)
   jquery-rails
   listen (~> 3.2)

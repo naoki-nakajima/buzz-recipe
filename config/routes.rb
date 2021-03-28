@@ -16,6 +16,9 @@ Rails.application.routes.draw do
     resources :photos, only: %i(create)
     resources :likes, only: %i(create destroy)
     resources :comments, only: %i(create destroy)
+    collection do
+      get :search
+    end
   end
   resources :foods, only: %i(new create)
 end

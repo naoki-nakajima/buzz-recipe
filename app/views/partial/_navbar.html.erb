@@ -2,7 +2,10 @@
   <div id="glb_header_bar">
     <div id="container">
       <div id="hdr_search">
-        <div id="search_form">検索する</div>
+        <%= form_with(url: search_posts_path, local: true, method: :get, class: "search-form") do |form| %>
+          <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
+          <%= form.submit "検索", class: "search-btn" %>
+        <% end %>
       </div>
       <h1 class="logo">
         <%= link_to "COOCING", root_path %>

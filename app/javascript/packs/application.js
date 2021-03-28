@@ -4,7 +4,7 @@
 // that code so it'll be compiled.
 import 'bootstrap';
 import '../stylesheets/application';
-import '../packs/search';
+//import '../packs/search';
 
 require("@rails/ujs").start()
 require("turbolinks").start()

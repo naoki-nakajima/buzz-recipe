@@ -54,10 +54,14 @@ class PostsController < ApplicationController
 
   def search
     @posts = Post.search(params[:keyword])
-    respond_to do |format|
-      format.html
-      format.json
+    unless @posts.present?
+      flash[:alert] = "一致するレシピはありません"
+      redirect_to root_path
     end
+    #respond_to do |format|
+      #format.html
+      #format.json
+    #end
   end
 
   def hashtag

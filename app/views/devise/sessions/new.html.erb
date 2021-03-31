@@ -1,12 +1,14 @@
 <div class="main">
-  <div class="card devise-card">
+  <div class="devise-card">
     <div class="form-wrap">
-    <%= render  "partial/devise_flash_messages" %>
-      
-      <h1>ログイン</h1>
+    <!-------<%= render  "partial/devise_flash_messages" %>-------------->
+      <div class="top_title">俺流<br>ごはんレシピ</div>
       <%= form_with scope: resource, as: resource_name, url: session_path(resource_name), local: true do |f| %>
-        
         <div class="form-group">
+          <%= link_to 'ゲストログイン', users_guest_sign_in_path, class: 'guest_btn', method: :post %>
+        </div>
+
+      <div class="form-group">
           <%= f.email_field :email, autofocus: true, placeholder: "メールアドレス", class: "form-control" %>
         </div>
 
@@ -18,10 +20,7 @@
           <%= f.submit "サインインする", class: "btn btn-primary w-100" %>
         </div>
         <br />
-        <div class="form-group">
-          <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, class: 'btn btn-info btn-block', method: :post %>
-        </div>
-
+      
         
       <% end %>
       <%= render partial: "partial/devise_links" %>

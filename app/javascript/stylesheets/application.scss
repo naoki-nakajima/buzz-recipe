@@ -9,6 +9,10 @@
 @import "posts/show";
 @import "posts/comment";
 
+@font-face {
+  font-family: "kssweetheavycalligraphy";
+  src: url("../fonts/kssweetheavycalligraphy.ttf");
+}
 
 .clearfix::after {
   content: "";

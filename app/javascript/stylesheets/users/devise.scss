@@ -1,22 +1,49 @@
 .main {
-  max-width: 960px;
-  margin: 0 auto;
-  width: 90%;
+  width: 100%;
   padding: 100px 75px 100px;
   display: block;
   flex: 1;
   flex-basis: auto;
   box-sizing: border-box;
-}
-
-.devise-card {
-  border: none;
+  background-image: url(~top-view.jpeg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .form-wrap{
-  max-width: 400px;
-  width: 100%;
-  margin: 50px auto;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.form-group {
+  width: 300px;
+  padding-top: 50px;
+  margin: 0 auto;
+  a.guest_btn {
+    font-family: "kssweetheavycalligraphy";
+    font-size: 30px;
+    color: rgb(255,0,0);
+  }
+  a.guest_btn:hover {
+    color: white; 
+    background-color: rgb(29, 20, 158);
+    transition: 0.3s;
+    text-decoration: none;
+  }
+}
+
+
+.top_title {
+  font-family: "kssweetheavycalligraphy";
+  font-size: 150px;
+  color: rgb(34, 33, 33);
+}
+.top_title:hover {
+  color: white; 
+  color: rgb(255, 0, 0);
+  transition: 2s;
 }
 
 .logo-img {

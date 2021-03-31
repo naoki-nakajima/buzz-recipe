@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, expect: %i(index)
+  before_action :authenticate_user!
   before_action :set_post, only: %i(edit update show destroy search)
   
   def index

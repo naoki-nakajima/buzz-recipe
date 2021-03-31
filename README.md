@@ -1,7 +1,6 @@
 # The-View
  料理の写真、レシピの投稿サイトです。
-<img width="1000" src="https://user-images.githubusercontent.com/64394899/112477337-3eacac00-8db6-11eb-9f90-2f4e395bf93e.png">
-<img width="1000" src="https://user-images.githubusercontent.com/64394899/112477740-a95de780-8db6-11eb-81d2-948cefa29dc2.png">
+<img width="1000" src="https://user-images.githubusercontent.com/64394899/113078815-d115db00-920e-11eb-9907-346157f2132f.png">
 # URL
  https://buzz-recipe.herokuapp.com/users/sign_in
  <br >

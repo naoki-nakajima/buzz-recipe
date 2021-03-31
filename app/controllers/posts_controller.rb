@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, expect: %i(index)
-  before_action :set_post, only: %i(edit update show destroy)
+  before_action :set_post, only: %i(edit update show destroy search)
   
   def index
     @posts = Post.limit(10).includes(:photos, :user).order('created_at DESC')
@@ -50,6 +50,18 @@ class PostsController < ApplicationController
       flash[:alert] = "投稿の削除に失敗しました"
     end
     redirect_to root_path
+  end
+
+  def search
+    @posts = Post.search(params[:keyword])
+    unless @posts.present?
+      flash[:alert] = "一致するレシピはありません"
+      redirect_to root_path
+    end
+    #respond_to do |format|
+      #format.html
+      #format.json
+    #end
   end
 
   def hashtag

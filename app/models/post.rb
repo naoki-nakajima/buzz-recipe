@@ -15,6 +15,11 @@ class Post < ApplicationRecord
     Like.find_by(user_id: user.id, post_id: id)
   end
 
+  def self.search(search)
+    return Post.all unless search
+    Post.where('caption LIKE(?)', "%#{search}%")
+  end
+
   after_create do
     post = Post.find_by(id: self.id)
     hashtags = self.caption.scan(/[#＃][\w\p{Han}ぁ-ヶｦ-ﾟー]+/)

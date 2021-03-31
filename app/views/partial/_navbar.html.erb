@@ -7,17 +7,6 @@
           <%= form.submit "検索", class: "search_btn" %>
         <% end %>
       </div>
-      <h1 class="logo">
-        <%= link_to "COOCING", root_path %>
-      </h1>
-      <div class="no_login">
-        <p class="login">
-          <%= link_to "ログアウト",  destroy_user_session_path, method: :delete %>
-        </p>
-        <p class="regist">
-          <%= link_to "レシピを投稿する", new_post_path, method: :get %>
-        </p>
-      </div>    
     </div>
   </div>
 </nav>

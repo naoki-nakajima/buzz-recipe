@@ -1,10 +1,17 @@
 <div id="side_bar">
-  <ul>
-    <li>
-      <%= link_to "ログアウト",  destroy_user_session_path, method: :delete %>
-    </li>
-    <li>
-      <%= link_to "プロフィールを編集", edit_user_registration_path %>
-    <li>
-  </ul>
+  <div class="side_header">
+    <p class="top_link">
+      <%= link_to "俺流", root_path %>
+    </p>
+  </div>
+  <div class="side_main">
+    <ul>
+      <li>
+        <%= link_to "ログアウト",  destroy_user_session_path, method: :delete %>
+      </li>
+      <li>
+        <%= link_to "プロフィールを編集", edit_user_registration_path %>
+      <li>
+    </ul>
+  </div>
   

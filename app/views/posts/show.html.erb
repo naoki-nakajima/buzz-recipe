@@ -1,13 +1,57 @@
 <div id="glb_main">
   <div id="glb_body" class="clearfix">
     <div id="content_container">
-      <div id="recipe_container" class="clearfix">
-        <div id="recipe_title">
+      <section id="show_image" >
+        <div class="show_main_photo" style="background-image: url(<%= url_for(@post.photos.first.image.url(:medium)) %>);">
+          <div class="show_recipe_title">
+            <%= @post.caption %>
+          </div>
+        </div>
+      </section>
+      <section id="recipe_comment">
+        <div>
+          <div>
+            <%= @post.caption %>
+          </div>
+        </div>
+      </section>
+      <section id ="howto_cock">
+        <div>
+          <h1></h1>
+          <div> 
+            <div>
+              <div>
+                <div>
+                </div>
+                <div>
+                </div>
+              </div>
+              <div>
+                <div>
+                </div>
+                <div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="one_point_comment">
+        <h1></h1>
+        <div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+        <!---------<div id="recipe_title">
           <h1 class="recipe_title">
             <%= @post.caption %>
           </h1>
         </div>
-        <div id="name_recipe_made" >
+        ---------->
+        <!------------<div id="name_recipe_made" >
           作った人 : 
           <%= link_to(user_path(@post.user)) do %>
             <%= @post.user.name %>
@@ -48,126 +92,8 @@
             <%= render_with_hashtags(@post.caption) %>
           </div>
         </div>
-        <div class="how_to_cook ">
-          <h2 class="how_to_title ">作り方</h2>
-          <div id="steps">
-            <div id="step">
-              <dl>
-                <dt id="step_number">
-                  <h3>1</h3>
-                </dt>
-                <dd class="instruction">
-                  <div id="recipe_step_photo">
-                    <%= image_tag @post.photos.first.image.url(:medium) %>
-                  </div>
-                  <p class="recipe_step_text">
-                    test test test test 
-                  </p>
-                </dd>
-              </dl>
-            </div>
-            <div id="step">
-              <dl>
-                <dt id="step_number">
-                  <h3>2</h3>
-                </dt>
-                <dd class="instruction">
-                  <div id="recipe_step_photo">
-                  </div>
-                  <p class="recipe_step_text">
-                    test test test test 
-                    test test test test 
-                  </p>
-                </dd>
-              </dl>
-            </div>
-            <div id="step">
-              <dl>
-                <dt id="step_number">
-                  <h3>3</h3>
-                </dt>
-                <dd class="instruction">
-                  <div id="recipe_step_photo">
-                    <%= image_tag @post.photos.first.image.url(:medium) %>
-                  </div>
-                  <p class="recipe_step_text">
-                    test test test test 
-                    test test test test 
-                    test test test test 
-                  </p>
-                </dd>
-              </dl>
-            </div>
-            <div id="step">
-              <dl>
-                <dt id="step_number">
-                  <h3>4</h3>
-                </dt>
-                <dd class="instruction">
-                  <div id="recipe_step_photo">
-                    <%= image_tag @post.photos.first.image.url(:medium) %>
-                  </div>
-                  <p class="recipe_step_text">
-                    test test test test 
-                    test test test test 
-                    test test test test 
-                    test test test test 
-                  </p>
-                </dd>
-              </dl>
-            </div>
-            <div id="step">
-              <dl>
-                <dt id="step_number">
-                  <h3>5</h3>
-                </dt>
-                <dd class="instruction">
-                  <div id="recipe_step_photo">
-                    <%= image_tag @post.photos.first.image.url(:medium) %>
-                  </div>
-                  <p class="recipe_step_text">
-                    test test test test 
-                    test test test test 
-                    test test test test 
-                    test test test test 
-                    test test test test 
-                  </p>
-                </dd>
-              </dl>
-            </div>
-            <div id="step">
-              <dl>
-                <dt id="step_number">
-                  <h3>6</h3>
-                </dt>
-                <dd class="instruction">
-                  <div id="recipe_step_photo">
-                  </div>
-                  <p class="recipe_step_text">
-                    test test test test 
-                    test test test test test test test
-                    
-                  </p>
-                </dd>
-              </dl>
-            </div>
-            <div id="step">
-              <dl>
-                <dt id="step_number">
-                  <h3>7</h3>
-                </dt>
-                <dd class="instruction">
-                  <div id="recipe_step_photo">
-                    <%= image_tag @post.photos.first.image.url(:medium) %>
-                  </div>
-                  <p class="recipe_step_text"></p>
-                </dd>
-              </dl>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="comment_container">
+        ------------->
+      <!------<div id="comment_container">
         <div class="comment_post" id="comment_post-<%= @post.id.to_s %>">
           <%= render 'comment_list', { post: @post } %>
         </div>
@@ -197,6 +123,7 @@
             <%= render "like_text", { likes: @post.likes } %>
           </div>
         </div>
+        ----------->
     </div>
   </div>
 </div>

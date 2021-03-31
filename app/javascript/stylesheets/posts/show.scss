@@ -1,92 +1,10 @@
-#recipe_container {
-  background: #fff;
-  border: 1px solid #ddd;
-  padding: 24px;
+section#show_image {
+  .show_main_photo {
+    height: 300px;
+    width: 1000px;
+    background-repeat: no-repeat;
+    .show_recipe_title {
 
-  #recipe_title {
-    .recipe_title {
-      font-size: 30px;
-      color: #333;
-    }
-  }
-  
-  #main_photo {
-    float: left;
-    padding-top: 12px;
-    .main_photo {
-      height: 326px;
-      max-width: 280px;
-    }
-  }
-  #desc_and_ingredients {
-    float: left;
-    padding-top: 12px;
-    display: flex;
-    
-    #ingredients_container {
-      margin: 0 60px;
-      #ingredients {
-        .material {
-          .material_head {
-            h2.title {
-              font-size: 20px;
-              color: #333;
-            }
-          }
-        }
-      }
-      #ingredients_lists {
-        border-bottom: 1px #ddd solid;
-        .ingredients_list {
-          width: 300px;
-          font-size: 15px;
-          color:#666;
-          padding: 2px 6px;
-          display: flex;
-          justify-content: space-between;
-          .ingredients_name {
-          }
-          .ingredients_quantity {
-          }
-        }
-      }
-    }
-    .description_text {
-      color: #666;
-    }
-  }
-  
-  .how_to_cook {
-    clear: both;
-    padding-top: 36px;
-    h2.how_to_title {
-      font-size: 20px;
-      color: #333;
-    }
-    #steps {
-      width: 1000px;
-      #step {
-        float: left;
-        width: 136px;
-        margin-right: 64px;
-        dl {
-          dt#step_number {
-            h3 {
-              font-size: 20px;
-              font-weight: bold;
-            }
-          }
-          dd.instruction {
-            #recipe_step_photo {
-              width: 136px;
-             
-            }
-            .recipe_step_text {
-              
-            }
-          }
-        }
-      }
     }
   }
 }

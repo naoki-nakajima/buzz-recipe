@@ -1,26 +1,22 @@
 #glb_main {
   width: 100%;
-  padding-top: 54px; 
   #glb_body {
     width: 100%;
     #content_container {
-      margin: 30px auto 0 auto;
       padding: 0 0 50px 0;
-      width: 990px;
       overflow: scroll;
       .content {
         float: right;
-        width: 800px;
+        width: 1175px;
         section#recommend {
           h2.title {
             font-size: 18px;
             color: #333;
           }
           ul.top_images {
-            margin: -8px 0 0 -55px;
             li {
               float: left;
-              margin: 18px 0 0 18px;
+              margin: 18px 0 18px 18px;
               border: 1px #ddd solid;
               background: #fff;
               border-radius: 3px;
@@ -28,8 +24,8 @@
               .image_container {
                 p.img {
                   .img_top {
-                    width: 248px;
-                    height: 328px;
+                    width: 336px;
+                    height: 189px;
                   }
                 }
               }
@@ -88,19 +84,16 @@
         }
       }
       #side_bar {
-        width: 180px;
+        height: 100vh;
+        width: 200px;
+        border-right: 1px solid #ddd;
         float: left;
-        padding-left: 10px;
-        h3.title {
-          font-size: 14px;
-          font-weight: bold;
-          color: #666;
-        }
         ul {
           li {
+            padding-top: 15px;
             list-style: none;
             a {
-              font-size: 13px;
+              font-size: 15px;
               color: #666;
             }
           }

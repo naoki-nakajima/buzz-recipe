@@ -1,6 +1,6 @@
 section#show_image {
   .show_main_photo {
-    width: 1024px;;
+    width: 1024px;
     height: 500px;
     object-fit: cover;
     background-repeat: no-repeat;
@@ -8,35 +8,111 @@ section#show_image {
     position: relative
   }
   .show_recipe_title {
-    min-width: 200px;
-    min-height: 100px;
+    width: 400px;
+    min-height: 200px;
     position: absolute;
-    top: 250px;
-    left: 521px;
+    top: 50%;
+    left: 50%;
+    font-size: 50px;
+    color: #eee;
+    overflow-wrap: break-word;
   }
 }
 
 section#recipe_comment {
+  padding-top: 25px;
   .recipe_commnet_container{
     width: 1024px;
     margin: 0 auto;
-    background: red;
     .recipe_comment_detail {
-      min-height: 150px;
-      width: 600px;
-      background: #fff;
       margin: 0 auto;
+      min-height: 150px;
+      width: 900px;
       p {
         display: block;
         font-size: 20px;
-        line-height: 100px;
+        overflow-wrap: break-word;
+        line-height: 2em;
       }
     }
   }
 }
 
-section#howto_cock {
-  
+section#cock {
+  width: 900px;
+  margin: 0 auto;
+  .ingredients {
+    width: 200px;
+    float: left;
+    margin: 0 auto;
+    h1 {
+      font-size: 40px;
+      font-family: "kssweetheavycalligraphy";
+    }
+    .ingredients_detail { 
+      height: 32px;
+      width: 175px;
+      border-bottom: 1px solid #aaa;
+      display: flex;
+      .material {
+        width: 150px;
+        .material_detail {
+          font-size: 20px;
+          line-height: 2em;
+        }
+      }
+      .quantity {
+        .quantity_detail {
+          font-size: 20px;
+          line-height: 2em;
+        }
+      }
+    }
+  }
+  .how_to {
+    padding-left: 50px;
+    h1 {
+      font-size: 30px;
+      font-family: "kssweetheavycalligraphy";
+    }
+    float: left;
+    .order_of_operation {
+      display: flex;
+      .operation_number {
+        font-size: 20px;
+        width: 20px;
+        line-height: 2em;
+      }
+      .operation_detail {
+        max-width: 600px;
+        overflow-wrap: break-word;
+        font-size: 20px;
+        line-height: 2em;
+      }
+    }
+  }
+}
+
+section#one_point_comment {
+  width: 900px;
+  margin: 0 auto;
+  padding-top: 100px;
+  content: "";
+  display: block;
+  clear: both;
+  h1 {
+    font-size: 30px;
+    font-family: "kssweetheavycalligraphy";
+  }
+  .one_point_comment_box {
+    
+    .one_point_comment_detail {
+      width: 850px;
+      overflow-wrap: break-word;
+      line-height: 2em;
+      font-size: 20px;
+    }
+  }
 }
 
 

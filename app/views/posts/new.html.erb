@@ -1,43 +1,81 @@
 <div id="glb_main">
   <div id="glb_body" class="clearfix">
     <div id="content_container">
-      <div class="d-flex flex-column align-items-center pt-3">
-  <div class="col-xl-7 col-lg-8 col-md-10 col-sm-11 post-card">
-    <div class="card">
-      <div class="card-header">
-        投稿画面
-      </div>
-      <div class="card-body">
-        <%= form_with model: @post, class: "upload-images p-0 border-0" do |f| %>
-          <div class="form-group row mt-2">
-            <div class="col-auto pr-0">
-              <%= image_tag avatar_url(current_user), class: "post-profile-icon" %>
-            </div>
-            <div class="col pl-0">
-              <%= f.text_field :caption, class: "form-control border-0", placeholder: "キャプションを書く" %>
-            </div>
-          </div>
-          <div class="mb-3">
-            <%= f.fields_for :photos do |i| %>
-              <%= i.file_field :image %>
-            <% end %>
-          </div>
-          <div class="parents">
-            <%= f.fields_for :foods do |t| %>
-              <%= render "food_fields", f: t %>
-            <% end %>
-            <div class="links">
-              <%= link_to_add_association "追加", f, :foods %>
-            </div>
-          </div>
-          <%= f.submit "投稿する", class: "btn btn-primary" %>
-        <% end %>
-      </div>
-    </div>
-  </div>
-</div>
-    </div>
-  </div>
-</div>
+      <div id="new_container">
+        <div id="new_container_main">
 
+          <%= form_with model: @post, class: "upload-images" do |f| %>
+            <div class="new_post_title">
+              <div class="title_head">
+                <%= f.text_field :title, class: "new_title", placeholder: "タイトルを入力する" %>
+              </div>
+            </div>
+
+            <div class="new_post_photo">
+              <div class="photo_head">
+                <div class="photo_title">
+                  写真を選ぶ
+                </div>
+                <%= f.fields_for :photos do |i| %>
+                  <%= i.file_field :image %>
+                <% end %>
+              </div>
+            </div>
+
+            <div class="new_post_caption">
+              <div class="caption_head">
+                <div class="caption_title">
+                  簡単な説明
+                </div>
+                <%= f.text_area :caption, class: "new_caption" %>
+              </div>
+            </div>
+
+            <div class="new_post_incredients">
+              <div class="new_incredients">
+                <%= f.fields_for :foods do |t| %>
+                  <%= render "food_fields", f: t %>
+                <% end %>
+                <div class="links">
+                  <%= link_to_add_association "追加", f, :foods %>
+                </div>
+              </div>
+            </div>
+
+            <div class="new_post_cock">
+              <div class="how_to">
+                <%= f.fields_for :foods do |t| %>
+                  <div class="nested-fields">
+                    <div class="nested-fields_howto">
+                      作り方
+                    </div>
+                    <%= f.text_field :ingredient, class: "cock_desc" %>
+                    
+                    <%= link_to_remove_association "削除", f %>
+                  </div>
+                <% end %>
+                <div class="links">
+                  <%= link_to_add_association "追加", f, :foods %>
+                </div>
+              </div>
+            </div>
+            
+            <div class="new_post_description">
+              <div class="description_head">
+                <div class="description_title">
+                  ひとことメモ
+                </div>
+                <%= f.text_field :description, class: "description_desc" %>
+              </div>
+            </div>
+
+            <div class="post_btn">
+              <%= f.submit "投稿する", class: "new_post_btn" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 

@@ -11,7 +11,7 @@
                 <div class="image_container">
                   <p class="img">
                     <%= link_to(post_path(post)) do %>
-                      <%= image_tag post.photos.first.image.url(:medium), class: "img_top" %>
+                      <%= image_tag post.photos.first.image.url, class: "img_top" %>
                     <% end %>
                   </p>
                 </div>

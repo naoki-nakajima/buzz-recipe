@@ -1,10 +1,42 @@
 section#show_image {
   .show_main_photo {
-    height: 300px;
-    width: 1000px;
+    width: 1024px;;
+    height: 500px;
+    object-fit: cover;
     background-repeat: no-repeat;
-    .show_recipe_title {
+    margin: 0 auto;
+    position: relative
+  }
+  .show_recipe_title {
+    min-width: 200px;
+    min-height: 100px;
+    position: absolute;
+    top: 250px;
+    left: 521px;
+  }
+}
 
+section#recipe_comment {
+  .recipe_commnet_container{
+    width: 1024px;
+    margin: 0 auto;
+    background: red;
+    .recipe_comment_detail {
+      min-height: 150px;
+      width: 600px;
+      background: #fff;
+      margin: 0 auto;
+      p {
+        display: block;
+        font-size: 20px;
+        line-height: 100px;
+      }
     }
   }
 }
+
+section#howto_cock {
+  
+}
+
+

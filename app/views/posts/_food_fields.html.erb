@@ -1,7 +1,8 @@
-<div class="nested-fields">
-  <%= f.label "材料" %>
-  <%= f.text_field :ingredient %>
-  <%= f.label "分量" %>
-  <%= f.text_field :quantity %>
-  <%= link_to_remove_association "削除", f %>
+<div class="incredients_nested-fields">
+  <div class="incredietns_title">
+    材料
+  </div>
+  <%= f.text_field :ingredient, class: "link_incredient" %>
+  <%= f.text_field :quantity, class: "link_quantity" %>
+  <%= link_to_remove_association "削除", f ,class: "incredietns_delete_btn" %>
 </div>

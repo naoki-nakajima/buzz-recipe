@@ -1,0 +1,104 @@
+#new_container {
+  width: 1024px;
+  margin: 0 auto;
+  #new_container_main {
+    width: 600px;
+    margin: 0 auto;
+    padding-top: 50px;
+    .new_post_title {
+      .title_head {
+        .new_title {
+          width: 600px;
+          height: 75px;
+          background: #f6f7f8;
+          font-size: 40px;
+          border: none;
+          border-bottom: 2px solid #aaa;
+          outline: none;
+        }
+      }
+    }
+    .new_post_photo {
+      padding-top: 25px;
+      .photo_head {
+        width: 300px;
+        height: 100px;
+        .photo_title {
+          font-size: 20px;
+        }
+      }
+    }
+    .new_post_caption {
+      .caption_head {
+        .caption_title {
+          font-size: 20px;
+        }
+        .new_caption {
+          width: 600px;
+          height: 100px;
+        }
+      }
+    }
+    .new_post_incredients {
+      padding-top: 25px;
+      .new_incredients {
+        .incredients_nested-fields {
+          .incredietns_title {
+            font-size: 20px;
+          }
+          .link_incredient {
+            width: 200px;
+          }
+          .link_quantity {
+            width: 100px;
+            margin-left: 15px;
+          }
+          .incredietns_delete_btn {
+
+          }
+        }
+      }
+    }
+    .new_post_cock {
+      padding-top: 25px;
+      .how_to {
+        .cock_nested-fields {
+          .nested-fields_howto {
+            font-size: 20px;
+          }
+          .cock_desc {
+            width: 400px;
+            height: 30px;
+          }
+        }
+      }
+    }
+    
+    .new_post_description {
+      padding-top: 25px;
+      .description_head {
+        .description_title {
+          font-size: 20px;
+        }
+        .description_desc {
+          width: 600px;
+          height: 100px;
+        }
+      }
+    }
+    .post_btn {
+      padding-top: 25px;
+      margin: 0 auto;
+      width: 200px;
+      .new_post_btn {
+        display: block;
+        background: red;
+        color: #fff;
+        width: 200px;
+        height: 50px;
+        border-radius: 3px;
+        border: none;
+      }
+    }
+  }
+}

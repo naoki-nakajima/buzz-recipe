@@ -6,9 +6,14 @@
 @import "users/show";
 @import "users/edit";
 @import "posts/index";
+@import "posts/new";
 @import "posts/show";
 @import "posts/comment";
 
+@font-face {
+  font-family: "kssweetheavycalligraphy";
+  src: url("../fonts/kssweetheavycalligraphy.ttf");
+}
 
 .clearfix::after {
   content: "";

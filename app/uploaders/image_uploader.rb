@@ -33,8 +33,8 @@ class ImageUploader < CarrierWave::Uploader::Base
   #   process resize_to_fit: [50, 50]
   # end
 
-  version :medium do
-    process resize_to_fill: [500, 500]
+  def scale(width, height)
+    process resize_to_fill: [656, 492]
   end
 
   # Add an allowlist of extensions which are allowed to be uploaded.

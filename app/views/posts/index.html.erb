@@ -3,15 +3,15 @@
   <div id="glb_body" class="clearfix">
     <div id="content_container" class="clearfix">
       <div class="content">
+        <%= render partial: 'partial/navbar' %>
         <section id="recommend" class="clearfix">
-          <h2 class="title">おすすめレシピ</h2>
           <ul class="top_images" >
             <% @posts.each do |post| %>
               <li>
                 <div class="image_container">
                   <p class="img">
                     <%= link_to(post_path(post)) do %>
-                      <%= image_tag post.photos.first.image.url(:medium), class: "img_top" %>
+                      <%= image_tag post.photos.first.image.url, class: "img_top" %>
                     <% end %>
                   </p>
                 </div>

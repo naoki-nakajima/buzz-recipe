@@ -33,6 +33,9 @@
 
             <div class="new_post_incredients">
               <div class="new_incredients">
+                <div class="incredietns_title">
+                  材料
+                </div>
                 <%= f.fields_for :foods do |t| %>
                   <%= render "food_fields", f: t %>
                 <% end %>
@@ -44,18 +47,11 @@
 
             <div class="new_post_cock">
               <div class="how_to">
-                <%= f.fields_for :foods do |t| %>
-                  <div class="cock_nested-fields">
-                    <div class="nested-fields_howto">
-                      作り方
-                    </div>
-                    <%= f.text_field :ingredient, class: "cock_desc" %>
-                    
-                    <%= link_to_remove_association "削除", f %>
+                <div class="cock_nested-fields">
+                  <div class="nested-fields_howto">
+                    作り方
                   </div>
-                <% end %>
-                <div class="links">
-                  <%= link_to_add_association "追加", f, :foods %>
+                  <%= f.text_field :how_to_cock, class: "cock_desc" %>
                 </div>
               </div>
             </div>
@@ -65,7 +61,7 @@
                 <div class="description_title">
                   ひとことメモ
                 </div>
-                <%= f.text_field :description, class: "description_desc" %>
+                <%= f.text_field :post_comment, class: "description_desc" %>
               </div>
             </div>
 

@@ -39,10 +39,30 @@
         }
       }
     }
+    .new_post_incredients {
+      padding-top: 25px;
+      .new_incredients {
+        .incredients_nested-fields {
+          .incredietns_title {
+            font-size: 20px;
+          }
+          .link_incredient {
+            width: 200px;
+          }
+          .link_quantity {
+            width: 100px;
+            margin-left: 15px;
+          }
+          .incredietns_delete_btn {
+
+          }
+        }
+      }
+    }
     .new_post_cock {
       padding-top: 25px;
       .how_to {
-        .nested-fields {
+        .cock_nested-fields {
           .nested-fields_howto {
             font-size: 20px;
           }
@@ -53,6 +73,7 @@
         }
       }
     }
+    
     .new_post_description {
       padding-top: 25px;
       .description_head {
@@ -71,10 +92,12 @@
       width: 200px;
       .new_post_btn {
         display: block;
-        background: green;
+        background: red;
         color: #fff;
         width: 200px;
         height: 50px;
+        border-radius: 3px;
+        border: none;
       }
     }
   }

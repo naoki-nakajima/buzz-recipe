@@ -4,6 +4,7 @@
 // that code so it'll be compiled.
 import 'bootstrap';
 import '../stylesheets/application';
+import '../packs/post_new';
 //import '../packs/search';
 
 require("@rails/ujs").start()

@@ -11,6 +11,6 @@ class FoodsController < ApplicationController
 
   private
     def post_params
-      params.require(:post).permit(:caption, foods_attributes: [:id, :ingredient, :quantity, :_destroy])
+      params.require(:post).permit(:title, :caption, :post_comment, foods_attributes: [:id, :ingredient, :quantity, :_destroy])
     end
 end

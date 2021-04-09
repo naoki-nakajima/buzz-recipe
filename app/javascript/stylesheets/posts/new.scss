@@ -42,19 +42,26 @@
     .new_post_incredients {
       padding-top: 25px;
       .new_incredients {
-        .incredients_nested-fields {
-          .incredietns_title {
-            font-size: 20px;
-          }
+        .incredietns_title {
+          font-size: 20px;
+        }
+        .nested-fields {
+          padding-top: 5px;
           .link_incredient {
-            width: 200px;
+            
           }
           .link_quantity {
-            width: 100px;
-            margin-left: 15px;
+            
           }
           .incredietns_delete_btn {
-
+            font-size: 18px;
+            color: red;
+          }
+        }
+        .links {
+          .add_form_btn {
+            font-size: 18px;
+            color: blue;
           }
         }
       }
@@ -62,13 +69,26 @@
     .new_post_cock {
       padding-top: 25px;
       .how_to {
-        .cock_nested-fields {
-          .nested-fields_howto {
-            font-size: 20px;
+        .how_to_title {
+          font-size: 20px;
+        }
+        .how_to_form {
+          .nested-fields {
+            .cock_desc {
+              width: 400px;
+              height: 25px;
+              padding-top: 5px;
+            }
+            .how_to_delete_btn {
+              font-size: 18px;
+              color: red;
+            }
           }
-          .cock_desc {
-            width: 400px;
-            height: 30px;
+          .links {
+            .add_form_btn {
+              font-size: 18px;
+              color: blue;
+            }
           }
         }
       }

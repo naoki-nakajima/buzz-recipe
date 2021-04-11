@@ -116,4 +116,36 @@ section#one_point_comment {
   }
 }
 
+section#comment_container {
+  width: 900px;
+  margin: 0 auto;
+  margin-top: 100px;
+  content: "";
+  display: block;
+  clear: both;
+  background: #fff;
+}
+
+section#comment_form {
+  width: 900px;
+  margin: 0 auto;
+  margin-top: 5px;
+  .comment_form_post {
+    .form_post {
+      .form_control {
+        width: 400px;
+      }
+    }
+  }
+}
+
+section#like_container {
+  width: 900px;
+  margin: 0 auto;
+  padding-top: 100px;
+  content: "";
+  display: block;
+  clear: both;
+}
+
 

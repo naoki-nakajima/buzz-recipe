@@ -56,19 +56,14 @@
           </div>
         </div>
       </section>
-    </div>
-  </div>
-</div>
 
-        
-  <!------        <div class="description_text">
-            <%= render_with_hashtags(@post.caption) %>
-          </div>
-        </div>
-      <div id="comment_container">
+      <section id="comment_container">
         <div class="comment_post" id="comment_post-<%= @post.id.to_s %>">
           <%= render 'comment_list', { post: @post } %>
         </div>
+      </section>
+
+      <section id="comment_form">
         <div class ="comment_form_post" id="comment_form_post-<%= @post.id.to_s %>">
           <%= form_with model: [@post, Comment.new], local: false, class: "form_post" do |f| %>
             <%= f.hidden_field :user_id, value: current_user.id %>
@@ -77,25 +72,25 @@
             <%= f.submit "送信" %>
           <% end %>
         </div>
-      </div>
+      </section>
 
-      <div id="like_container">
-          <div class="like_btn">
-            <div id="like-icon-post-<%= @post.id.to_s %>">
-              <% if @post.liked_by(current_user).present? %>
-                <%= link_to "いいねを取り消す", post_like_path(@post.id, @post.liked_by(current_user)), method: :DELETE, remote: true, class: "loved hide-text" %>
-              <% else %>
-                <%= link_to "いいね", post_likes_path(@post), method: :POST, remote: true, class: "love hide-text" %>
-              <% end %>
-            </div>
-            <%= link_to "", "#", class: "comment" %>
+      <section id="like_container">
+        <div class="like_btn">
+          <div id="like-icon-post-<%= @post.id.to_s %>">
+            <% if @post.liked_by(current_user).present? %>
+              <%= link_to "いいねを取り消す", post_like_path(@post.id, @post.liked_by(current_user)), method: :DELETE, remote: true, class: "loved hide-text" %>
+            <% else %>
+              <%= link_to "いいね", post_likes_path(@post), method: :POST, remote: true, class: "love hide-text" %>
+            <% end %>
           </div>
-          
-          <div id="like-text-post-<%= @post.id.to_s %>">
-            <%= render "like_text", { likes: @post.likes } %>
-          </div>
+        </section>
+        <div id="like-text-post-<%= @post.id.to_s %>">
+          <%= render "like_text", { likes: @post.likes } %>
         </div>
-        ----------->
+      </div>
     </div>
   </div>
 </div>
+
+        
+

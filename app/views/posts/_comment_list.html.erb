@@ -1,11 +1,13 @@
 <% post.comments.each do |comment| %>
   <div class="comment_box">
-    <% if comment.user == current_user %>
-      <%= link_to "コメントを消す", post_comment_path(post.id, comment), method: :delete, remote: true, class:"delete_comment" %>
-    <% end %>
     <div>
       <%= link_to comment.user.name, user_path(comment.user), class: "comment_user_name" %>
     </div>
-    <div class="comment_comment"><%= comment.comment %></div>
+    <div class="comment_comment">
+      <%= comment.comment %>
+    </div>
+    <% if comment.user == current_user %>
+      <%= link_to "コメントを消す", post_comment_path(post.id, comment), method: :delete, remote: true, class:"delete_comment" %>
+    <% end %>
   </div>
 <% end %>

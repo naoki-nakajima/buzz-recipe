@@ -27,8 +27,10 @@
             <%= f.label :password_confirmation, "パスワードの確認" %>
             <%= f.password_field :password_confirmation, autofocus: "off", class: "form-control" %>
           </div>
-
-          <%= f.submit "変更する", class: "btn btn-primary" %>
+          
+          <div class="form-group">
+            <%= f.submit "変更する", class: "btn btn-primary btn-block mb-4" %>
+          </div>
 
           <hr class="devise-link my-5">
           <div class="form-group">

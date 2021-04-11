@@ -27,9 +27,8 @@
     color: rgb(255,0,0);
   }
   a.guest_btn:hover {
-    color: white; 
-    background-color: rgb(29, 20, 158);
-    transition: 0.3s;
+    color: rgb(29, 20, 158); 
+    transition: 0.5s;
     text-decoration: none;
   }
 }
@@ -38,11 +37,7 @@
 .top_title {
   font-family: "kssweetheavycalligraphy";
   font-size: 150px;
-  color: rgb(34, 33, 33);
-}
-.top_title:hover {
   color: rgb(255, 0, 0);
-  transition: 2s;
 }
 
 .logo-img {

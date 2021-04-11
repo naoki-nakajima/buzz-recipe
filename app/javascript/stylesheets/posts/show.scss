@@ -42,7 +42,7 @@ section#cock {
   width: 900px;
   margin: 0 auto;
   .ingredients {
-    width: 200px;
+    width: 500px;
     float: left;
     margin: 0 auto;
     h1 {
@@ -51,17 +51,19 @@ section#cock {
     }
     .ingredients_detail { 
       height: 32px;
-      width: 175px;
+      width: 300px;
       border-bottom: 1px solid #aaa;
       display: flex;
       .material {
-        width: 150px;
+        width: 200px;
         .material_detail {
           font-size: 20px;
           line-height: 2em;
         }
       }
       .quantity {
+        width: 100px;
+        text-align: end;
         .quantity_detail {
           font-size: 20px;
           line-height: 2em;
@@ -70,12 +72,11 @@ section#cock {
     }
   }
   .how_to {
-    padding-left: 50px;
+    float: left;
     h1 {
       font-size: 30px;
       font-family: "kssweetheavycalligraphy";
     }
-    float: left;
     .order_of_operation {
       display: flex;
       .operation_number {
@@ -84,7 +85,7 @@ section#cock {
         line-height: 2em;
       }
       .operation_detail {
-        max-width: 600px;
+        max-width: 300px;
         overflow-wrap: break-word;
         font-size: 20px;
         line-height: 2em;
@@ -113,6 +114,38 @@ section#one_point_comment {
       font-size: 20px;
     }
   }
+}
+
+section#comment_container {
+  width: 900px;
+  margin: 0 auto;
+  margin-top: 100px;
+  content: "";
+  display: block;
+  clear: both;
+  background: #fff;
+}
+
+section#comment_form {
+  width: 900px;
+  margin: 0 auto;
+  margin-top: 5px;
+  .comment_form_post {
+    .form_post {
+      .form_control {
+        width: 400px;
+      }
+    }
+  }
+}
+
+section#like_container {
+  width: 900px;
+  margin: 0 auto;
+  padding-top: 100px;
+  content: "";
+  display: block;
+  clear: both;
 }
 
 

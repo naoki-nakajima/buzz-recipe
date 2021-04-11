@@ -15,24 +15,13 @@
                     <% end %>
                   </p>
                 </div>
-                <div class="profile clearfix">
-                  <div class="content clearfix">
-                    <div class="left_icon">
-                      <%= image_tag avatar_url(current_user), class: "profile_icon" %>
-                    </div>
-                    <div class="right_name">
-                      <div class="name">
-
-                      </div>
+                <div class="top_recipe_title">
+                  <div class="title_box">
+                    <div class="title">
+                      <%= post.title %>
                     </div>
                   </div>
-                  <div class="btn_block">
-                    <div class="btn_like">
-                      <div class="btn">
-                        <%= link_to "いいね!する" %>
-                      </div>
-                    </div>
-                  </div>
+                  
                 </div>
               </li>
             <% end %>

@@ -9,7 +9,7 @@ section#show_image {
   }
   .show_recipe_title {
     width: 400px;
-    min-height: 200px;
+    min-height: 100px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -17,6 +17,46 @@ section#show_image {
     color: #eee;
     overflow-wrap: break-word;
   }
+  .edit_delete {
+    position: absolute;
+    top: 62%;
+    left: 16%;
+    display: flex;
+  .edit_container {
+    width: 60px;
+    .caption {
+      width: 70px;
+      font-size: 15px;
+      opacity: 0;
+      -webkit-transition:	all 0.6s ease;
+      transition:		all 0.6s ease;
+    }
+    a {
+      font-size: 25px;
+    }
+  }
+  .edit_container:hover .caption{
+    opacity: 1;
+  }
+
+
+  .delete_container {
+    .caption {
+      width: 60px;
+      font-size: 15px;
+      opacity: 0;
+      -webkit-transition:	all 0.6s ease;
+      transition:		all 0.6s ease;
+    }
+    a {
+      font-size: 25px;
+    }
+  }
+  .delete_container:hover .caption{
+    opacity: 1;
+  }
+}
+  
 }
 
 section#recipe_comment {

@@ -7,7 +7,9 @@
       <%= comment.comment %>
     </div>
     <% if comment.user == current_user %>
-      <%= link_to "コメントを消す", post_comment_path(post.id, comment), method: :delete, remote: true, class:"delete_comment" %>
+      <%= link_to post_comment_path(post.id, comment), method: :delete, remote: true, class:"delete_comment text-danger" do%>
+        <i class="far fa-trash-alt"></i>
+      <% end %>
     <% end %>
   </div>
 <% end %>

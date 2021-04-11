@@ -1,5 +1,8 @@
 @import "reset.scss";
 @import "~bootstrap/scss/bootstrap";
+//@import 'font-awesome-sprockets';
+//@import 'font-awesome';
+@import "@fortawesome/fontawesome-free/scss/fontawesome";
 @import "layouts/navbar";
 @import "layouts/footer";
 @import "users/devise";
@@ -9,6 +12,7 @@
 @import "posts/new";
 @import "posts/show";
 @import "posts/comment";
+
 
 @font-face {
   font-family: "kssweetheavycalligraphy";

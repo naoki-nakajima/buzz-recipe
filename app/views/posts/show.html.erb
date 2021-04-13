@@ -20,6 +20,22 @@
             <% end %>
         </div>
       </section>
+      <section id="like_container">
+        <div class="like_btn">
+          <div id="like-icon-post-<%= @post.id.to_s %>">
+            <% if @post.liked_by(current_user).present? %>
+              <%= link_to "いいねを取り消す", post_like_path(@post.id, @post.liked_by(current_user)), method: :DELETE, remote: true, class: "loved hide-text" %>
+            <% else %>
+              <%= link_to "いいね!", post_likes_path(@post), method: :POST, remote: true, class: "love hide-text" %>
+            <% end %>
+          </div>
+        </div>
+        <div class="like-text-post" id="like-text-post-<%= @post.id.to_s %>">
+          <%= render "like_text", { likes: @post.likes } %>
+        </div>
+      </section>
+      
+
       <section id="recipe_comment">
         <div class="recipe_commnet_container">
           <div class="recipe_comment_detail">
@@ -86,21 +102,6 @@
           <% end %>
         </div>
       </section>
-
-      <section id="like_container">
-        <div class="like_btn">
-          <div id="like-icon-post-<%= @post.id.to_s %>">
-            <% if @post.liked_by(current_user).present? %>
-              <%= link_to "いいねを取り消す", post_like_path(@post.id, @post.liked_by(current_user)), method: :DELETE, remote: true, class: "loved hide-text" %>
-            <% else %>
-              <%= link_to "いいね", post_likes_path(@post), method: :POST, remote: true, class: "love hide-text" %>
-            <% end %>
-          </div>
-        </section>
-        <div id="like-text-post-<%= @post.id.to_s %>">
-          <%= render "like_text", { likes: @post.likes } %>
-        </div>
-      </div>
     </div>
   </div>
 </div>

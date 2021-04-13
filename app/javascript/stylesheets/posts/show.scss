@@ -9,7 +9,7 @@ section#show_image {
   }
   .show_recipe_title {
     width: 400px;
-    min-height: 200px;
+    min-height: 100px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -17,6 +17,77 @@ section#show_image {
     color: #eee;
     overflow-wrap: break-word;
   }
+  .edit_delete {
+    position: absolute;
+    top: 62%;
+    left: 16%;
+    display: flex;
+  }
+  .edit_container {
+    width: 60px;
+    .caption {
+      width: 70px;
+      font-size: 15px;
+      opacity: 0;
+      -webkit-transition:	all 0.6s ease;
+      transition:		all 0.6s ease;
+    }
+    a {
+      font-size: 25px;
+    }
+  }
+  .edit_container:hover .caption{
+    opacity: 1;
+  }
+
+
+  .delete_container {
+    .caption {
+      width: 60px;
+      font-size: 15px;
+      opacity: 0;
+      -webkit-transition: all 0.6s ease;
+      transition: all 0.6s ease;
+    }
+    a {
+      font-size: 25px;
+    }
+  }
+  .delete_container:hover .caption{
+    opacity: 1;
+  }
+} 
+
+section#like_container {
+  margin-left: 214px;
+  padding-top: 15px;
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.love {
+  background-image: url("~parts5");
+  background-repeat: no-repeat;
+  height: 24px;
+  width: 24px;
+  background-size: 24px !important;
+}
+
+
+.loved {
+  background-image: url("~parts7");
+  background-repeat: no-repeat;
+  height: 24px;
+  width: 24px;
+  background-size: 24px !important;
+}
+
+.hide-text {
+  display: block;
+  overflow: hidden;
+  text-indent: 110%;
+  white-space: nowrap;
 }
 
 section#recipe_comment {
@@ -117,19 +188,43 @@ section#one_point_comment {
 }
 
 section#comment_container {
-  width: 900px;
+  width: 700px;
+  height: 150px;
+  overflow: scroll;
   margin: 0 auto;
-  margin-top: 100px;
+  margin-top: 50px;
   content: "";
   display: block;
   clear: both;
   background: #fff;
+  border: 1px #ddd solid;
+  border-radius: 3px;
+  .comment_post {
+    width: 675px;
+    margin: 0 auto;
+    .comment_box {
+      display: flex;
+      padding-bottom: 3px;
+      .comment_user_name {
+        padding-right: 15px;
+      }
+      .comment_comment {
+        padding-right: 5px;
+        overflow-wrap: break-word;
+        max-width: 550px;
+      }
+      .delete_comment {
+
+      }
+    }
+  }
 }
 
 section#comment_form {
-  width: 900px;
+  width: 700px;
   margin: 0 auto;
   margin-top: 5px;
+
   .comment_form_post {
     .form_post {
       .form_control {
@@ -139,13 +234,6 @@ section#comment_form {
   }
 }
 
-section#like_container {
-  width: 900px;
-  margin: 0 auto;
-  padding-top: 100px;
-  content: "";
-  display: block;
-  clear: both;
-}
+
 
 

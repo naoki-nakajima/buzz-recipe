@@ -1,0 +1,55 @@
+<div id="glb_header">
+  <div id="glb_header_top">
+    <div class="header_tit">
+      <%= link_to "俺流" %>
+    </div>
+    <div class="log_in">
+      <ul>
+        <li>
+          <%= link_to "新規登録"%>
+        </li>
+        <li>
+          <%= link_to "ログイン"%>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div id="glb_header_bottom">
+    <div class="search_section">
+      <ul>
+        <li>
+          <i class="fa fa-search" id="search_icon"></i>
+          <a>キーワードからレシピを探す</a>
+        </li>
+        <li>
+          <div class="header_search">
+            <%= form_with(url: search_posts_path, local: true, method: :get, class: "search_form") do |form| %>
+              <%= form.text_field :keyword, placeholder: "食材名・料理名を入力", class: "search_input" %>
+              <%= form.button "検索", class: "search_btn" do %>
+                <i class="fa fa-search"></i>
+              <% end %>
+
+            <% end %>
+          </div>
+        </li>
+        <li class="search_recipe">
+          <%= link_to "レシピを探す" %>
+        </li>
+        <li class="search_ingreditnts">
+          <%= link_to "食材から探す" %>
+        </li>
+        <li>
+          <%= link_to "人気レシピ" %>
+        </li>
+        <li>
+          <%= link_to "ユーザーで探す" %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+

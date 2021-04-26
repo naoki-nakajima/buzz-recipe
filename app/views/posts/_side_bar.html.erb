@@ -1,10 +1,23 @@
 <div id="side_bar">
   <div class="side_header">
-    <p class="top_link">
-      <%= link_to "俺流", root_path %>
-    </p>
+    <h2 class="head">
+      食材から探す
+    </h2>
   </div>
-  <div class="side_main">
+  <div class="side_header_list">
+    <ul>
+      <li>
+        <%= link_to "肉" %>
+      </li>
+      <li>
+        <%= link_to "魚" %>
+      </li>
+      <li>
+        <%= link_to "野菜" %>
+      </li>
+    </ul>
+  </div>
+  <div class="side_header_link">
     <ul>
       <li>
         <%= link_to "ログアウト",  destroy_user_session_path, method: :delete %>
@@ -17,4 +30,5 @@
       <li>
     </ul>
   </div>
+</div>
   

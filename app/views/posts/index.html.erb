@@ -1,9 +1,10 @@
 <div id="glb_main">
   <div id="glb_body" class="clearfix">
     <%= render partial: 'partial/header' %>
-    <div id="content_container" class="clearfix">
+    <div id="content_container">
+      <%= render partial: 'posts/side_bar' %>
       <div class="content">
-        <section id="recommend" class="clearfix">
+        <section id="recommend" >
           <ul class="top_images" >
             <% @posts.each do |post| %>
               <li>
@@ -14,20 +15,21 @@
                     <% end %>
                   </p>
                 </div>
-                <div class="top_recipe_title">
-                  <div class="title_box">
-                    <div class="title">
-                      <%= post.title %>
-                    </div>
+                <div class="recipe_txt_box">
+                  <div class="title">
+                    <%= post.title %>
                   </div>
-                  
+                  <div class="recipe_txt">
+                    test
+                  </div>
                 </div>
               </li>
             <% end %>
           </ul>
         </section>
+        <%= paginate @posts %>
       </div>
-      <%= render 'posts/side_bar' %>
+      
     </div>
   </div>
 </div>

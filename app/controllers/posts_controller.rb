@@ -4,6 +4,10 @@ class PostsController < ApplicationController
   
   def index
     @posts = Post.includes(:photos, :user).order('created_at DESC').page(params[:page]).per(1)
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def new

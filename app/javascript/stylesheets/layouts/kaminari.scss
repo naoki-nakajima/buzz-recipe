@@ -1,0 +1,39 @@
+nav {
+  ul.pagination {
+    justify-content: center;
+    li {
+      a {
+        border: none;
+        color: #666; 
+      }
+      a:hover {
+        border-radius: 3px;
+        background: #f5b561;
+        color: #fff;
+      }
+      .page-link {
+        border-radius: 3px;
+        background-color: #f6f7f8;
+      }
+    }
+    li.page-item.active .page-link {
+      z-index: 3;
+      color: #fff;
+      background-color: #f5b561;
+      border-color: #f5b561;
+      a {
+        background: #f5b561;
+        border-radius: 3px;
+        }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+

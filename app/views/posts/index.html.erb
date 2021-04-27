@@ -4,32 +4,8 @@
     <div id="content_container">
       <%= render partial: 'posts/side_bar' %>
       <div class="content">
-        <section id="recommend" >
-          <ul class="top_images" >
-            <% @posts.each do |post| %>
-              <li>
-                <div class="image_container">
-                  <p class="img">
-                    <%= link_to(post_path(post)) do %>
-                      <%= image_tag post.photos.first.image.url, class: "img_top" %>
-                    <% end %>
-                  </p>
-                </div>
-                <div class="recipe_txt_box">
-                  <div class="title">
-                    <%= post.title %>
-                  </div>
-                  <div class="recipe_txt">
-                    test
-                  </div>
-                </div>
-              </li>
-            <% end %>
-          </ul>
-        </section>
-        <%= paginate @posts %>
+        <%= render partial: 'posts/post' %>
       </div>
-      
     </div>
   </div>
 </div>

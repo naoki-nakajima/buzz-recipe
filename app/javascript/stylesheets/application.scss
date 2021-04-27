@@ -12,6 +12,7 @@
 @import "posts/new";
 @import "posts/show";
 @import "posts/comment";
+@import "layouts/kaminari";
 
 
 @font-face {
@@ -37,5 +38,7 @@
 .alert-alert {
   @extend .alert-danger;
 }
+
+
 
 

@@ -1,238 +1,147 @@
-section#show_image {
-  .show_main_photo {
-    width: 1024px;
-    height: 500px;
-    object-fit: cover;
-    background-repeat: no-repeat;
-    margin: 0 auto;
-    position: relative
-  }
-  .show_recipe_title {
-    width: 400px;
-    min-height: 100px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    font-size: 50px;
-    color: #eee;
-    overflow-wrap: break-word;
-  }
-  .edit_delete {
-    position: absolute;
-    top: 62%;
-    left: 16%;
-    display: flex;
-  }
-  .edit_container {
-    width: 60px;
-    .caption {
-      width: 70px;
-      font-size: 15px;
-      opacity: 0;
-      -webkit-transition:	all 0.6s ease;
-      transition:		all 0.6s ease;
-    }
-    a {
-      font-size: 25px;
-    }
-  }
-  .edit_container:hover .caption{
-    opacity: 1;
-  }
-
-
-  .delete_container {
-    .caption {
-      width: 60px;
-      font-size: 15px;
-      opacity: 0;
-      -webkit-transition: all 0.6s ease;
-      transition: all 0.6s ease;
-    }
-    a {
-      font-size: 25px;
-    }
-  }
-  .delete_container:hover .caption{
-    opacity: 1;
-  }
-} 
-
-section#like_container {
-  margin-left: 214px;
-  padding-top: 15px;
-  content: "";
-  display: block;
-  clear: both;
+.show_recipe_tit {
+  width: 1064px;
+  height: 46px;
+  margin-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+  font-size: 24px;
 }
-
-.love {
-  background-image: url("~parts5");
-  background-repeat: no-repeat;
-  height: 24px;
-  width: 24px;
-  background-size: 24px !important;
+.show_recipe_txt {
+  width: 840px;
+  margin-top: 17px;
+  font-size: 18px;
+  line-height: 1.75;
 }
+.content_main {
+  padding-top: 24px;
+  display: flex;
+  .content_left {
+    section.show_image {
+      .show_main_photo {
+        width: 556px;
+        height: 417px;
+      }
+    }
+    section#like_container {
+      border: 1px solid #ddd;
+      border-bottom: none;
+      padding: 0 13px;
+      .like_btn {
+        font-size: 15px;
+        color: #808080;
+        
+      }
+      .unlike_btn {
+        font-size: 15px;
+        color: #e54747;
+      }
+    }
+    section#show_comment {
+      #comment_container {
+        border: 1px solid #ddd;
+        background: #fff;
+        padding: 15px;
+        .comment_to_user_name {
+          font-size: 16px;
+          font-weight: 800;
+          padding: 15px 0;
+        }
+        .comment_post {
+          .comment_box {
+            padding-bottom: 3px;
+            display: flex;
+            .comment_user {
+              padding-right: 13px;
+              a.comment_user_name {
 
-
-.loved {
-  background-image: url("~parts7");
-  background-repeat: no-repeat;
-  height: 24px;
-  width: 24px;
-  background-size: 24px !important;
-}
-
-.hide-text {
-  display: block;
-  overflow: hidden;
-  text-indent: 110%;
-  white-space: nowrap;
-}
-
-section#recipe_comment {
-  padding-top: 25px;
-  .recipe_commnet_container{
-    width: 1024px;
-    margin: 0 auto;
-    .recipe_comment_detail {
-      margin: 0 auto;
-      min-height: 150px;
-      width: 900px;
+              }
+            }
+            .comment_comment {
+                
+            }
+          }
+        }
+      }
+    }
+  }
+  .content_right {
+    padding-left: 36px;
+    width: 605px;
+    .recipe_ingredients {
+      padding-bottom: 13px;
+      font-size: 24px;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: 0.05em;
       p {
-        display: block;
-        font-size: 20px;
-        overflow-wrap: break-word;
-        line-height: 2em;
-      }
-    }
-  }
-}
 
-section#cock {
-  width: 900px;
-  margin: 0 auto;
-  .ingredients {
-    width: 500px;
-    float: left;
-    margin: 0 auto;
-    h1 {
-      font-size: 40px;
-      font-family: "kssweetheavycalligraphy";
-    }
-    .ingredients_detail { 
-      height: 32px;
-      width: 300px;
-      border-bottom: 1px solid #aaa;
-      display: flex;
-      .material {
-        width: 200px;
-        .material_detail {
-          font-size: 20px;
-          line-height: 2em;
-        }
       }
-      .quantity {
-        width: 100px;
-        text-align: end;
-        .quantity_detail {
-          font-size: 20px;
-          line-height: 2em;
+      .ingredients_detail {
+        border-top: 1px solid #ddd;
+        list-style: none;
+        width: 470px;
+        display: flex;
+        ul.material {
+          padding: 0;
+          list-style: none;
+          min-width: 100px;
+          li.material_detail {
+            padding: 13px 0;
+            margin: 0;
+            font-size: 20px;
+            font-weight: normal;
+            color: #444;
+            line-height: 1.333;
+            letter-spacing: 0;
+            border-bottom: 1px solid #ddd;
+          }
+        }
+        ul.quantity {
+          padding: 0;
+          list-style: none;
+          min-width: 370px;
+          li.quantity_detail {
+            padding: 13px 0;
+            font-size: 20px;
+            font-weight: normal;
+            color: #444;
+            line-height: 1.333;
+            letter-spacing: 0;
+            border-bottom: 1px solid #ddd;
+          }
         }
       }
     }
-  }
-  .how_to {
-    float: left;
-    h1 {
-      font-size: 30px;
-      font-family: "kssweetheavycalligraphy";
-    }
-    .order_of_operation {
-      display: flex;
-      .operation_number {
-        font-size: 20px;
-        width: 20px;
-        line-height: 2em;
-      }
-      .operation_detail {
-        max-width: 300px;
-        overflow-wrap: break-word;
-        font-size: 20px;
-        line-height: 2em;
-      }
-    }
-  }
-}
+    .recipe_how_to {
+      width: 470px;
+      padding-top: 17px;
+      padding-bottom: 13px;
+      font-size: 24px;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: 0.05em;
+      p {
 
-section#one_point_comment {
-  width: 900px;
-  margin: 0 auto;
-  padding-top: 100px;
-  content: "";
-  display: block;
-  clear: both;
-  h1 {
-    font-size: 30px;
-    font-family: "kssweetheavycalligraphy";
-  }
-  .one_point_comment_box {
-    
-    .one_point_comment_detail {
-      width: 850px;
-      overflow-wrap: break-word;
-      line-height: 2em;
-      font-size: 20px;
-    }
-  }
-}
-
-section#comment_container {
-  width: 700px;
-  height: 150px;
-  overflow: scroll;
-  margin: 0 auto;
-  margin-top: 50px;
-  content: "";
-  display: block;
-  clear: both;
-  background: #fff;
-  border: 1px #ddd solid;
-  border-radius: 3px;
-  .comment_post {
-    width: 675px;
-    margin: 0 auto;
-    .comment_box {
-      display: flex;
-      padding-bottom: 3px;
-      .comment_user_name {
-        padding-right: 15px;
       }
-      .comment_comment {
-        padding-right: 5px;
-        overflow-wrap: break-word;
-        max-width: 550px;
-      }
-      .delete_comment {
-
+      ul.order_of_operation {
+        padding: 0;
+        border-top: 1px solid #ddd;
+        list-style: none;
+        li.operation_detail {
+          padding: 13px 0;
+          margin: 0;
+          font-size: 20px;
+          font-weight: normal;
+          color: #444;
+          line-height: 1.333;
+          letter-spacing: 0;
+          border-bottom: 1px solid #ddd;
+        }
       }
     }
   }
 }
 
-section#comment_form {
-  width: 700px;
-  margin: 0 auto;
-  margin-top: 5px;
-
-  .comment_form_post {
-    .form_post {
-      .form_control {
-        width: 400px;
-      }
-    }
-  }
-}
 
 
 

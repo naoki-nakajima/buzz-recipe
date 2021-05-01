@@ -1,28 +1,29 @@
 #glb_header {
-  
+  background: #BB1C33;
   #glb_header_top {
     width: 1170px;
-    height: 120px;
+    height: 60px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
+    
     .header_tit {
       a {
         font-family: "kssweetheavycalligraphy";
-        font-size: 80px;
-        color: #f5b561;
+        font-size: 45px;
+        color: #eee;
         text-decoration: none;
       }
     }
     .log_in {
       display: table;
-      padding-top: 72px;
+      padding-top: 30px;
       ul {
         li {
           display: table-cell;
           padding: 0 16px;
           a {
-            color: black;
+            color: #eee;
             font-size: 16px;
             font-weight: 800;
             text-decoration: none;
@@ -34,24 +35,25 @@
     }
   }
   #glb_header_bottom {
-    background: #eeedeb;
     .search_section {
+      height: 350px;
+      background-image: url(~mati-cyuuka-top.jpeg);
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
       ul {
-        display: flex;
-        justify-content: space-between;
         max-width: 1170px;
-        padding: 16px 0;
-        margin: 0 auto;
+        padding-top: 62px;
+        margin-left: 300px;
         text-decoration: none;
         li {
           list-style: none;
-          color: #222;
-          a {
-            color: #222;
-            font-size: 12px;
-          
-            line-height: 30px;
+          p {
+            color: #BB1C33;
+            font-size: 72px;
             text-decoration: none;
+            font-family: "kssweetheavycalligraphy";
           }
           #search_icon {
             color: gray;
@@ -59,8 +61,8 @@
           .header_search {
             .search_form {
               .search_input {
-                width: 340px;
-                height: 30px;
+                width: 720px;
+                height: 45px;
                 color: #323232;
                 font-size: 12px;
                 border: none;

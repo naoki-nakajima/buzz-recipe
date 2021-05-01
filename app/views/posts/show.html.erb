@@ -1,32 +1,78 @@
 <div id="glb_main">
   <div id="glb_body" class="clearfix">
-    
-    <%= render partial: 'partial/header' %>
-    
     <div id="content_container">
-      <div class="show_recipe_tit">
-        <%= @post.title %>
-      </div>
-      
-      <div class="show_recipe_txt">
-        <%= render_with_hashtags(@post.caption) %>
-      </div>
-      
-      <div class="content_main">
-        <div class="content_left">
-          <section class="show_image">
-            <%= image_tag @post.photos.first.image.url, class: "show_main_photo" %>
-          </section>
-          
-          <section id="like_container">
-            <div class="like_btn">
-              <div id="like-icon-post-<%= @post.id.to_s %>">
-                <%= render 'like', { post: @post } %>
+      <div id="show_content">
+        <div class="top_photo">
+        </div>
+        <div class="top_content">
+          <div class="left_content">
+            <div class="like_content">
+              <div class="like_btn">
+                <div id="like-icon-post-<%= @post.id.to_s %>">
+                  <%= render 'like', { post: @post } %>
+                </div>
               </div>
             </div>
+            <div class="shop_tit">
+              中華一番
+            </div>
+            <div class="shop_address">
+              渋谷区渋谷町1-12-5
+            </div>
+            <div class="shop_text">
+               test test test test test test test test test
+               test test test test test test test test test
+               test test test test test test test test test
+               test test test test test test test test test
+            </div>
+          </div>
+          <div class="right_content">
+            <div class="shop_mouth">
+            </div>
+            <div class="shop_info">
+            </div>
+            <div class="shop_hours">
+            </div>
+          </div>
+        </div>
+        <div class=bottom_content>
+          <div class="tab_content">
+            <ul class="shop_menu">
+              <li>
+                <a href="#" id="about" class="menu_item active">メニュー</a>
+              </li>
+              <li>
+                <a href="#" id="service" class="menu_item">お店からのコメント</a>
+              </li>
+              <li>
+                <a href="#" id="contact" class="menu_item">口コミ</a>
+              </li>
+            </ul>
+            <ul class="menu_details">
+              <li class="menu_detail show">
+                about about about about about about about about about about about about about about about about about about about about about about about about about about about about about about about about about about about about about about about
+              </li>
+              <li class="menu_detail">
+                service service service service service service service service service service service service service service service service service service service service service service service service service service
+              </li>
+              <li class="menu_detail">
+                contact contact contact contact contact contact contact contact contact contact contact contact contact contact contact contact contact contact contact contact contact contact contact
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+         <!-----------------
+          <section id="like_conttent">
+            
           </section>
+          -------------->
 
-          
+          <!-----------------------
           <section id="show_comment">
             <div id="comment_container">
               <div class="comment_to_user_name">
@@ -47,42 +93,8 @@
               </div>
             </div>
           </section>
-        </div>
+          ------------------------>
         
-        
-        <div class="content_right">
-          <div class="recipe_ingredients">
-            <p>材料</p>
-            <% @post.foods.each do |food| %>
-              <div class="ingredients_detail"> 
-                <ul class="material">
-                  <li class="material_detail">
-                    <%= food.ingredient %>
-                  </li>
-                </ul>
-                <ul class="quantity">
-                  <li class="quantity_detail">
-                    <%= food.quantity %>
-                  </li>
-                </ul>
-              </ul>
-            <% end %>
-          </div>
-          <div class="recipe_how_to">
-            <p>作り方</p>
-            <ul class="order_of_operation">
-              <% @post.cocks.each do |cock| %>
-                <li class="operation_detail">
-                  <%= cock.how_to %>
-                </li>
-              <% end %>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
         
 <!---------------------------

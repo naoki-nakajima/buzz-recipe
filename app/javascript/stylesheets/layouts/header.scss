@@ -1,7 +1,7 @@
 #glb_header {
   background: #BB1C33;
   #glb_header_top {
-    width: 1170px;
+    width: 960px;
     height: 60px;
     margin: 0 auto;
     display: flex;
@@ -43,9 +43,9 @@
       background-size: cover;
       background-attachment: fixed;
       ul {
-        max-width: 1170px;
+        width: 960px;
         padding-top: 62px;
-        margin-left: 300px;
+        margin: 0 auto;
         text-decoration: none;
         li {
           list-style: none;
@@ -61,7 +61,7 @@
           .header_search {
             .search_form {
               .search_input {
-                width: 720px;
+                width: 840px;
                 height: 45px;
                 color: #323232;
                 font-size: 12px;
@@ -81,7 +81,6 @@
                 right: 30px;
               }
             }
-            
           }
         }
       }

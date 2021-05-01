@@ -1,31 +1,122 @@
-.show_recipe_tit {
-  width: 1064px;
-  height: 46px;
-  margin-top: 20px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #ddd;
-  font-size: 24px;
-}
-.show_recipe_txt {
-  width: 840px;
-  margin-top: 17px;
-  font-size: 18px;
-  line-height: 1.75;
-}
-.content_main {
-  padding-top: 24px;
-  display: flex;
-  .content_left {
-    section.show_image {
-      .show_main_photo {
-        width: 556px;
-        height: 417px;
+#show_content {
+  .top_photo {
+    width: 960px;
+    height: 350px;
+    background-image: url(~mati-cyuuka-top.jpeg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+  .top_content {
+    display: flex;
+    .left_content {
+      height: 300px;
+      width: 70%;
+      margin-left: 44px;
+      position: relative;
+      .like_content {
+        .like_btn {
+          .link_like {
+            position: absolute;
+            top: 0;
+            right: 0;
+          }
+        }
+      }
+      .shop_tit {
+        padding-top: 15px;
+        font-size: 20px;
+        font-weight: bold;
+      }
+      .shop_address {
+        font-size: 14px;
+        color: #666;
+      }
+      .shop_text {
+        color: #333;
+        padding-top: 30px;
       }
     }
-    section#like_container {
-      border: 1px solid #ddd;
-      border-bottom: none;
-      padding: 0 13px;
+    .right_content {
+      width: 30%;
+      .shop_mouth {
+        height: 30%;
+        width: 75%;
+        border: solid 2px #F0D6AC;
+        border-radius: 3px;
+        margin-top: 10px;
+        margin-left: 25px;
+      }
+      .shop_info {
+        height: 30%;
+        width: 75%;
+        border: solid 2px #F0D6AC;
+        border-radius: 3px;
+        margin-top: 10px;
+        margin-left: 25px;
+      }
+      .shop_hours {
+        height: 30%;
+        width: 75%;
+        border: solid 2px #F0D6AC;
+        border-radius: 3px;
+        margin-top: 10px;
+        margin-left: 25px;
+      }
+    }
+  }
+  .tab_content {
+    padding: 0;
+    margin: 0 auto;
+    width: 600px;
+    background: #dce0e0;
+  }
+  ul.shop_menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li {
+      display: inline-block;
+    }
+    li .menu_item {
+      display: inline-block;
+      font-size: 14px;
+      width: 186px;
+      height: 20px;
+      line-height: 20px;
+      text-align: center;
+      text-decoration: none;
+      padding: 7px;
+      color: #333;
+    }
+    li .active {
+      background: #353d3e;
+      color: #fff;
+      height: 28px;
+    }
+  }
+  ul.shop_menu li :not(.active):hover {
+    opacity: 0.5;
+    transition: .8s;
+  }
+  ul.menu_details {
+    padding: 0;
+    li {
+      list-style: none;
+      font-size: 14px;
+      padding: 7px 10px;
+      line-height: 1.4;
+      background: #353d3e;
+      color: #fff;
+      min-height: 150px;
+      display: none;
+    }
+    li.show {
+      display: block;
+    }
+  }
+}
+    
       .like_btn {
         font-size: 15px;
         color: #808080;
@@ -35,114 +126,5 @@
         font-size: 15px;
         color: #e54747;
       }
-    }
-    section#show_comment {
-      #comment_container {
-        border: 1px solid #ddd;
-        background: #fff;
-        padding: 15px;
-        .comment_to_user_name {
-          font-size: 16px;
-          font-weight: 800;
-          padding: 15px 0;
-        }
-        .comment_post {
-          .comment_box {
-            padding-bottom: 3px;
-            display: flex;
-            .comment_user {
-              padding-right: 13px;
-              a.comment_user_name {
-
-              }
-            }
-            .comment_comment {
-                
-            }
-          }
-        }
-      }
-    }
-  }
-  .content_right {
-    padding-left: 36px;
-    width: 605px;
-    .recipe_ingredients {
-      padding-bottom: 13px;
-      font-size: 24px;
-      font-weight: 800;
-      line-height: 1;
-      letter-spacing: 0.05em;
-      p {
-
-      }
-      .ingredients_detail {
-        border-top: 1px solid #ddd;
-        list-style: none;
-        width: 470px;
-        display: flex;
-        ul.material {
-          padding: 0;
-          list-style: none;
-          min-width: 100px;
-          li.material_detail {
-            padding: 13px 0;
-            margin: 0;
-            font-size: 20px;
-            font-weight: normal;
-            color: #444;
-            line-height: 1.333;
-            letter-spacing: 0;
-            border-bottom: 1px solid #ddd;
-          }
-        }
-        ul.quantity {
-          padding: 0;
-          list-style: none;
-          min-width: 370px;
-          li.quantity_detail {
-            padding: 13px 0;
-            font-size: 20px;
-            font-weight: normal;
-            color: #444;
-            line-height: 1.333;
-            letter-spacing: 0;
-            border-bottom: 1px solid #ddd;
-          }
-        }
-      }
-    }
-    .recipe_how_to {
-      width: 470px;
-      padding-top: 17px;
-      padding-bottom: 13px;
-      font-size: 24px;
-      font-weight: 800;
-      line-height: 1;
-      letter-spacing: 0.05em;
-      p {
-
-      }
-      ul.order_of_operation {
-        padding: 0;
-        border-top: 1px solid #ddd;
-        list-style: none;
-        li.operation_detail {
-          padding: 13px 0;
-          margin: 0;
-          font-size: 20px;
-          font-weight: normal;
-          color: #444;
-          line-height: 1.333;
-          letter-spacing: 0;
-          border-bottom: 1px solid #ddd;
-        }
-      }
-    }
-  }
-}
-
-
-
-
+ 
 

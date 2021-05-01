@@ -1,17 +1,22 @@
 <div id="glb_header">
   <div id="glb_header_top">
     <div class="header_tit">
-      <%= link_to "俺流" %>
+      <%= link_to "しょくどう" %>
     </div>
     <div class="log_in">
       <ul>
-        <li>
-          <%= link_to "新規登録", new_user_registration_path %>
-        </li>
-        <li>
-          <%= link_to "ログイン", new_user_session_path %>
-        </li>
-      </ul>
+        <% if user_signed_in? %>
+          <li>
+            <%= link_to "ログアウト", new_user_registration_path %>
+          </li>
+        <% else %>
+          <li>
+            <%= link_to "新規登録", new_user_registration_path %>
+          </li>
+          <li>
+            <%= link_to "ログイン", new_user_session_path %>
+          </li>
+        <% end %>
     </div>
 
   </div>
@@ -20,31 +25,20 @@
     <div class="search_section">
       <ul>
         <li>
-          <i class="fa fa-search" id="search_icon"></i>
-          <a>キーワードからレシピを探す</a>
+          <p>
+            お気に入りのしょくどうを<br>
+            つなげる、見つける
+          </p>
         </li>
         <li>
           <div class="header_search">
             <%= form_with(url: search_posts_path, local: true, method: :get, class: "search_form") do |form| %>
-              <%= form.text_field :keyword, placeholder: "食材名・料理名を入力", class: "search_input" %>
+              <%= form.text_field :keyword, placeholder: "キーワードから探す  例：オムライス  渋谷", class: "search_input" %>
               <%= form.button "検索", class: "search_btn" do %>
                 <i class="fa fa-search"></i>
               <% end %>
-
             <% end %>
           </div>
-        </li>
-        <li class="search_recipe">
-          <%= link_to "レシピを探す" %>
-        </li>
-        <li class="search_ingreditnts">
-          <%= link_to "食材から探す" %>
-        </li>
-        <li>
-          <%= link_to "人気レシピ" %>
-        </li>
-        <li>
-          <%= link_to "ユーザーで探す" %>
         </li>
       </ul>
     </div>

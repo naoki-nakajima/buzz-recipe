@@ -65,57 +65,64 @@
       }
     }
   }
-  .tab_content {
-    padding: 0;
-    margin: 0 auto;
-    width: 600px;
-    background: #dce0e0;
-  }
-  ul.shop_menu {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    li {
-      display: inline-block;
+  .bottom_content {
+    padding-top: 36px;
+    .tab_content {
+      padding: 0;
+      margin-left: 44px;
+      width: 70%;
     }
-    li .menu_item {
-      display: inline-block;
-      font-size: 14px;
-      width: 186px;
-      height: 20px;
-      line-height: 20px;
-      text-align: center;
-      text-decoration: none;
-      padding: 7px;
-      color: #333;
-    }
-    li .active {
-      background: #353d3e;
-      color: #fff;
-      height: 28px;
-    }
-  }
-  ul.shop_menu li :not(.active):hover {
-    opacity: 0.5;
-    transition: .8s;
-  }
-  ul.menu_details {
-    padding: 0;
-    li {
+    ul.shop_menu {
       list-style: none;
-      font-size: 14px;
-      padding: 7px 10px;
-      line-height: 1.4;
-      background: #353d3e;
-      color: #fff;
-      min-height: 150px;
-      display: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      li {
+        cursor: pointer;
+        width : calc(100% / 3);
+      }
+      li .menu_item {
+        display: inline-block;
+        font-size: 14px;
+        width : 100%;
+        height: 20px;
+        line-height: 20px;
+        text-align: center;
+        text-decoration: none;
+        padding: 7px;
+        color: #333;
+      }
+      li .active {
+        width : 100%;
+        background: #F0D6AC;
+        color: #333;
+        height: 28px;
+      }
     }
-    li.show {
-      display: block;
+    ul.shop_menu li :not(.active):hover {
+      opacity: 0.5;
+      transition: .8s;
+    }
+    ul.menu_details {
+      padding: 0;
+      margin-bottom: 0;
+      li {
+        list-style: none;
+        font-size: 14px;
+        padding: 7px 10px;
+        line-height: 1.4;
+        color: #333;
+        min-height: 150px;
+        display: none;
+        background: #F0D6AC;
+      }
+      li.show {
+        display: block;
+      }
     }
   }
-}
+  }
+
     
       .like_btn {
         font-size: 15px;

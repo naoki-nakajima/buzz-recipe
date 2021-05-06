@@ -1,4 +1,4 @@
-$(function () {
+$(document).on('turbolinks:load', function () {
   let tabs = $(".menu_item");
 
   function tabChange() {
@@ -17,8 +17,15 @@ $(function () {
 
   // タブがクリックされたら関数を呼び出す
   tabs.on('click', tabChange);
-
 });
+
+$(function () {
+  $(".more_shop_info").on("click", function () {
+    $(this).toggleClass("on-click");
+    $(".info_hide").slideToggle(500);
+  });
+});
+
 
 
 

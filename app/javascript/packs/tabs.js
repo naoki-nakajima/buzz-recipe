@@ -26,6 +26,13 @@ $(function () {
   });
 });
 
+$(function () {
+  $(".more_hours").on("click", function () {
+    $(this).toggleClass("on-click");
+    $(".shop_hour").slideToggle(500);
+  });
+});
+
 
 
 

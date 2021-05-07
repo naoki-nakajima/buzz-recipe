@@ -66,7 +66,7 @@
         }
       }
       .shop_info {
-        height: 30%;
+        min-height: 20%;
         width: 75%;
         border: solid 2px #F0D6AC;
         border-radius: 5px;
@@ -82,42 +82,85 @@
           display: none;
         }
         .more_shop_info {
-          font-size: 14px;
-          margin: 20px auto;
+          font-size: 8px;
+          width: 50%;
+          text-align: center;
+          margin: 0 auto 10px;
           display: block;
           background-color: #ff9e3d;
           color: #fff;
-          padding:10px 15px;
+          padding: 5px 10px;
+          border-radius: 5px;
           border: none;
           outline: 0;
           transition: .5s;
         }
-        button.more_shop_info::after {
+        .more_shop_info::after {
           content: "もっと見る";
           transition: .2s;
           }
-        button.more_shop_info.on-click::after{
-          content: "閉じる";
-          background-color: red;
+        .more_shop_info.on-click::after{
+          content: "閉じる";  
         }
 
       }
       .shop_hours {
-        height: 30%;
+        min-height: 20%;
         width: 75%;
         border: solid 2px #F0D6AC;
         border-radius: 5px;
         margin-top: 10px;
         margin-left: 25px;
+        .more_hours {
+          position: relative;
+          font-size: 14px;
+          display: block;
+          color: #333;
+          padding: 0 0 10px 3px;
+
+        }
+        .more_hours::after {
+          content: "";
+          position: absolute;
+          top: 6px;
+          right: 50px;
+          width: 0;
+          height: 0;
+          border: 8px solid transparent;
+          border-top-color: black;
+        }
+        .more_hours.on-click::after {
+          content: "";
+          position: absolute;
+          top: -3px;
+          border: 8px solid transparent;
+          border-bottom-color: black;
+        }
+        .shop_day {
+          display: flex;
+          list-style: none;
+          margin-top: 15px;
+          margin-left: -15px;
+          li {
+            padding-left: 5px;
+          }
+        }
+        .shop_hour {
+          display: none;
+          list-style: none;
+          margin-top: 15px;
+          margin-left: -15px;
+          li {
+          }
+        }
       }
     }
   }
   .bottom_content {
-    padding-top: 36px;
     .tab_content {
       padding: 0;
       margin-left: 44px;
-      width: 70%;
+      width: 65%;
     }
     ul.shop_menu {
       list-style: none;

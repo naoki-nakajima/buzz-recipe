@@ -156,6 +156,8 @@
       }
     }
   }
+  
+  
   .bottom_content {
     .tab_content {
       padding: 0;
@@ -208,20 +210,130 @@
       }
       li.show {
         display: block;
+        display: flex;
+        .menu_detail_container {
+          height: 200px;
+          width: 30%;
+          background: #f6f7f8;
+          margin: 15px 0 15px 15px;
+          .menu_photo {
+            height: 50%;
+            width: 90%;
+            background: red;
+            margin: 5px auto;
+          }
+          .menu_tit {
+            font-weight: 800;
+            margin-left: 8px;
+          }
+          .menu_price {
+            font-weight: 600;
+            margin-left: 10px;
+          }
+          .menu_word {
+            padding: 3px 8px;
+            font-size: 12px;
+          } 
+        }
+        .shop_commnet_container {
+          margin: 15px;
+          .comment_tit {
+            font-size: 24px;
+            font-weight: 800;
+            border-bottom: solid 2px #333;
+            padding-bottom: 3px;
+            margin-top: 10px;
+          }
+          .comment_main {
+            padding: 12px 0;
+            display: flex;
+            .comment_photo {
+              height: 108px;
+              width: 175px;
+              background: red;
+            }
+            .comment {
+              padding: 0 15px 15px 15px;
+              width: 400px;
+            }
+          }
+        }
+        .review_container {
+          .review_top {
+            .cases_box {
+              display: flex;
+              .cases_display {
+                margin-left: 15px;
+              }
+              select {
+                background: #F0D6AC;
+                border-radius: 3px;
+                margin-left: 15px;
+                margin-bottom: 2px;
+                box-shadow: inset 0.5px 0.5px 0.5px #333;
+              }
+            }
+          }
+          .review_bottom {
+            width: 100%;
+            min-height: 100px;
+            background: #f6f7f8;
+            .review_box {
+              display: flex;
+              padding: 12px;
+              .user_photo {
+                height: 36px;
+                width: 36px;
+                background: red;
+              }
+              ul.user_rating {
+                padding-left: 12px;
+                padding-top: 20px;
+                .fa-star {
+                  color: orange;
+                }
+                .score {
+  
+                }
+              }
+            }
+            .review_main {
+              .review_detail {
+                padding: 12px;
+              }
+              .reviewer {
+                padding: 12px 12px 2px 12px;
+                float: left;
+              }
+              .review_date {
+                padding: 12px 12px 2px 12px;
+                float: left;
+              }
+              .shop_reply {
+                border: 1px solid #333;
+                border-radius: 5px;
+                padding: 1px;
+                margin-top: 8px;
+                margin-right: 15px;
+                float: right;
+              }
+            }
+          }
+        }
       }
     }
   }
-  }
+}
 
     
-      .like_btn {
-        font-size: 15px;
-        color: #808080;
-        
-      }
-      .unlike_btn {
-        font-size: 15px;
-        color: #e54747;
-      }
+.like_btn {
+  font-size: 15px;
+  color: #808080;
+  
+}
+.unlike_btn {
+  font-size: 15px;
+  color: #e54747;
+}
  
 

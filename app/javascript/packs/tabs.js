@@ -14,7 +14,7 @@ $(document).on('turbolinks:load', function () {
 $(document).on('turbolinks:load', function () {
   $(".more_shop_info").on('click', function () {
     var show_text = $(".info_item");
-    var small_height = 40; //This is initial height.
+    var small_height = 40;
     var original_height = show_text.css({ height: "auto" }).height();
 
     if (show_text.hasClass("open")) {
@@ -41,10 +41,10 @@ $(document).on('turbolinks:load', function () {
 });
 
 
-$(function () {
-  $("#demo_stage").on('click', function () {
+$(document).on('turbolinks:load', function () {
+  $("#toggle_box").on('click', function () {
     $(this).toggleClass("act");
-    $(".top_images").toggleClass(".change");
+    //$("#top_images").toggleClass("change");
   });
 });
 

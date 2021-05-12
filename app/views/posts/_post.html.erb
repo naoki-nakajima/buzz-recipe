@@ -1,10 +1,10 @@
 <div class="recomend_tit">
   #ピックアップ
 </div>
-<div id="demo_stage">
+<div id="toggle_box">
   <div class="block"></div>
 </div>
-<ul class="top_images" >
+<ul id="top_images" >
   <% @posts.each do |post| %>
     <li>
       <div class="image_container">
@@ -23,28 +23,3 @@
   <% end %>
 </ul>
 <%= paginate @posts, remote: true %>
-
-<!------------------------------
-<ul class="top_images" >
-  <% @posts.each do |post| %>
-    <li>
-      <div class="image_container">
-        <p class="img">
-          <%= link_to(post_path(post)) do %>
-            <%= image_tag post.photos.first.image.url, class: "img_top" %>
-          <% end %>
-        </p>
-      </div>
-      <div class="recipe_txt_box">
-        <div class="title">
-          <%= post.title %>
-        </div>
-        <div class="recipe_txt">
-          test
-        </div>
-      </div>
-    </li>
-  <% end %>
-</ul>
-<%= paginate @posts, remote: true %>
------------------------------------------------->

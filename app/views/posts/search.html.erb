@@ -1,34 +1,56 @@
 <div id="glb_main">
-<%= render partial: "partial/flash_messages" %>
   <div id="glb_body" class="clearfix">
-    <div id="content_container" class="clearfix">
+    <%= render partial: 'partial/header' %>
+    <div id="content_container">
+      <!--------------------------------------
+      <%= render partial: 'posts/side_bar' %>
+      ----------------------------------------->
       <div class="content">
-        <%= render partial: 'partial/navbar' %>
-        <section id="recommend" class="clearfix">
-          <ul class="top_images" >
-            <% @posts.each do |post| %>
-              <li>
-                <div class="image_container">
-                  <p class="img">
-                    <%= link_to(post_path(post)) do %>
-                      <%= image_tag post.photos.first.image.url, class: "img_top" %>
-                    <% end %>
-                  </p>
-                </div>
-                <div class="top_recipe_title">
-                  <div class="title_box">
-                    <div class="title">
-                      <%= post.title %>
-                    </div>
-                  </div>
-                  
-                </div>
-              </li>
-            <% end %>
+        <section id ="search_menu">
+          <div class="menu_tit">
+            <p>メニューから探す</p>
+          </div>
+          <ul class="menu">
+            <li>
+              <%= link_to "和食" %>
+            </li>
+            <li>
+              <%= link_to "中華" %>
+            </li>
+            <li>
+              <%= link_to "洋食" %>
+            </li>
+            <li>
+              <%= link_to "その他" %>
+            </li>
           </ul>
         </section>
+        <section id="search_area">
+          <div class="area_tit">
+            <p>エリアから探す</p>
+          </div>
+          <ul class="area">
+            <li>
+              <%= link_to "渋谷" %>
+            </li>
+            <li>
+              <%= link_to "新宿" %>
+            </li>
+            <li>
+              <%= link_to "池袋" %>
+            </li>
+            <li>
+              <%= link_to "上野" %>
+            </li> 
+            <li>
+              <%= link_to "その他" %>
+            </li>              
+          </ul>
+        </section>
+        <section id="recommend" >
+          <%= render partial: 'posts/post' %>
+        </section>
       </div>
-      <%= render 'posts/side_bar' %>
     </div>
   </div>
 </div>

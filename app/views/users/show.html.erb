@@ -1,11 +1,41 @@
-<div class="profile_container">
-  <div class="row">
-    <div class="col-md-4 text-center">
-      <%= image_tag avatar_url(@user), class: "float-left round-img" %>
+<div id="glb_main">
+  <div id="glb_body" class="clearfix">
+    <div id="content_container">
+      <div id="profile_container">
+        <div class="profile_left">
+        </div>
+        <div class="profile_right">
+          <div class="profile_main">
+            <div class="profile_edit">
+              <%= link_to "編集", edit_user_registration_path %>
+            </div>
+            <div class="profile_photo">
+            </div>
+            <ul class="profile_lists">
+              <li class="profile_user_name">
+                あいうえお
+              </li>
+              <li class="profile_list">
+                お気に入り  4
+              </li>
+              <li class="profile_list">
+                行ってみたい  5
+              </li>
+              <li class="profile_list">
+                口コミ  2
+              </li>
+            </ul>
+            <div class="log_out">
+              <%= link_to "ログアウトする", destroy_user_session_path, method: :delete %>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="col-md-8">
-      <div class="profile_main row">
-        <h1><%= @user.username %></h1>
+  </div>
+</div>
+  
+<!--------------------------------------------------------------
         <% if @user == current_user %>
           <%= link_to "プロフィールを編集", edit_user_registration_path, class: "btn btn-outline-dark edit-profile-btn" %>
           <button type="button" class="setting" data-toggle="modal" data-target="#exampleModal"></button>
@@ -27,26 +57,4 @@
             </div>
           </div>
         </div>
-      </div>
-      <ul class="row">
-          <li class="profile_post">投稿77件</li>
-          <li class="profile_follower">フォロワー777人</li>
-          <li class="profile_follow">フォロー中7777人</li>
-      </ul>
-      <div class="row">
-        <p>
-          <%= @user.name %>
-        </p>
-      </div>
-    </div>
-  </div>
-  <div class="row py-5" style="width: 1000px;">
-    <% @posts.each do |post| %>
-      <div class="col-sm" >
-        <%= link_to(post_path(post)) do %>
-          <%= image_tag post.photos.first.image.url, class: "img_top  mx-auto" %>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
-</div>
+------------------------------------------------------------------>        

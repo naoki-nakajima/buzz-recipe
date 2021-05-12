@@ -25,7 +25,7 @@
               min-width: 60px;
               margin-right: 15px;
               border: 1px solid #ff9e3d;
-              border-radius: 30px;
+              border-radius: 3px;
               text-align: center;
               a {
                 color: #ff9e3d;
@@ -75,11 +75,11 @@
         section#recommend {
           .recomend_tit {
             padding-left: 58px;
-            margin-top: 36px;
+            margin-top: 24px;
             font-size: 20px;
           }
           
-          ul.top_images {
+          ul#top_images {
             margin-top: 24px;
             margin-left: 18px;
             display: flex;
@@ -102,34 +102,69 @@
               }
             }
           }
+          /*ul#top_images.change {
+            width: 620px;
+            background: red;
+            li {
+              padding: 18px 0 18px 18px;
+              list-style: none;
+              display: flex;
+              border-bottom: 1px solid #ddd;
+              width: 100%;
+              .image_container {
+                p.img {
+                  .img_top {
+                    width: 280px;
+                    height: 187px;
+                  }
+                }
+              }
+              .recipe_txt_box {
+                padding-left: 20px;
+                .title {
+                  font-size: 22px;
+                  line-height: 26px;
+                  letter-spacing: 0.07em;
+                }
+                .recipe_txt {
+                  margin-top: 16px;
+                  font-size: 20px;
+                  letter-spacing: 0.05em;
+                  color: #666;
+                }
+              }
+            }
+          }*/
         }
-        #demo_stage{
+        #toggle_box {
           border: solid 1px #CCC;
-          width: 300px;
-          height: 60px;
+          width: 50px;
+          height: 20px;
+          margin-left: 58px;
+          margin-top: 12px;
           border-radius: 30px;
           box-shadow: 2px 2px 5px rgba(0,0,0,0.4) inset;
-          background-color: #FEE;
+          background-color: red;
           transition: all 300ms 0s ease;
         }
-        #demo_stage.act{
-          background-color: #EEF;
+        #toggle_box.act{
+          background-color: blue;
           transition: all 300ms 0s ease;    
         }
-        #demo_stage.act .block{
-          left:240px;
+        #toggle_box.act .block{
+          left: 30px;
           transition: all 300ms 0s ease;
         }
         
         .block { 
             transition: all 300ms 0s ease;
             position: relative; 
-            background-color: #CCC;
-            border: solid 1px #EEE;
+            border: solid 1px #eee;
+            background: #eee;
             box-sizing: border-box;
             left: 0px;
-            width: 60px; 
-            height: 60px;
+            width: 18px; 
+            height: 18px;
             border-radius: 30px;
             box-shadow: 2px 2px 5px rgba(0,0,0,0.4);
         }

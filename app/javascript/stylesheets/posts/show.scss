@@ -78,31 +78,24 @@
           p {
           } 
         }
-        .info_hide {
-          display: none;
+        .info_item {
+          height: 40px;
+          overflow: hidden;
         }
+      
         .more_shop_info {
           font-size: 8px;
           width: 50%;
           text-align: center;
-          margin: 0 auto 10px;
           display: block;
-          background-color: #ff9e3d;
+          margin: 0 auto 10px;
+          background: #ff9e3d;
           color: #fff;
           padding: 5px 10px;
           border-radius: 5px;
-          border: none;
-          outline: 0;
-          transition: .5s;
+          text-decoration: none;
+          cursor: pointer;  
         }
-        .more_shop_info::after {
-          content: "もっと見る";
-          transition: .2s;
-          }
-        .more_shop_info.on-click::after{
-          content: "閉じる";  
-        }
-
       }
       .shop_hours {
         min-height: 20%;
@@ -117,7 +110,7 @@
           display: block;
           color: #333;
           padding: 0 0 10px 3px;
-
+          cursor: pointer;  
         }
         .more_hours::after {
           content: "";
@@ -336,4 +329,6 @@
   color: #e54747;
 }
  
+
+
 

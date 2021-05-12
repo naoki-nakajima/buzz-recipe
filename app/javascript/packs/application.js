@@ -6,7 +6,6 @@ import 'bootstrap';
 import '../stylesheets/application';
 import '../packs/post_new';
 import '../packs/tabs';
-//import '../packs/search';
 
 require("@rails/ujs").start()
 require("turbolinks").start()

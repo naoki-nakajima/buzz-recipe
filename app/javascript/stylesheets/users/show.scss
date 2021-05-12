@@ -1,51 +1,61 @@
-.profile_container{
-  padding-top: 74px;
-  margin: 0 auto;
-}
-
-.round-img{
-  border-radius:50%;
-  width: 150px;
-}
-
-.profile_main {
-  width: 600px;
-  h1 {
-    font-size: 28px;
-    font-weight: normal;
-    margin-top: 10px;
-  }
-}
-
-.edit-profile-btn {
-  margin: 15px 0 0 15px;
-  font-weight: bold;
-  height: 26px;
-  line-height: 26px;
-  padding: 0 26px;
-  border-color: #dbdbdb;
-  font-size: 14px;
-}
-
-.setting {
-  background-repeat: no-repeat;
-  height: 24px;
-  width: 24px;
-  background-color: transparent;
-  margin: 18px 0 0 10px;
-  background-size: 22px!important;
-  border: none;
-  &:hover {
-    cursor: pointer;
-  }
-}
-
-ul.row{
+#profile_container {
   display: flex;
-  padding: 9px 0 3px 0;
-  li {
-    list-style: none;
-    padding-right: 25px;
+  justify-content: space-between;
+  .profile_left {
+    width: 80%;
+    height: 100vh;
+  }
+  .profile_right {
+    width: 20%;
+    .profile_main {
+      padding: 15px 15px 5px 15px;
+      border: 1px solid #ff9e3d;
+      border-radius: 5px;
+      .profile_edit {
+        text-align: right;
+        a {
+          color: #ff9e3d;
+          display: inline-block;
+          width: 30%;
+          border: 1px solid #ff9e3d;
+          border-radius: 5px;
+          text-align: center;
+        }
+        a:hover {
+          background: #ff9e3d;
+          color: #fff;
+          text-decoration: none;
+        }
+      }
+      .profile_photo {
+        height: 150px;
+        width: 150px;
+        background: red;
+        margin-top: 10px;
+      }
+      ul.profile_lists {
+        padding: 0;
+        margin-top: 10px;
+        li {
+          list-style: none;
+          font-size: 14px;
+        }
+        li.profile_user_name {
+          font-size: 18px;
+          font-weight: 800;
+        }
+        li.profile_list {
+          
+        }
+        
+      }
+      .log_out {
+        a {
+          color: #444;
+          font-size: 14px;
+        }
+      }
+    }
   }
 }
 

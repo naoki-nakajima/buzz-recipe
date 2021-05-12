@@ -5,7 +5,7 @@
       padding: 50px 0 50px 0;
       overflow: scroll;
       margin: 0 auto;
-      width: 960px;
+      width: 70%;
       .content {
         float: left;
         padding-top: 12px;
@@ -78,38 +78,30 @@
             margin-top: 36px;
             font-size: 20px;
           }
-          /*ul.top_images {
-            width: 620px;
+          
+          ul.top_images {
+            margin-top: 24px;
+            margin-left: 18px;
+            display: flex;
+            justify-content: space-between;
             li {
-              padding: 18px 0 18px 18px;
               list-style: none;
-              display: flex;
-              border-bottom: 1px solid #ddd;
-              width: 100%;
               .image_container {
                 p.img {
                   .img_top {
-                    width: 280px;
-                    height: 187px;
+                    width: 150px;
+                    height: 150px;
                   }
                 }
               }
               .recipe_txt_box {
-                padding-left: 20px;
+                text-align: center;
                 .title {
-                  font-size: 22px;
-                  line-height: 26px;
-                  letter-spacing: 0.07em;
-                }
-                .recipe_txt {
-                  margin-top: 16px;
-                  font-size: 20px;
-                  letter-spacing: 0.05em;
-                  color: #666;
+                  
                 }
               }
             }
-          }*/
+          }
         }
         #demo_stage{
           border: solid 1px #CCC;
@@ -140,29 +132,6 @@
             height: 60px;
             border-radius: 30px;
             box-shadow: 2px 2px 5px rgba(0,0,0,0.4);
-        }
-        ul.top_images {
-          margin-top: 24px;
-          width: 100%;
-          display: flex;
-          justify-content: space-around;
-          li {
-            list-style: none;
-            .image_container {
-              p.img {
-                .img_top {
-                  width: 150px;
-                  height: 150px;
-                }
-              }
-            }
-            .recipe_txt_box {
-              text-align: center;
-              .title {
-                
-              }
-            }
-          }
         }
       }
 

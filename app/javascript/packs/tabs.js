@@ -44,5 +44,7 @@ $(document).on('turbolinks:load', function () {
 $(function () {
   $("#demo_stage").on('click', function () {
     $(this).toggleClass("act");
+    $(".top_images").toggleClass(".change");
   });
 });
+

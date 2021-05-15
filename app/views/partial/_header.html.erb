@@ -1,32 +1,5 @@
 <div id="glb_header">
-  <div id="glb_header_top">
-    <div class="header_tit">
-      <%= link_to "しょくどう" %>
-    </div>
-    <div class="log_in">
-      <ul>
-        <li>
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-        </li>
-        <li>
-          <%= link_to "新規登録", new_user_registration_path %>
-        </li>
-        <li>
-          <%= link_to "ログイン", new_user_session_path %>
-        </li>
-        <li>
-          <%= link_to "マイページ", user_path(current_user) %>
-        </li>
-        <li>
-          <%= link_to "店舗ページ", post_path(@post) %>
-        </li>
-        <li>
-          <%= link_to "管理画面" %>
-        </li>
-    </div>
-
-  </div>
-
+  <%= render partial: "partial/header_top" %>
   <div id="glb_header_bottom">
     <div class="search_section">
       <ul>

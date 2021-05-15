@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def show
     @user = User.find_by(id: params[:id])
-    @posts = Post.limit(10).includes(:photos, :user).order('created_at DESC')
+    @posts = Post.includes(:photos, :user).order('created_at DESC').page(params[:page]).per(5)
+    @post = Post.find_by(params[:post_id])
   end
 end

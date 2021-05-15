@@ -5,7 +5,8 @@
 import 'bootstrap';
 import '../stylesheets/application';
 import '../packs/post_new';
-import '../packs/tabs';
+import '../packs/post_show_tabs';
+import '../packs/user_show_tabs';
 
 require("@rails/ujs").start()
 require("turbolinks").start()

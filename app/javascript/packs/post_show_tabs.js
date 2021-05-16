@@ -35,10 +35,13 @@ $(document).on('turbolinks:load', function () {
 
 $(document).on('turbolinks:load', function () {
   $(".more_hours").on("click", function () {
+    var index = $(".shop_hours>.more_hours").index(this);
     $(this).toggleClass("on-click");
-    $(".shop_hour").slideToggle(500);
+    $(".shop_hour").eq(index).slideToggle(500);
   });
 });
+
+
 
 
 $(document).on('turbolinks:load', function () {

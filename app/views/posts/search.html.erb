@@ -1,54 +1,13 @@
 <div id="glb_main">
   <div id="glb_body" class="clearfix">
-    <%= render partial: 'partial/header' %>
+    <div id="glb_header">
+      <%= render partial: "partial/header_top" %>
+    </div>
     <div id="content_container">
-      <!--------------------------------------
-      <%= render partial: 'posts/side_bar' %>
-      ----------------------------------------->
+      <%= render partial: 'posts/search_side_bar' %>
       <div class="content">
-        <section id ="search_menu">
-          <div class="menu_tit">
-            <p>メニューから探す</p>
-          </div>
-          <ul class="menu">
-            <li>
-              <%= link_to "和食" %>
-            </li>
-            <li>
-              <%= link_to "中華" %>
-            </li>
-            <li>
-              <%= link_to "洋食" %>
-            </li>
-            <li>
-              <%= link_to "その他" %>
-            </li>
-          </ul>
-        </section>
-        <section id="search_area">
-          <div class="area_tit">
-            <p>エリアから探す</p>
-          </div>
-          <ul class="area">
-            <li>
-              <%= link_to "渋谷" %>
-            </li>
-            <li>
-              <%= link_to "新宿" %>
-            </li>
-            <li>
-              <%= link_to "池袋" %>
-            </li>
-            <li>
-              <%= link_to "上野" %>
-            </li> 
-            <li>
-              <%= link_to "その他" %>
-            </li>              
-          </ul>
-        </section>
         <section id="recommend" >
-          <%= render partial: 'posts/post' %>
+          <%= render partial: 'posts/search_main' %>
         </section>
       </div>
     </div>

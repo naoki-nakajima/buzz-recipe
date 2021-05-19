@@ -1,0 +1,60 @@
+<div id="side_bar">
+  <div class="side_header_search">
+    <h2 class="header_title">
+      キーワードから探す
+    </h2>
+    <%= form_with model: @post do |f| %>
+      <%= f.text_field :title, class: "new_title", placeholder: "タイトルを入力する" %>
+    <% end %>
+  </div>
+
+  <div class="side_header_area_list">
+    <h2 class="area_title">
+      エリアから探す
+    </h2>
+    <div>
+      <input type="checkbox" id="checkbox3" name="check[]" value="1">
+      <label for="checkbox1">渋谷</label>
+    </div>
+
+    <div>
+      <input type="checkbox" id="checkbox3" name="check[]" value="2">
+      <label for="checkbox2">新宿</label>
+    </div>
+
+    <div>
+      <input type="checkbox" id="checkbox3" name="check[]" value="3">
+      <label for="checkbox3">池袋</label>
+    </div>
+  </div>
+
+  <div class="side_header_category_list">
+    <h2 class="category_title">
+      カテゴリーから探す
+    </h2>
+    <div>
+      <input type="checkbox" id="checkbox3" name="check[]" value="1">
+      <label for="checkbox1">中華</label>
+    </div>
+
+    <div>
+      <input type="checkbox" id="checkbox3" name="check[]" value="2">
+      <label for="checkbox2">洋食</label>
+    </div>
+
+    <div>
+      <input type="checkbox" id="checkbox3" name="check[]" value="3">
+      <label for="checkbox3">和食</label>
+    </div>
+  </div>
+
+  <div class="side_header_button_list">
+    <div class="narrow_down">
+      <%= link_to "絞り込む" %>
+    </div>
+    <div class="reset_items">
+      <%= link_to "項目をリセットする" %>
+    </div>
+  </div>
+</div>
+  

@@ -1,0 +1,222 @@
+<div id="search_container">
+  <div class="search_main">
+    <ul class="user_menu">
+      <li>
+        <a id="user_favorit" class="user_menu_item active">お気に入り</a>
+      </li>
+      <li>
+        <a id="user_hope" class="user_menu_item">行ってみたい</a>
+      </li>
+      <li>
+        <a id="user_commented" class="user_menu_item">コメント</a>
+      </li>
+    </ul>
+    <ul class="user_menu_details">
+      <li class="user_menu_detail show">
+        <ul id="top_images" >
+          <% @posts.each do |post| %>
+            <li class="top_image">
+              <div class="image_container">
+                <p class="img">
+                  <%= link_to(post_path(post)) do %>
+                    <%= image_tag post.photos.first.image.url, class: "img_top" %>
+                  <% end %>
+                </p>
+              </div>
+              <div class="recipe_txt_box">
+                <div class="like_content">
+                  <div class="like_btn">
+                    <div id="like-icon-post-<%= @post.id.to_s %>">
+                      <%= render 'posts/like', { post: @post } %>
+                    </div>
+                  </div>
+                </div>
+                <div class="hope_content">
+                  <i class="fas fa-running"></i>
+                </div>
+                <div class="title">
+                  <%= post.title %>
+                </div>
+                <div class="recipe_txt">
+                  <p>あいうえお  あいうえお  あいうえお  あいうえお  
+                  あいうえお  あいうえお  あいうえお  あいうえお  あいうえお  あいうえお  </p>
+                  <!--------------
+                  <%= render_with_hashtags(post.caption) %>
+                  -------------->
+                </div>
+                <div class="shop_add">
+                  <p>渋谷区渋谷町1-12-5</p>
+                </div>
+                <div class="shop_hours">
+                  <ul class="shop_day">
+                    <li>月</li>
+                    <li>火</li>
+                    <li>水</li>
+                    <li>木</li>
+                    <li>金</li>
+                    <li>土</li>
+                    <li>日</li>
+                  </ul>
+                  <div class="more_hours">
+                      <p>営業時間を見る</p>
+                  </div>
+                  <ul class="shop_hour">
+                    <li>月  10:00~18:00</li>
+                    <li>火  10:00~18:00</li>
+                    <li>水  10:00~18:00</li>
+                    <li>木  10:00~18:00</li>
+                    <li>金  10:00~18:00</li>
+                    <li>土  10:00~18:00</li>
+                    <li>日  10:00~18:00</li>
+                  </ul>
+                </div>
+                <div class="shop_mouth">
+                  <ul class="shop_rating">
+                    <li class="fas fa-star"></li>
+                    <li class="fas fa-star"></li>
+                    <li class="fas fa-star"></li>
+                    <li class="fas fa-star"></li>
+                    <li class="fas fa-star"></li>
+                    <li class="score">(4.5)</li>
+                  </ul>
+                  <div class="number_of_mouth">
+                    <i class="fas fa-comment-dots"></i>
+                    <p>34件</p>
+                </div>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+        <%= paginate @posts, remote: true %>
+      </li>
+      <li class="user_menu_detail">
+        <ul id="top_images" >
+          <% @posts.each do |post| %>
+            <li class="top_image">
+              <div class="image_container">
+                <p class="img">
+                  <%= link_to(post_path(post)) do %>
+                    <%= image_tag post.photos.first.image.url, class: "img_top" %>
+                  <% end %>
+                </p>
+              </div>
+              <div class="recipe_txt_box">
+                <div class="like_content">
+                  <div class="like_btn">
+                    <div id="like-icon-post-<%= @post.id.to_s %>">
+                      <%= render 'posts/like', { post: @post } %>
+                    </div>
+                  </div>
+                </div>
+                <div class="hope_content">
+                  <i class="fas fa-running"></i>
+                </div>
+                <div class="title">
+                  <%= post.title %>
+                </div>
+                <div class="recipe_txt">
+                  <p>test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</p>
+                  <!--------------
+                  <%= render_with_hashtags(post.caption) %>
+                  -------------->
+                </div>
+                <div class="shop_add">
+                  <p>渋谷区渋谷町1-12-5</p>
+                </div>
+                <div class="shop_hours">
+                  <div class="more_hours">
+                      <p>営業時間を見る</p>
+                  </div>
+                  <ul class="shop_day">
+                    <li>月</li>
+                    <li>火</li>
+                    <li>水</li>
+                    <li>木</li>
+                    <li>金</li>
+                    <li>土</li>
+                    <li>日</li>
+                  </ul>
+                  <ul class="shop_hour">
+                    <li>月  10:00~18:00</li>
+                    <li>火  10:00~18:00</li>
+                    <li>水  10:00~18:00</li>
+                    <li>木  10:00~18:00</li>
+                    <li>金  10:00~18:00</li>
+                    <li>土  10:00~18:00</li>
+                    <li>日  10:00~18:00</li>
+                  </ul>
+                </div>
+                <div class="shop_mouth">
+                  <ul class="shop_rating">
+                    <li class="fas fa-star"></li>
+                    <li class="fas fa-star"></li>
+                    <li class="fas fa-star"></li>
+                    <li class="fas fa-star"></li>
+                    <li class="fas fa-star"></li>
+                    <li class="score">(4.5)</li>
+                  </ul>
+                  <div class="number_of_mouth">
+                    <i class="fas fa-comment-dots"></i>
+                    <p>34件</p>
+                  </div>
+                </div>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+        <%= paginate @posts, remote: true %>
+      </li>
+      <li class="user_menu_detail">
+        <div class="review_container">
+          <div class="review_top">
+            <div class="cases_box">
+              <div class="cases_display">
+              投稿件数  3件
+              </div>
+              <select name="example">
+                <option value="サンプル1">標準</option>
+                <option value="サンプル2">お気に入り数</option>
+                <option value="サンプル3">コメント数</option>
+              </select>
+            </div>
+          </div>
+          <div class="review_bottom clearfix">
+            <div class="review_box">
+              <div class="user_photo">
+              </div>
+              <ul class="user_rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="score">4.5</i>
+              </ul>
+            </div>
+            <div class="review_main">
+              <div class="review_detail">
+                あいうえお あいうえお あいうえお あいうえお あいうえお あいうえお あいうえお あいうえお あいうえお あいうえお 
+              </div>
+              <div class="reviewer">
+                投稿者 : あいうえお
+              </div>
+              <div class="review_date">
+                投稿日時 : 2021/05/11
+              </div>
+            </div>
+          </div>
+          <div class="shop_reply_container">
+            <div class="shop_reply_box">
+              <div class="shop_title">
+                <p>オーナーからの返信</p>
+              </div>
+              <div Class="shop_reply_main">
+                <p>コメントありがとうございます!!!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

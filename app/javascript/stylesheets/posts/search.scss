@@ -1,0 +1,274 @@
+#search_container {
+  
+  .search_main {
+    width: 100%;
+    height: 100vh;
+    ul.user_menu {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      li {
+        cursor: pointer;
+        width : calc(100% / 3);
+      }
+      li .user_menu_item {
+        display: inline-block;
+        font-size: 14px;
+        width : 100%;
+        height: 20px;
+        line-height: 20px;
+        text-align: center;
+        text-decoration: none;
+        padding: 7px;
+        color: #333;
+      }
+      li .active {
+        width : 100%;
+        background: #F0D6AC;
+        color: #333;
+        height: 28px;
+      }
+    }
+    /*ul.user_menu_details li :not(.active):hover {
+      opacity: 0.5;
+      transition: .8s;
+    }*/
+    ul.user_menu_details {
+      padding: 0;
+      margin-bottom: 0;
+      width: 100%;
+      li.user_menu_detail {
+        list-style: none;
+        font-size: 14px;
+        padding: 15px 10px;
+        margin-bottom: 15px;
+        line-height: 1.4;
+        color: #333;
+        min-height: 325px;
+        display: none;
+        background: #F0D6AC;
+        ul#top_images {
+          width: 95%;
+          li.top_image {
+            padding: 18px 0 18px 18px;
+            margin-bottom: 15px;
+            list-style: none;
+            display: flex;
+            width: 100%;
+            background: #f3f4f5f6;
+            .image_container {
+              width: 40%;
+              p.img {
+                .img_top {
+                  width: 230px; 
+                  height: 187px;
+                }
+              }
+            }
+            .recipe_txt_box {
+              width: 60%;
+              height: 100%;
+              padding-left: 20px;
+              .like_content {
+                float: left;
+                .like_btn {
+                  font-size: 18px;
+                }
+              }
+              .hope_content {
+                float: left;
+                margin-top: 3px;
+                padding-left: 10px;
+                .fa-running {
+                  font-size: 18px;
+                }
+              }
+              .title {
+                font-size: 36px;
+                letter-spacing: 0.02em;
+                clear: both;
+              }
+              .recipe_txt {
+                font-size: 14px;
+                color: #ff9e3d;
+              }
+              .shop_add {
+                p {
+                  font-size: 12px;
+                  margin: 0;
+                }
+              }
+              ul.shop_day {
+                display: flex;
+                padding: 0;
+                margin-top: 12px;
+                li {
+                  display: inline-block;
+                  list-style: none;
+                  padding: 0;
+                  border: 1px solid #ff9e3d;
+                  border-radius: 50%;
+                  background: #ff9e3d;
+                  color: #fff;
+                  width: 6.5%;
+                  height: 6%;
+                  text-align: center;
+                  margin-right: 3px;
+                }
+              }
+              .shop_hours {
+                margin-bottom: 8px;
+                .more_hours {
+                  position: relative;
+                  margin: 7px 0 4px 0;
+                  display: block;
+                  cursor: pointer;  
+                  p {
+                    margin: 0;
+                  }
+                }
+                .more_hours::after {
+                  content: "";
+                  position: absolute;
+                  top: 6px;
+                  left: 100px;
+                  width: 0;
+                  height: 0;
+                  border: 6px solid transparent;
+                  border-top-color: black;
+                }
+                .more_hours.on-click::after {
+                  content: "";
+                  position: absolute;
+                  top: -1px;
+                  border: 6px solid transparent;
+                  border-bottom-color: black;
+                }
+                ul.shop_hour {
+                  display: none;
+                  padding: 0;
+                  margin-bottom: 8px;
+                  li {
+                    list-style: none;
+                    padding: 0;
+                  }
+
+                }
+              }
+              .shop_mouth {
+                display: flex;
+                ul.shop_rating {
+                  padding: 0;
+                  li {
+                    padding: 0;
+                    list-style: none;
+                    display: inline-block;
+                  }
+                  .fa-star {
+                    color: orange;
+                  }
+                  li.score {
+                  }
+                }
+                .number_of_mouth {
+                  display: flex;
+                  margin-left: 10px;
+                  .fa-comment-dots {
+                    font-size: 18px;
+                  }
+                  p {
+                    margin-left: 4px;
+                  }
+                }
+              }
+            }
+          }
+        }
+        .review_container {
+          .review_top {
+            .cases_box {
+              display: flex;
+              .cases_display {
+                margin-left: 15px;
+              }
+              select {
+                background: #F0D6AC;
+                border-radius: 3px;
+                margin-left: 15px;
+                margin-bottom: 2px;
+                box-shadow: inset 0.25px 0.25px 0.25px #444;
+                font-size: 14px;
+                color: #333;
+              }
+            }
+          }
+          .review_bottom {
+            width: 100%;
+            min-height: 100px;
+            background: #f6f7f8;
+            .review_box {
+              display: flex;
+              padding: 12px;
+              .user_photo {
+                height: 36px;
+                width: 36px;
+                background: red;
+              }
+              ul.user_rating {
+                padding-left: 12px;
+                padding-top: 20px;
+                .fa-star {
+                  color: orange;
+                }
+                .score {
+  
+                }
+              }
+            }
+            .review_main {
+              .review_detail {
+                padding: 12px;
+              }
+              .reviewer {
+                padding: 12px 12px 2px 12px;
+                float: left;
+              }
+              .review_date {
+                padding: 12px 12px 2px 12px;
+                float: left;
+              }
+            }
+          }
+          .shop_reply_container {
+            
+            background: #f6f7f8;
+            min-height: 15px;
+            padding: 30px 30px 15px 30px;
+            .shop_reply_box {
+              padding-left: 25px;
+              border-left: 1px solid #333;
+              .shop_title {
+                p {
+                  font-size: 20px;
+                  font-weight: bold;
+                }
+              }
+              .shop_reply_main {
+                p {
+  
+                }
+              }
+            }
+          }
+        }
+        
+        
+      }
+      li.show {
+        display: block;
+        display: flex;
+      }
+    }
+  }
+}

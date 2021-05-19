@@ -59,6 +59,7 @@ class PostsController < ApplicationController
 
   def search
     @posts = Post.search(params[:keyword]).includes(:photos, :user).order('created_at DESC').page(params[:page]).per(5)
+    @post = Post.find_by(params[:post_id])
     #respond_to do |format|
       #format.html
       #format.json

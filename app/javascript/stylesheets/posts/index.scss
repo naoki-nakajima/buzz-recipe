@@ -73,7 +73,35 @@
           }
         }
         section#recommend {
-          
+          .recomend_tit {
+            padding-left: 58px;
+            margin-top: 24px;
+            font-size: 20px;
+          }
+
+          ul#index_top_images {
+            margin-top: 24px;
+            margin-left: 18px;
+            display: flex;
+            justify-content: space-between;
+            li {
+              list-style: none;
+              .image_container {
+                p.img {
+                  .img_top {
+                    width: 150px;
+                    height: 150px;
+                  }
+                }
+              }
+              .recipe_txt_box {
+                text-align: center;
+                .title {
+
+                }
+              }
+            }
+          }
           /*ul#top_images.change {
             width: 620px;
             background: red;

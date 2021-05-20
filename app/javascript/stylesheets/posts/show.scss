@@ -236,6 +236,7 @@
             border-bottom: solid 2px #333;
             padding-bottom: 3px;
             margin-top: 10px;
+            width: 95%;
           }
           .comment_main {
             padding: 12px 0;
@@ -252,7 +253,9 @@
           }
         }
         .review_container {
+          padding: 15px;
           .review_top {
+            padding-bottom: 12px;
             .cases_box {
               display: flex;
               .cases_display {
@@ -264,6 +267,18 @@
                 margin-left: 15px;
                 margin-bottom: 2px;
                 box-shadow: inset 0.5px 0.5px 0.5px #333;
+              }
+              .post_mouth {
+                margin-left: auto;
+                a {
+                  font-size: 11px;
+                  display: block;
+                  color: #fff;
+                  background: brown;
+                  border: 1px solid brown;
+                  border-radius: 3px;
+                  text-decoration: none;
+                }
               }
             }
           }

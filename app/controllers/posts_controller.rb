@@ -45,6 +45,7 @@ class PostsController < ApplicationController
   def show
     @posts = Post.limit(10).includes(:photos, :user).order('created_at DESC')
     @food = Food.find_by(id: params[:id])
+    @user = User.find_by(id: params[:id])
   end
 
   def destroy

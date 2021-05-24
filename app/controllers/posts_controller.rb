@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_post, only: %i(index edit update destroy search)
+  before_action :set_post, only: %i(edit update destroy search)
   
   def index
     @posts = Post.includes(:photos, :user).order('created_at DESC').page(params[:page]).per(5)

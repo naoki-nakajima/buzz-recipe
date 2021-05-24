@@ -7,7 +7,6 @@
       margin: 0 auto;
       width: 70%;
       .content {
-        float: right;
         padding-top: 12px;
         margin-right: 175px;
         width: 70%;
@@ -170,7 +169,7 @@
             box-shadow: 2px 2px 5px rgba(0,0,0,0.4);
         }
       }
-//-------------------side_bar-------------------------//
+//-------------------side_bar-------------------------//    
       #side_bar {
         float: left;
         width: 200px;
@@ -228,6 +227,11 @@
             }
           }
         }
+      }
+      .search_item_content {
+        padding-top: 12px;
+        width: 70%;
+        float: right;
       }
     }
   }

@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   
   root "posts#index"
   
-  get '/users/:id', to: 'users#show', as: 'user'
+  
   get '/photo/hashtag/:name', to: 'posts#hashtag'
 
   resources :posts do
@@ -20,6 +20,7 @@ Rails.application.routes.draw do
       get :search
     end
   end
+  resources :users, only: %i(index show)
   resources :foods, only: %i(new create)
   resources :cocks, only: %i(new create)
 end

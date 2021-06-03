@@ -1,0 +1,30 @@
+<div id="glb_main">
+  <div id="glb_body" class="clearfix">
+    <%= render partial: "partial/management_header"%>
+    <div id="shop_management">
+      <div id="shop_management_left">
+        <ul class="shop_management_lists">
+          <li class="list_header"> <P>店舗情報</p> </li>
+          <li class="shop_management_list"><%= link_to "基本情報"%></li>
+          <li class="shop_management_list"><%= link_to "営業時間"%></li>
+          <li class="shop_management_list"><%= link_to "お知らせ"%></li>
+          <li class="shop_management_list"><%= link_to "ホームページ"%></li>
+          <li class="shop_management_list"><%= link_to "SNS"%></li>
+          <li class="shop_management_list"><%= link_to "画像"%></li>
+          <li class="list_header"><p>メニューの追加・編集</p>
+          <li class="shop_management_list"><%= link_to "メニューの追加"%></li>
+          <li class="shop_management_list"><%= link_to "メニューの編集"%></li>
+          <li class="list_header"> <p>お店のこだわり</p> </li>
+          <li class="shop_management_list"><%= link_to "こだわり・想い"%></li>
+        </ul>
+        <ul class="shop_account_management">
+          <li><%= link_to "パスワードの再設定"%></li>
+          <li><%= link_to "ログアウトする"%></li>
+          <li><%= link_to "アカウントを削除する"%></li>
+        </ul>
+      </div>
+      <div id="shop_management_right">
+      </div>
+    </div>
+  </div>
+</div>

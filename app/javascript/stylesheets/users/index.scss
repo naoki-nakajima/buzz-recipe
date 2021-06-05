@@ -1,6 +1,6 @@
 #shop_management {
   width : 75%;
-  margin: 0 auto;
+  margin: 28px auto;
   #shop_management_left {
     width : 30%;
     float: left;
@@ -66,7 +66,183 @@
   }
   #shop_management_right {
     width: 70%;
-    height: 100vh;
     float: right;
+    margin-bottom: 28px;
+    .shop_basic {
+      width: 100%;
+      ul {
+        li {
+          list-style: none;
+          display: flex;
+          font-size: 24px;
+          padding: 24px 0;
+          border-bottom: 1px solid #333;
+          
+          .shop_basic_title {
+            width: 30%;
+          }
+          .shop_basic_input {
+            width: 50%;
+          }
+        }
+        li:first-child {
+          font-size: 36px;
+          margin: 0;
+          padding: 0;
+          p {
+            margin: 0 0 8px 0;
+          }
+        }
+      }
+      .shop_basic_submit {
+        width :47.29%;
+        margin-left: 34%;
+        .shop_basic_btn {
+          width: 100%;
+          height: 10vh;
+          background: #ff9e3d;
+          color: #fff;
+          border: none;
+          border-radius: 3px;
+          font-size: 24px;
+        }
+      }
+    }
+    
+
+    .shop_management_hour {
+      width: 100%;
+      padding-left: 40px;
+      .shop_management_hour_tit {
+        width: 100%;
+        border-bottom: 1px solid #333;
+        p {
+          font-size: 36px;
+        }
+      }
+      .shop_hour_main {
+        width: 100%;
+        height: 52vh;
+        margin-bottom: 18px;
+        border-bottom: solid 1px #333;
+        .shop_hour_left {
+          float: left;
+          width: 30%;
+          margin-top: 12px;
+          p {
+            font-size: 24px;
+          }
+        }
+        .shop_hour_right {
+          float: left;
+          width: 50%;
+          margin-top: 12px;
+          ul {
+            margin: 0;
+            padding: 0;
+            li {
+              list-style: none;
+              display: flex;
+              
+              p {
+                font-size: 18px;
+                margin-top: 6px;
+              }
+              #toggle_box {
+                border: solid 1px #CCC;
+                width: 50px;
+                height: 20px;
+                margin-left: 20px;
+                margin-top: 12px;
+                border-radius: 30px;
+                box-shadow: 2px 2px 5px rgba(0,0,0,0.4) inset;
+                background-color: red;
+                transition: all 300ms 0s ease;
+                .block {
+                  transition: all 300ms 0s ease;
+                  position: relative; 
+                  border: solid 1px #eee;
+                  background: #eee;
+                  box-sizing: border-box;
+                  left: 0px;
+                  width: 18px; 
+                  height: 18px;
+                  border-radius: 30px;
+                  box-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+                }
+              }
+              .shop_management_hour_detail {
+                float: left;
+                display: flex;
+                margin-top: 12px;
+                margin-left: 12px;
+                
+                .shop_hour_detail_in {
+                  margin-right: 8px;
+                }
+                .shop_hour_detail_out {
+                  margin-left: 8px;
+                }
+              }
+            }
+          }
+        }
+      }
+      .shop_hour_submit {
+        clear: both;
+        background: #ff9e3d;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        font-size: 24px;
+        width :50%;
+        height: 10vh;
+        margin-left: 30%;
+      }
+    }
+
+    .shop_menu_lists {
+      width: 100%;
+      ul {
+        li {
+          list-style: none;
+          display: flex;
+          font-size: 24px;
+          padding: 24px 0;
+          border-bottom: 1px solid #333;
+          
+          .shop_menu_title {
+            width: 30%;
+          }
+          .shop_menu_input {
+            width: 50%;
+          }
+        }
+        li:first-child {
+          font-size: 36px;
+          margin: 0;
+          padding: 0;
+          p {
+            margin: 0 0 8px 0;
+          }
+        }
+      }
+      .shop_menu_submit {
+        width :47.29%;
+        margin-left: 34%;
+        .shop_menu_btn {
+          width: 100%;
+          height: 10vh;
+          background: #ff9e3d;
+          color: #fff;
+          border: none;
+          border-radius: 3px;
+          font-size: 24px;
+        }
+      }
+    }
+  }
+  .unactive {
+  
   }
 }

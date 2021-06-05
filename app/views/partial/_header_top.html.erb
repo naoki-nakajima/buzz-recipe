@@ -17,7 +17,10 @@
         <%= link_to "マイページ", user_path(current_user) %>
       </li>
       <li>
-        <%= link_to "店舗管理ページ" %>
+        <%= link_to "店舗ページ", post_path(@post) %>
+      </li>
+      <li>
+        <%= link_to "管理画面", users_path %>
       </li>
   </div>
 </div>

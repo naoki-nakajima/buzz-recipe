@@ -24,6 +24,48 @@
         </ul>
       </div>
       <div id="shop_management_right">
+        <div class="shop_basic">
+          <%= form_with url: posts_path do |form| %>
+            <ul>
+              <li>
+                <p>基本情報</p>
+              </li>
+              <li>
+                <div class="shop_basic_title">
+                  店舗名
+                </div>
+                <%= form.text_field :title, class: "shop_basic_input" %>
+              </li>
+              <li>
+                <div class="shop_basic_title">
+                  住所
+                </div>
+                <%= form.text_field :title, class: "shop_basic_input" %>
+              </li>
+              <li>
+                <div class="shop_basic_title">
+                  メールアドレス
+                </div>
+                <%= form.text_field :title, class: "shop_basic_input" %>
+              </li>
+              <li>
+                <div class="shop_basic_title">
+                  電話番号
+                </div>
+                <%= form.text_field :title, class: "shop_basic_input" %>
+              </li>
+              <li>
+                <div class="shop_basic_title">
+                  お店の説明
+                </div>
+                <%= form.text_area :title, class: "shop_basic_input" %>
+              </li>
+            </ul>
+            <div class="shop_basic_submit">
+              <%= form.submit "保存する", class: "shop_basic_btn" %>
+            </div>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>

@@ -1,6 +1,8 @@
 <div id="glb_main">
   <div id="glb_body" class="clearfix">
-    <%= render partial: "partial/management_header"%>
+    <div id="glb_header">
+      <%= render partial: "partial/header_top" %>
+    </div>
     <div id="shop_management">
       <div id="shop_management_left">
         <ul class="shop_management_lists">
@@ -23,7 +25,7 @@
           <li><%= link_to "アカウントを削除する"%></li>
         </ul>
       </div>
-      <div id="shop_management_right">
+      <div id="shop_management_right" class="unactive">
         <div class="shop_basic">
           <%= form_with url: posts_path do |form| %>
             <ul>
@@ -63,6 +65,211 @@
             </ul>
             <div class="shop_basic_submit">
               <%= form.submit "保存する", class: "shop_basic_btn" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+      <div id="shop_management_right" >
+        <div class="shop_management_hour">
+          <div class="shop_management_hour_tit">
+            <p>営業日時・時間</p>
+          </div>
+          <div class="shop_hour_main">
+            <div class="shop_hour_left">
+              <p>営業日</p>
+            </div>
+            <div class="shop_hour_right">
+              <%= form_with url: posts_path do |form| %>
+                <ul>
+                  <li>
+                    <p>月曜日</p>
+                    <div id="toggle_box">
+                      <div class="block"></div>
+                    </div>
+                    <div class=shop_management_hour_detail>
+                      <div class="shop_hour_detail_in">
+                        <%= form.time_select :created_at %>
+                      </div>
+                      ~
+                      <div class="shop_hour_detail_out">
+                        <%= form.time_select :created_at %>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <p>火曜日</p>
+                    <div id="toggle_box">
+                      <div class="block"></div>
+                    </div>
+                    <div class=shop_management_hour_detail>
+                      <div class="shop_hour_detail_in">
+                        <%= form.time_select :created_at %>
+                      </div>
+                      ~
+                      <div class="shop_hour_detail_out">
+                        <%= form.time_select :created_at %>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <p>水曜日</p>
+                    <div id="toggle_box">
+                      <div class="block"></div>
+                    </div>
+                    <div class=shop_management_hour_detail>
+                      <div class="shop_hour_detail_in">
+                        <%= form.time_select :created_at %>
+                      </div>
+                      ~
+                      <div class="shop_hour_detail_out">
+                        <%= form.time_select :created_at %>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <p>木曜日</p>
+                    <div id="toggle_box">
+                      <div class="block"></div>
+                    </div>
+                    <div class=shop_management_hour_detail>
+                      <div class="shop_hour_detail_in">
+                        <%= form.time_select :created_at %>
+                      </div>
+                      ~
+                      <div class="shop_hour_detail_out">
+                        <%= form.time_select :created_at %>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <p>金曜日</p>
+                    <div id="toggle_box">
+                      <div class="block"></div>
+                    </div>
+                    <div class=shop_management_hour_detail>
+                      <div class="shop_hour_detail_in">
+                        <%= form.time_select :created_at %>
+                      </div>
+                      ~
+                      <div class="shop_hour_detail_out">
+                        <%= form.time_select :created_at %>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <p>土曜日</p>
+                    <div id="toggle_box">
+                      <div class="block"></div>
+                    </div>
+                    <div class=shop_management_hour_detail>
+                      <div class="shop_hour_detail_in">
+                        <%= form.time_select :created_at %>
+                      </div>
+                      ~
+                      <div class="shop_hour_detail_out">
+                        <%= form.time_select :created_at %>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <p>日曜日</p>
+                    <div id="toggle_box">
+                      <div class="block"></div>
+                    </div>
+                    <div class=shop_management_hour_detail>
+                      <div class="shop_hour_detail_in">
+                        <%= form.time_select :created_at %>
+                      </div>
+                      ~
+                      <div class="shop_hour_detail_out">
+                        <%= form.time_select :created_at %>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              <% end %>
+            </div>
+          </div>
+          <div class="shop_hour_submit">
+            保存する
+          </div>
+        </div>
+      </div>
+      
+      <div id="shop_management_right" >
+        <div class="shop_menu_lists">
+          <%= form_with url: posts_path do |form| %>
+            <ul>
+              <li>
+                <p>メニューの追加</p>
+              </li>
+              <li>
+                <div class="shop_menu_title">
+                  写真を選ぶ
+                </div>
+                <%= form.file_field :image, class: "shop_menu_input" %>
+              </li>
+              <li>
+                <div class="shop_menu_title">
+                  メニュー名
+                </div>
+                <%= form.text_field :title, class: "shop_menu_input" %>
+              </li>
+              <li>
+                <div class="shop_menu_title">
+                  値段
+                </div>
+                <%= form.text_field :title, class: "shop_menu_input" %>
+              </li>
+              <li>
+                <div class="shop_menu_title">
+                  商品説明
+                </div>
+                <%= form.text_area :title, class: "shop_menu_input" %>
+              </li>
+            </ul>
+            <div class="shop_menu_submit">
+              <%= form.submit "保存する", class: "shop_menu_btn" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+      <div id="shop_management_right" >
+        <div class="shop_menu_lists">
+          <%= form_with url: posts_path do |form| %>
+            <ul>
+              <li>
+                <p>メニューの編集</p>
+              </li>
+              <li>
+                <div class="shop_menu_title">
+                  写真を選ぶ
+                </div>
+                <%= form.file_field :image, class: "shop_menu_input" %>
+              </li>
+              <li>
+                <div class="shop_menu_title">
+                  メニュー名
+                </div>
+                <%= form.text_field :title, class: "shop_menu_input" %>
+              </li>
+              <li>
+                <div class="shop_menu_title">
+                  値段
+                </div>
+                <%= form.text_field :title, class: "shop_menu_input" %>
+              </li>
+              <li>
+                <div class="shop_menu_title">
+                  商品説明
+                </div>
+                <%= form.text_area :title, class: "shop_menu_input" %>
+              </li>
+            </ul>
+            <div class="shop_menu_submit">
+              <%= form.submit "保存する", class: "shop_menu_btn" %>
             </div>
           <% end %>
         </div>

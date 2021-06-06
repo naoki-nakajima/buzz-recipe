@@ -122,7 +122,7 @@
       }
       .shop_hour_main {
         width: 100%;
-        height: 52vh;
+        height: 365px;
         margin-bottom: 18px;
         border-bottom: solid 1px #333;
         .shop_hour_left {
@@ -241,8 +241,186 @@
         }
       }
     }
+
+    .shop_menu_index {
+      width: 100%;
+      padding-left: 40px;
+      .shop_menu_index_tit {
+        width: 100%;
+        border-bottom: 1px solid #333;
+        p {
+          font-size: 36px;
+        }
+      }
+      ul.shop_menu_lists {
+        width: 100%;
+        padding: 0;
+        li.shop_menu_list {
+          list-style: none;
+          width: 100%;
+          margin-top: 12px;
+          padding:12px;
+          border: 1px solid #333;
+          border-radius: 3px;
+          .shop_menu_index_main {
+            display: flex;
+            .img {
+              width: 20%;
+              height: 15vh;
+              background: red;
+            }
+            .index_right {
+              width: 80%;
+              padding-left: 24px;
+              .text_box {
+                .tit {
+                  p {
+                    color: #333;
+                    font-size: 20px;
+                    font-weight: bold;
+                    margin: 0;
+                  }
+                }
+                .price {
+                  p {
+                    color: #333;
+                    font-size: 18px;
+                    margin: 0;
+                  }
+                }
+                .text {
+                  margin-top: 6px;
+                  .text_tit {
+                    background: #ff9e3d;
+                    width: 18%;
+                    border: 1px solid #ff9e3d;
+                    border-radius: 3px;
+                  }
+                  .text_main {
+                    margin-top: 6px;
+                    line-height: 1.2em;
+                    p {
+                      color: #333;
+                      font-size: 18px;
+                      margin: 0;
+                    }
+                  }
+                }
+              }
+            }
+            .edit_box {
+              width: 20%;
+              display: flex;
+              .edit {
+                width: 100%;
+                height: 4vh;
+                border: solid 1px #333;
+                border-radius: 3px;
+                text-align: center;
+                margin-right: 3px;
+                a {
+                  text-decoration: none;
+                  color: #333;
+                }
+              }
+              .delete {
+                width: 100%;
+                height: 4vh;
+                border: solid 1px #333;
+                border-radius: 3px;
+                text-align: center;
+                a {
+                  text-decoration: none;
+                  color: #333;
+                }
+              }
+            }
+          }
+        }
+      }  
+    }
   }
   .unactive {
   
   }
+  #shop_management_right_post_edit {
+    width: 70%;
+    margin: 0 auto;
+    .shop_menu_edit_lists {
+      width: 100%;
+      ul {
+        li {
+          list-style: none;
+          display: flex;
+          font-size: 24px;
+          padding: 24px 0;
+          border-bottom: 1px solid #333;
+          
+          .shop_menu_title {
+            width: 30%;
+          }
+          .shop_menu_input {
+            width: 50%;
+          }
+        }
+        li:first-child {
+          font-size: 36px;
+          margin: 0;
+          padding: 0;
+          p {
+            margin: 0 0 8px 0;
+          }
+        }
+      }
+      .shop_menu_submit {
+        width :47.29%;
+        margin-left: 34%;
+        .shop_menu_btn {
+          width: 100%;
+          height: 10vh;
+          background: #ff9e3d;
+          color: #fff;
+          border: none;
+          border-radius: 3px;
+          font-size: 24px;
+        }
+      }
+    }
+  }
+}
+
+
+
+#mask {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+}
+
+#modal {
+  background: #f5f6f7;
+  position: fixed;
+  top: 5vh;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  padding: 12px 0;
+  transform: translate(50, 50) scale(1);
+  transition: 0.2s;
+  z-index: 2;
+  width: 960px;
+}
+
+#mask.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+#modal.hidden {
+  opacity: 0;
+  visibility: hidden;
 }

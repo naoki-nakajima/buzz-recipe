@@ -25,6 +25,8 @@
           <li><%= link_to "アカウントを削除する"%></li>
         </ul>
       </div>
+      <div id="mask" class="hidden"></div>
+      <div id="modal" class="hidden"></div>
       <div id="shop_management_right" class="unactive">
         <div class="shop_basic">
           <%= form_with url: posts_path do |form| %>
@@ -235,43 +237,46 @@
           <% end %>
         </div>
       </div>
-
+      
       <div id="shop_management_right" >
-        <div class="shop_menu_lists">
-          <%= form_with url: posts_path do |form| %>
-            <ul>
-              <li>
-                <p>メニューの編集</p>
-              </li>
-              <li>
-                <div class="shop_menu_title">
-                  写真を選ぶ
+        <div class="shop_menu_index">
+          <div class="shop_menu_index_tit">
+            <p>メニュー  一覧</p>
+          </div>
+          <ul class="shop_menu_lists">
+            <li class="shop_menu_list">
+              <div class="shop_menu_index_main">
+                <div class="img">
                 </div>
-                <%= form.file_field :image, class: "shop_menu_input" %>
-              </li>
-              <li>
-                <div class="shop_menu_title">
-                  メニュー名
+                <div class="index_right">
+                  <div class="text_box">
+                    <div class="tit">
+                      <p>オムライス</p>
+                    </div>
+                    <div class="price">
+                      <p>1000円</p>                   
+                    </div>
+                    <div class="text">
+                      <div class="text_tit">
+                        コメント
+                      </div>
+                      <div class="text_main">
+                        <p>あいうえおアイウエオアイウエオアイウエオaiueo  aiueo  aiueo</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <%= form.text_field :title, class: "shop_menu_input" %>
-              </li>
-              <li>
-                <div class="shop_menu_title">
-                  値段
+                <div class="edit_box">
+                  <div class="edit">
+                    <%= link_to "編集", edit_post_path(@post.id), remote: true %>
+                  </div>
+                  <div class="delete">
+                    <%= link_to "削除", post_path(@post.id), method: :delete, data: { confirm: '本当に削除しますか？' } %>
+                  </div>
                 </div>
-                <%= form.text_field :title, class: "shop_menu_input" %>
-              </li>
-              <li>
-                <div class="shop_menu_title">
-                  商品説明
-                </div>
-                <%= form.text_area :title, class: "shop_menu_input" %>
-              </li>
-            </ul>
-            <div class="shop_menu_submit">
-              <%= form.submit "保存する", class: "shop_menu_btn" %>
-            </div>
-          <% end %>
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
     </div>

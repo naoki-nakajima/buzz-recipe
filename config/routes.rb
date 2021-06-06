@@ -20,7 +20,7 @@ Rails.application.routes.draw do
       get :search
     end
   end
-  resources :users, only: %i(index show)
+  resources :users, only: %i(index show edit)
   resources :foods, only: %i(new create)
   resources :cocks, only: %i(new create)
 end

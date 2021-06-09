@@ -64,9 +64,10 @@
       }
     }
   }
-  #shop_management_right {
+  .shop_management_right {
     width: 70%;
     float: right;
+    display: none;
     margin-bottom: 28px;
     .shop_basic {
       width: 100%;
@@ -340,8 +341,8 @@
       }  
     }
   }
-  .unactive {
-  
+  .shop_management_right.show {
+    display: block;
   }
   #shop_management_right_post_edit {
     width: 70%;

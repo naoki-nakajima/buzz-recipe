@@ -7,6 +7,7 @@ import '../stylesheets/application';
 import '../packs/post_new';
 import '../packs/post_show_tabs';
 import '../packs/user_show_tabs';
+import '../packs/user_index_lists';
 
 require("@rails/ujs").start()
 require("turbolinks").start()

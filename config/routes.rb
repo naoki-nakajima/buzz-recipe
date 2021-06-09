@@ -21,7 +21,5 @@ Rails.application.routes.draw do
     end
   end
   resources :users, only: %i(index show edit)
-  resources :foods, only: %i(new create)
-  resources :cocks, only: %i(new create)
 end
 

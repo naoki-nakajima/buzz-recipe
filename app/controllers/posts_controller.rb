@@ -44,7 +44,6 @@ class PostsController < ApplicationController
 
   def show
     @posts = Post.limit(10).includes(:photos, :user).order('created_at DESC')
-    @food = Food.find_by(id: params[:id])
     @post = Post.find_by(params[:post_id])
   end
 
@@ -75,7 +74,7 @@ class PostsController < ApplicationController
 
   private
     def post_params
-      params.require(:post).permit(:title, :caption, :post_comment, photos_attributes: [:id, :image], foods_attributes: [:id, :ingredient, :quantity, :_destroy], cocks_attributes: [:id, :how_to, :_destroy]).merge(user_id: current_user.id)
+      params.require(:post).permit(:title, :caption, :post_comment, photos_attributes: [:id, :image]).merge(user_id: current_user.id)
     end
 
     def set_post

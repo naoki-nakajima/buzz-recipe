@@ -7,10 +7,6 @@ class Post < ApplicationRecord
   has_many :hashtags, through: :post_hashtag_relations
   
   accepts_nested_attributes_for :photos
-  accepts_nested_attributes_for :foods, reject_if: :all_blank, allow_destroy: true
-  validates_associated :foods
-  accepts_nested_attributes_for :cocks, reject_if: :all_blank, allow_destroy: true
-  validates_associated :cocks
   
   def liked_by(user)
     Like.find_by(user_id: user.id, post_id: id)

@@ -1,2 +1,0 @@
-class Cock < ApplicationRecord
-end

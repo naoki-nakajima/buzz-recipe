@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  namespace :shop_admins do
+    resources :posts, only: %i(index)
+  end
   devise_for :shop_admins, controllers: {
     sessions: 'shop_admins/sessions',
     password: 'shop_admins/passwords',

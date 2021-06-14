@@ -1,0 +1,192 @@
+<div id="glb_main">
+  <div id="glb_body" class="clearfix">
+    <div id="glb_header">
+      <%= render partial: "partial/header_top" %>
+    </div>
+    <div id="content_container">
+      <div id="show_content">
+        <div class="top_photo">
+        </div>
+        <div class="top_content">
+          <div class="left_content">
+            <% if user_signed_in? %>
+              <div class="like_content">
+                <div class="like_btn">
+                  <div id="like-icon-post-<%= @post.id.to_s %>">
+                    <%= render 'like', { post: @post } %>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+            <div class="shop_tit">
+              中華一番
+            </div>
+            <div class="shop_address">
+              渋谷区渋谷町1-12-5
+            </div>
+            <div class="shop_text">
+               test test test test test test test test test
+               test test test test test test test test test
+               test test test test test test test test test
+               test test test test test test test test test
+            </div>
+          </div>
+          <div class="right_content">
+            <%= render partial: "posts/scroll_menu"%>
+          </div>
+        </div>
+        <div class=bottom_content>
+          <div class="tab_content">
+            <ul class="shop_menu">
+              <li>
+                <a id="about" class="menu_item active">メニュー</a>
+              </li>
+              <li>
+                <a id="service" class="menu_item">お店からのコメント</a>
+              </li>
+              <li>
+                <a id="contact" class="menu_item">口コミ</a>
+              </li>
+            </ul>
+            <ul class="menu_details">
+              <li class="menu_detail show">
+                <div class="menu_detail_container">
+                  <div class="menu_photo">
+                  </div>
+                  <div class="menu_tit">
+                  </div>
+                  <div class="menu_price">
+                  </div>
+                  <div class="menu_word">
+                  </div>
+                </div>
+                <div class="menu_detail_container">
+                  <div class="menu_photo">
+                  </div>
+                  <div class="menu_tit">
+                    オムライス
+                  </div>
+                  <div class="menu_price">
+                    500円
+                  </div>
+                  <div class="menu_word">
+                    フワフワ卵のオムライスです。ドミグラソース、トマトソースから選べます。
+                  </div>
+                </div>
+                <div class="menu_detail_container">
+                  <div class="menu_photo">
+                  </div>
+                  <div class="menu_tit">
+                  </div>
+                  <div class="menu_price">
+                  </div>
+                  <div class="menu_word">
+                  </div>
+                </div>
+              </li>
+              <li class="menu_detail">
+                <div class="shop_commnet_container">
+                  <div class="comment_tit">
+                    こだわり
+                  </div>
+                  <div class="comment_main">
+                    <div class="comment_photo">
+
+                    </div>
+                    <div class="comment">
+                      あいうえお　あいうえお　あいうえお　あいうえお　あいうえお　あいうえお　あいうえお　あいうえお　あいうえお　あいうえお　
+                    </div>
+                  </div>
+                  <div class="comment_tit">
+                    こだわり
+                  </div>
+                  <div class="comment_main">
+                    <div class="comment_photo">
+
+                    </div>
+                    <div class="comment">
+                      あいうえお　あいうえお　あいうえお　あいうえお　あいうえお　あいうえお　あいうえお　あいうえお　あいうえお　あいうえお　あいうえお　あいうえお　あいうえお　あいうえお　あいうえお　あいうえお　あいうえお　あいうえお　あいうえお　あいうえお　あいうえお　あいうえお　あいうえお　あいうえお
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li class="menu_detail">
+                <div class="review_container">
+                  <div class="review_top">
+                    <div class="cases_box">
+                      <div class="cases_display">
+                      全3件
+                      </div>
+                      <select name="example">
+                        <option value="サンプル1">標準</option>
+  
+                        <option value="サンプル2">いいねの多い順</option>
+                      </select>
+                      <div class="post_mouth">
+                        <%= link_to "口コミを投稿する", class: 'post_mouth_link' %>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="review_bottom clearfix">
+                    <div class="review_box">
+                      <div class="user_photo">
+                      </div>
+                      <ul class="user_rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="score">4.5</i>
+                      </ul>
+                    </div>
+                    <div class="review_main">
+                      <div class="review_detail">
+                        あいうえお あいうえお あいうえお あいうえお あいうえお あいうえお あいうえお あいうえお あいうえお あいうえお 
+                      </div>
+                      <div class="reviewer">
+                        投稿者 : あいうえお
+                      </div>
+                      <div class="review_date">
+                        投稿日時 : 2021/05/11
+                      </div>
+                      <div class="shop_reply">
+                        返信する
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      <% if user_signed_in? %>
+          <!-----------------------
+          <section id="show_comment">
+            <div id="comment_container">
+              <div class="comment_to_user_name">
+                <%= @post.user.name %>さんへのコメント
+              </div>
+              <div class="comment_post" id="comment_post-<%= @post.id.to_s %>">
+                <%= render 'comment_list', { post: @post } %>
+              </div>
+            </div>
+            <div id="comment_form">
+              <div class ="comment_form_post" id="comment_form_post-<%= @post.id.to_s %>">
+                <%= form_with model: [@post, Comment.new], local: false, class: "form_post" do |f| %>
+                  <%= f.hidden_field :user_id, value: current_user.id %>
+                  <%= f.hidden_field :post_id, value: @post.id %>
+                  <%= f.text_field :comment, class: "form_control", placeholder: "コメント ...", autocomplete: :off %>
+                  <%= f.submit "送信" %>
+                <% end %>
+              </div>
+            </div>
+          </section>
+          ------------------------>
+      <% end %>

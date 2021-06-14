@@ -5,16 +5,11 @@ class PostsController < ApplicationController
   def index
     @posts = Post.includes(:photos, :user).order('created_at DESC').page(params[:page]).per(5)
     @post = Post.find_by(params[:post_id])
-    respond_to do |format|
-      format.html
-      format.js
-    end
   end
 
   def new
     @post = Post.new
     @post.photos.build
-    @food = @post.foods.build
   end
 
   def create
@@ -22,10 +17,8 @@ class PostsController < ApplicationController
     if @post.photos.present?
       @post.save
       redirect_to root_path
-      flash[:notice] = "投稿が保存されました"
     else
       redirect_to root_path
-      flash[:alert] = "投稿に失敗しました"
     end
   end
 
@@ -35,10 +28,8 @@ class PostsController < ApplicationController
   def update
     if @post.update(post_params)
       redirect_to post_path
-      flash[:notice] = "投稿が保存されました"
     else
       render :edit
-      flash[:alert] = "投稿に失敗しました"
     end
   end
 
@@ -48,12 +39,8 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    if @post.user == current_user
-      @post.destroy
-      flash[:notice] = "投稿が削除されました" if @post.destroy
-    else
-      flash[:alert] = "投稿の削除に失敗しました"
-    end
+    @post.user == current_user
+    @post.destroy
     redirect_to root_path
   end
 

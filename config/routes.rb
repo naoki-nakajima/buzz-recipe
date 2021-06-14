@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  namespace :shop_admins do
-    resources :posts, only: %i(index)
-  end
   devise_for :shop_admins, controllers: {
     sessions: 'shop_admins/sessions',
     password: 'shop_admins/passwords',
@@ -19,6 +16,9 @@ Rails.application.routes.draw do
   root "posts#index"
 
   resources :posts do
+    namespace :shop_admins do
+      resources :posts
+    end
     resources :photos, only: %i(create)
     resources :likes, only: %i(create destroy)
     resources :comments, only: %i(create destroy)

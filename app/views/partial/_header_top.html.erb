@@ -27,7 +27,7 @@
         <%= link_to "店舗ページ" %>
       </li>
       <li>
-        <%= link_to "管理画面", users_path %>
+        <%= link_to "管理画面",  post_shop_admins_posts_path(current_shop_admin) %>
       </li>
       <li>
         <%= link_to "店舗ログアウト", destroy_shop_admin_session_path, method: :delete %>

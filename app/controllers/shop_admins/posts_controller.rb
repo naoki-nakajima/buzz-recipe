@@ -2,6 +2,8 @@ class ShopAdmins::PostsController < ShopAdmins::ApplicationController
   def index
     @posts = Post.includes(:photos, :user).order('created_at DESC').page(params[:page]).per(5)
     @post = Post.find_by(params[:post_id])
+    @post = Post.new
+    @post.photos.build
   end
 
   def new
@@ -62,7 +64,7 @@ class ShopAdmins::PostsController < ShopAdmins::ApplicationController
 
   private
     def post_params
-      params.require(:post).permit(:title, :price, :caption, photos_attributes: [:id, :image]).merge(shop_admin_id: current_user.id)
+      params.permit(:title, :price, :caption, photos_attributes: [:id, :image]).merge(shop_admin_id: current_user.id)
     end
 
     def set_post

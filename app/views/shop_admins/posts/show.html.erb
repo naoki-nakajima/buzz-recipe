@@ -171,7 +171,7 @@
           <section id="show_comment">
             <div id="comment_container">
               <div class="comment_to_user_name">
-                <%= @post.user.name %>さんへのコメント
+                <%= @post.shop_admin %>さんへのコメント
               </div>
               <div class="comment_post" id="comment_post-<%= @post.id.to_s %>">
                 <%= render 'comment_list', { post: @post } %>

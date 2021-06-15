@@ -1,0 +1,2 @@
+module ShopAdmins::PostHelper
+end

@@ -266,10 +266,10 @@
                 </div>
                 <div class="edit_box">
                   <div class="edit">
-                    <%= link_to "編集", edit_post_path(@post.id), remote: true %>
+                    <%= link_to "編集", remote: true %>
                   </div>
                   <div class="delete">
-                    <%= link_to "削除", post_path(@post.id), method: :delete, data: { confirm: '本当に削除しますか？' } %>
+                    <%= link_to "削除"%>
                   </div>
                 </div>
               </div>

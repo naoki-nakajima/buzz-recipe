@@ -3,13 +3,18 @@ class ShopAdmins::PostsController < ShopAdmins::ApplicationController
   def index
     @posts = Post.includes(:photos, :shop_admin).order('created_at DESC').page(params[:page]).per(5)
     @get_post = Post.find_by(params[:post_id])
+    
     @post = Post.new
     @post.photos.build
+
+    @shop_info = ShopInfo.new
   end
 
   def new
     @post = Post.new
     @post.photos.build
+
+    @shop_info = ShopInfo.new
   end
 
   def create
@@ -21,6 +26,13 @@ class ShopAdmins::PostsController < ShopAdmins::ApplicationController
     else
       redirect_to root_path
       flash[:alert] = "投稿に失敗しました"
+    end
+
+    @shop_info = ShopInfo.new(shop_info_params)
+    if @shop_info.save
+      redirect_to root_path
+    else
+      redirect_to post_shop_admins_posts_path
     end
   end
 
@@ -69,6 +81,10 @@ class ShopAdmins::PostsController < ShopAdmins::ApplicationController
       params.permit(:title, :price, :caption, photos_attributes: [:id, :image]).merge(shop_admin_id: current_shop_admin.id)
     end
 
+    def shop_info_params
+      params.require(:shop_info).permit(:store_name, :address, :email, :phone_number, :caption)
+    end
+    
     def set_post
       @post = Post.find_by(id: params[:id])
     end

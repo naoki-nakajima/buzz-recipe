@@ -26,6 +26,12 @@ Rails.application.routes.draw do
       get :search
     end
   end
+
+  resources :shop_infos do
+    namespace :shop_admins do
+      resources :shop_infos
+    end
+  end
   
   resources :users, only: %i(index show edit)
   

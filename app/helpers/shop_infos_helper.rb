@@ -1,0 +1,2 @@
+module ShopInfosHelper
+end

@@ -9,7 +9,7 @@
     <li>
       <div class="image_container">
         <p class="img">
-          <%= link_to(post_path(post)) do %>
+          <%= link_to(post_shop_admins_post_path(post, post.id)) do %>
             <%= image_tag post.photos.first.image.url, class: "img_top" %>
           <% end %>
         </p>

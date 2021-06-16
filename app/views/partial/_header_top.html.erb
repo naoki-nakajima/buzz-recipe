@@ -5,32 +5,41 @@
   <div class="log_in">
     <ul>
       <li>
-        <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-      </li>
-      <li>
         <%= link_to "新規登録", new_user_registration_path %>
       </li>
       <li>
         <%= link_to "ログイン", new_user_session_path %>
       </li>
-      <li>
-        <%= link_to "マイページ", user_path(current_user) %>
-      </li>
-      <li>
-      <li>
-        <%= link_to "店舗新規登録", new_shop_admin_registration_path %>
-      </li>
-      <li>
-        <%= link_to "店舗ログイン", new_shop_admin_session_path %>
-      </li>
-      <li>
-        <%= link_to "店舗ページ" %>
-      </li>
-      <li>
-        <%= link_to "管理画面",  post_shop_admins_posts_path(current_shop_admin) %>
-      </li>
-      <li>
-        <%= link_to "店舗ログアウト", destroy_shop_admin_session_path, method: :delete %>
-      </li>
+      <% if user_signed_in? %>
+        <% unless shop_admin_signed_in? %>
+          <li>
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+          </li>
+          <li>
+            <%= link_to "マイページ", user_path(current_user) %>
+          </li>
+        <% end %>
+      <% end %>
+      <% unless user_signed_in?%>
+        <% if shop_admin_signed_in?%>
+          <li>
+            <%= link_to "店舗ページ", post_shop_admins_post_path(@get_post.id, @get_post) %>
+          </li>
+          <li>
+            <%= link_to "管理画面",  post_shop_admins_posts_path(current_shop_admin) %>
+          </li>
+          <li>
+            <%= link_to "店舗ログアウト", destroy_shop_admin_session_path, method: :delete %>
+          </li>
+        <% end %>
+      <% end %>
+      <% unless shop_admin_signed_in? %>
+        <li>
+          <%= link_to "店舗新規登録", new_shop_admin_registration_path %>
+        </li>
+        <li>
+          <%= link_to "店舗ログイン", new_shop_admin_session_path %>
+        </li>
+      <% end %>
   </div>
 </div>

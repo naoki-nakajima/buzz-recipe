@@ -1,7 +1,8 @@
 class ShopAdmins::PostsController < ShopAdmins::ApplicationController
+  before_action :authenticate_shop_admin!, only: %i(new create edit update shoe delete)
   def index
-    @posts = Post.includes(:photos, :user).order('created_at DESC').page(params[:page]).per(5)
-    @post = Post.find_by(params[:post_id])
+    @posts = Post.includes(:photos, :shop_admin).order('created_at DESC').page(params[:page]).per(5)
+    @get_post = Post.find_by(params[:post_id])
     @post = Post.new
     @post.photos.build
   end
@@ -28,21 +29,22 @@ class ShopAdmins::PostsController < ShopAdmins::ApplicationController
 
   def update
     if @post.update(post_params)
-      redirect_to post_path
+      redirect_to root_path
       flash[:notice] = "投稿が保存されました"
     else
-      render :edit
+      render :new
       flash[:alert] = "投稿に失敗しました"
     end
   end
 
   def show
-    @posts = Post.limit(10).includes(:photos, :user).order('created_at DESC')
+    @posts = Post.limit(10).includes(:photos, :shop_admin).order('created_at DESC')
     @post = Post.find_by(params[:post_id])
+    @get_post = Post.find_by(params[:post_id])
   end
 
   def destroy
-    if @post.user == current_user
+    if @post.shop_admin == current_shop_admin
       @post.destroy
       flash[:notice] = "投稿が削除されました" if @post.destroy
     else
@@ -64,7 +66,7 @@ class ShopAdmins::PostsController < ShopAdmins::ApplicationController
 
   private
     def post_params
-      params.permit(:title, :price, :caption, photos_attributes: [:id, :image]).merge(shop_admin_id: current_user.id)
+      params.permit(:title, :price, :caption, photos_attributes: [:id, :image]).merge(shop_admin_id: current_shop_admin.id)
     end
 
     def set_post

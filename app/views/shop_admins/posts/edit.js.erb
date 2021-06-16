@@ -3,7 +3,7 @@ var modal = document.getElementById('modal');
 var mask = document.getElementById('mask');
 
 
-modal.innerHTML = '<%= escape_javascript(render partial: 'posts/edit', locals: { post: @post, user: @user }) %>';
+modal.innerHTML = '<%= escape_javascript(render partial: 'edit', locals: { post: @post }) %>';
 
 
 modal.classList.remove('hidden');

@@ -1,7 +1,6 @@
 <div class="main">
   <div class="card devise-card">
     <div class="form-wrap">
-      <%= render partial: "partial/devise_flash_messages" %>
       <h1>アカウント登録</h1>
       <%= form_with scope: resource, as: resource_name, url: registration_path(resource_name), local: true do |f| %>
         <div class="form-group">

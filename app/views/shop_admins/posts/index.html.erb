@@ -24,48 +24,7 @@
       <div id="mask" class="hidden"></div>
       <div id="modal" class="hidden"></div>
       <div class="shop_management_right show" >
-        <div class="shop_basic">
-          <%= form_with url: posts_path do |form| %>
-            <ul>
-              <li>
-                <p>基本情報</p>
-              </li>
-              <li>
-                <div class="shop_basic_title">
-                  店舗名
-                </div>
-                <%= form.text_field :title, class: "shop_basic_input" %>
-              </li>
-              <li>
-                <div class="shop_basic_title">
-                  住所
-                </div>
-                <%= form.text_field :title, class: "shop_basic_input" %>
-              </li>
-              <li>
-                <div class="shop_basic_title">
-                  メールアドレス
-                </div>
-                <%= form.text_field :title, class: "shop_basic_input" %>
-              </li>
-              <li>
-                <div class="shop_basic_title">
-                  電話番号
-                </div>
-                <%= form.text_field :title, class: "shop_basic_input" %>
-              </li>
-              <li>
-                <div class="shop_basic_title">
-                  お店の説明
-                </div>
-                <%= form.text_area :title, class: "shop_basic_input" %>
-              </li>
-            </ul>
-            <div class="shop_basic_submit">
-              <%= form.submit "保存する", class: "shop_basic_btn" %>
-            </div>
-          <% end %>
-        </div>
+        <%= render partial: "/shop_infos/new" %>
       </div>
 
       <div class="shop_management_right" >
@@ -197,7 +156,7 @@
       
       <div class="shop_management_right" >
         <div class="shop_menu_lists">
-          <%= form_with model: @post do |f| %>
+          <%= form_with(model: @post, local: true) do |f| %>
             <ul>
               <li>
                 <p>メニューの追加</p>
@@ -242,38 +201,41 @@
             <p>メニュー  一覧</p>
           </div>
           <ul class="shop_menu_lists">
-            <li class="shop_menu_list">
-              <div class="shop_menu_index_main">
-                <div class="img">
-                </div>
-                <div class="index_right">
-                  <div class="text_box">
-                    <div class="tit">
-                      <p>オムライス</p>
-                    </div>
-                    <div class="price">
-                      <p>1000円</p>                   
-                    </div>
-                    <div class="text">
-                      <div class="text_tit">
-                        コメント
+            <% @posts.each do |post|%>
+              <li class="shop_menu_list">
+                <div class="shop_menu_index_main">
+                  <div class="img">
+                    <%= image_tag post.photos.first.image.url %>
+                  </div>
+                  <div class="index_right">
+                    <div class="text_box">
+                      <div class="tit">
+                        <%= post.title %>
                       </div>
-                      <div class="text_main">
-                        <p>あいうえおアイウエオアイウエオアイウエオaiueo  aiueo  aiueo</p>
+                      <div class="price">
+                        <%= post.price %>               
+                      </div>
+                      <div class="text">
+                        <div class="text_tit">
+                          コメント
+                        </div>
+                        <div class="text_main">
+                          <%= post.caption %>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div class="edit_box">
-                  <div class="edit">
-                    <%= link_to "編集", edit_post_path(@post.id), remote: true %>
+                  <div class="edit_box">
+                    <div class="edit">
+                      <%= link_to "編集",  edit_post_shop_admins_post_path(id: post), remote: true %>
+                    </div>
+                    <div class="delete">
+                      <%= link_to "削除",  post_shop_admins_post_path(id: post), method: :delete, data: { confirm: '本当に削除しますか？' } %>
+                    </div>
                   </div>
-                  <div class="delete">
-                    <%= link_to "削除", post_path(@post.id), method: :delete, data: { confirm: '本当に削除しますか？' } %>
-                  </div>
                 </div>
-              </div>
-            </li>
+              </li>
+            <% end %>
           </ul>
         </div>
       </div>

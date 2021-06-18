@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_15_024643) do
+ActiveRecord::Schema.define(version: 2021_06_16_091650) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "comment", null: false
@@ -58,12 +58,12 @@ ActiveRecord::Schema.define(version: 2021_06_15_024643) do
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
     t.string "caption"
-    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "price"
+    t.bigint "shop_admin_id", null: false
     t.index ["caption"], name: "index_posts_on_caption", length: 32
-    t.index ["user_id"], name: "index_posts_on_user_id"
+    t.index ["shop_admin_id"], name: "index_posts_on_shop_admin_id"
   end
 
   create_table "shop_admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -76,6 +76,16 @@ ActiveRecord::Schema.define(version: 2021_06_15_024643) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_shop_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_shop_admins_on_reset_password_token", unique: true
+  end
+
+  create_table "shop_infos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "store_name"
+    t.string "address"
+    t.string "email"
+    t.string "phone_number"
+    t.string "caption"
+    t.bigint "shop_admin_id", null: false
+    t.index ["shop_admin_id"], name: "index_shop_infos_on_shop_admin_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -100,5 +110,6 @@ ActiveRecord::Schema.define(version: 2021_06_15_024643) do
   add_foreign_key "photos", "posts"
   add_foreign_key "post_hashtag_relations", "hashtags"
   add_foreign_key "post_hashtag_relations", "posts"
-  add_foreign_key "posts", "users"
+  add_foreign_key "posts", "shop_admins"
+  add_foreign_key "shop_infos", "shop_admins"
 end

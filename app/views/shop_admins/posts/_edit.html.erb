@@ -1,6 +1,6 @@
 <div id="shop_management_right_post_edit" >
   <div class="shop_menu_edit_lists">
-    <%= form_with url: posts_path do |form| %>
+    <%= form_with model: @post do |f| %>
       <ul>
         <li>
           <p>メニューの編集</p>
@@ -9,29 +9,31 @@
           <div class="shop_menu_title">
             写真を選ぶ
           </div>
-          <%= form.file_field :image, class: "shop_menu_input" %>
+          <%= f.fields_for :photos do |i| %>
+            <%= i.file_field :image, class: "shop_menu_input"%>
+          <% end %>
         </li>
         <li>
           <div class="shop_menu_title">
             メニュー名
           </div>
-          <%= form.text_field :title, class: "shop_menu_input" %>
+          <%= f.text_field :title, class: "shop_menu_input" %>
         </li>
         <li>
           <div class="shop_menu_title">
             値段
           </div>
-          <%= form.text_field :title, class: "shop_menu_input" %>
+          <%= f.text_field :price, class: "shop_menu_input" %>
         </li>
         <li>
           <div class="shop_menu_title">
             商品説明
           </div>
-          <%= form.text_area :title, class: "shop_menu_input" %>
+          <%= f.text_area :caption, class: "shop_menu_input" %>
         </li>
       </ul>
       <div class="shop_menu_submit">
-        <%= form.submit "保存する", class: "shop_menu_btn" %>
+        <%= f.submit "保存する", class: "shop_menu_btn" %>
       </div>
     <% end %>
   </div>

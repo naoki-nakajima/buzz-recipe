@@ -1,5 +1,4 @@
 class Post < ApplicationRecord
-  belongs_to :user
   belongs_to :shop_admin
   has_many :photos, dependent: :destroy
   has_many :likes, -> { order(created_at: :desc) }, dependent: :destroy

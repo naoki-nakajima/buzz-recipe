@@ -9,15 +9,13 @@
         </div>
         <div class="top_content">
           <div class="left_content">
-            <% if user_signed_in? %>
-              <div class="like_content">
-                <div class="like_btn">
-                  <div id="like-icon-post-<%= @post.id.to_s %>">
-                    <%= render 'like', { post: @post } %>
-                  </div>
+            <div class="like_content">
+              <div class="like_btn">
+                <div id="like-icon-post-<%= @post.id.to_s %>">
+                  <!-----------posts/likeをrenderする------>
                 </div>
               </div>
-            <% end %>
+            </div>
             <div class="shop_tit">
               中華一番
             </div>
@@ -50,39 +48,22 @@
             </ul>
             <ul class="menu_details">
               <li class="menu_detail show">
-                <div class="menu_detail_container">
-                  <div class="menu_photo">
+                <% @posts.each do |post| %>
+                  <div class="menu_detail_container">
+                    <div class="menu_photo">
+                      <%= image_tag post.photos.first.image.url %>
+                    </div>
+                    <div class="menu_tit">
+                      <%= post.title %>
+                    </div>
+                    <div class="menu_price">
+                      <%= post.price %>
+                    </div>
+                    <div class="menu_word">
+                      <%= post.caption %>
+                    </div>
                   </div>
-                  <div class="menu_tit">
-                  </div>
-                  <div class="menu_price">
-                  </div>
-                  <div class="menu_word">
-                  </div>
-                </div>
-                <div class="menu_detail_container">
-                  <div class="menu_photo">
-                  </div>
-                  <div class="menu_tit">
-                    オムライス
-                  </div>
-                  <div class="menu_price">
-                    500円
-                  </div>
-                  <div class="menu_word">
-                    フワフワ卵のオムライスです。ドミグラソース、トマトソースから選べます。
-                  </div>
-                </div>
-                <div class="menu_detail_container">
-                  <div class="menu_photo">
-                  </div>
-                  <div class="menu_tit">
-                  </div>
-                  <div class="menu_price">
-                  </div>
-                  <div class="menu_word">
-                  </div>
-                </div>
+                <% end %>
               </li>
               <li class="menu_detail">
                 <div class="shop_commnet_container">
@@ -165,28 +146,3 @@
     </div>
   </div>
 </div>
-
-      <% if user_signed_in? %>
-          <!-----------------------
-          <section id="show_comment">
-            <div id="comment_container">
-              <div class="comment_to_user_name">
-                <%= @post.user.name %>さんへのコメント
-              </div>
-              <div class="comment_post" id="comment_post-<%= @post.id.to_s %>">
-                <%= render 'comment_list', { post: @post } %>
-              </div>
-            </div>
-            <div id="comment_form">
-              <div class ="comment_form_post" id="comment_form_post-<%= @post.id.to_s %>">
-                <%= form_with model: [@post, Comment.new], local: false, class: "form_post" do |f| %>
-                  <%= f.hidden_field :user_id, value: current_user.id %>
-                  <%= f.hidden_field :post_id, value: @post.id %>
-                  <%= f.text_field :comment, class: "form_control", placeholder: "コメント ...", autocomplete: :off %>
-                  <%= f.submit "送信" %>
-                <% end %>
-              </div>
-            </div>
-          </section>
-          ------------------------>
-      <% end %>

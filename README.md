@@ -76,7 +76,7 @@
 - テスト機能
   - 実際の業務を想定して、テストコードを実装したいと考えています。バックエンドエンジニアとして業務に携わりたいので、APIの深掘りを強化したいです。
 
-## usersテーブル
+# usersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
@@ -88,7 +88,17 @@
 ### Association
 - has_one :shipping_info, dependent: :destroy
 
-## commentsテーブル
+# commentsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|caption|string|null: false|
+|post_id|string|null: false|
+|user_id|string|null: false|
+
+### Association
+- has_one :shipping_info, dependent: :destroy
+
+# likesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |post_id|string|null: false|
@@ -97,16 +107,7 @@
 ### Association
 - has_one :shipping_info, dependent: :destroy
 
-## likesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|post_id|string|null: false|
-|user_id|string|null: false|
-
-### Association
-- has_one :shipping_info, dependent: :destroy
-
-## shop_adminsテーブル
+# shop_adminsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |email|string|null: false, unique: true|
@@ -115,7 +116,7 @@
 ### Association
 - has_one :shipping_info, dependent: :destroy
 
-## usersテーブル
+# usersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
@@ -127,7 +128,7 @@
 ### Association
 - has_one :shipping_info, dependent: :destroy
 
-## postsテーブル
+# postsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |title|string|null: false|
@@ -138,7 +139,7 @@
 ### Association
 - has_one :shipping_info, dependent: :destroy
 
-## photosテーブル
+# photosテーブル
 |Column|Type|Options|
 |------|----|-------|
 |image|string|null: false|
@@ -149,7 +150,7 @@
 ### Association
 - has_one :shipping_info, dependent: :destroy
 
-## shop_infosテーブル
+# shop_infosテーブル
 |Column|Type|Options|
 |------|----|-------|
 |store_name|string|null: false|
@@ -162,7 +163,7 @@ shop_admin_id|string|null: false|
 ### Association
 - has_one :shipping_info, dependent: :destroy
 
-## shop_hoursテーブル
+# shop_hoursテーブル
 |Column|Type|Options|
 |------|----|-------|
 |sun|string|
@@ -190,7 +191,7 @@ shop_admin_id|string|null: false|
 ### Association
 - has_one :shipping_info, dependent: :destroy
 
-## shop_commitmentsテーブル
+# shop_commitmentsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |commnet|string|null: false|

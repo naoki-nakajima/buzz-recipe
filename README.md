@@ -86,7 +86,8 @@
 |icon|string|
 
 ### Association
-- has_one :shipping_info, dependent: :destroy
+- has_many :comments, dependent: :destroy
+- has_many :likes, dependent: :destroy
 
 ## commentsテーブル
 |Column|Type|Options|
@@ -95,7 +96,8 @@
 |user_id|string|null: false|
 
 ### Association
-- has_one :shipping_info, dependent: :destroy
+- belongs_to :user
+- belongs :shop_admin
 
 ## likesテーブル
 |Column|Type|Options|
@@ -104,7 +106,8 @@
 |user_id|string|null: false|
 
 ### Association
-- has_one :shipping_info, dependent: :destroy
+- belongs_to :user
+- belongs_to :shop_admin
 
 ## shop_adminsテーブル
 |Column|Type|Options|
@@ -113,54 +116,54 @@
 |encrypted_password|string|null: false|
 
 ### Association
-- has_one :shipping_info, dependent: :destroy
+- has_many :posts, dependent: :destroy
+- has_many :comments, dependent: :destroy
+- has_many :likes
+- has_many :shop_infos, dependent: :destroy
+- has_many :shop_hours, dependent: :destroy
+- has_many :shop_commitments: :dependent: :destroy
+- has_one :photo, dependent: :destroy
 
-## usersテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false|
-|nickname|string|null: false|
-|email|string|null: false, unique: true|
-|encrypted_password|string|null: false|
-|icon|string|
-
-### Association
-- has_one :shipping_info, dependent: :destroy
 
 ## postsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |title|string|null: false|
-|caption|string|null: false|
-|price|string|null: false, unique: true|
+|caption|string|
+|price|string|
 |shop_admin_id|string|null: false|
 
 ### Association
-- has_one :shipping_info, dependent: :destroy
+- belongs_to :shop_admin
+- has_many :photos, dependent: :destroy
+- has_many :likes, dependent: :destroy
+- has_many :comments, dependent: :destroy
 
 ## photosテーブル
 |Column|Type|Options|
 |------|----|-------|
 |image|string|null: false|
 |post_id|null: false|
-|user-id|string|null: false, unique: true|
+|user-id|string|null: false|
 |shop_admin_id|string|null: false|
-
+|shop_commitment_id|string|null: false|
 ### Association
-- has_one :shipping_info, dependent: :destroy
+- belongs_to :shop_admin
+- belongs_to :user
+- belongs_to :post
 
 ## shop_infosテーブル
 |Column|Type|Options|
 |------|----|-------|
 |store_name|string|null: false|
-|address|string|null: false|
-|email|string|null: false, unique: true|
-|phone_number|string|null: false|
+|address|string|
+|email|string|
+|phone_number|
 |caption|string|
 shop_admin_id|string|null: false|
 
 ### Association
-- has_one :shipping_info, dependent: :destroy
+- belongs_to :shop_admin
 
 ## shop_hoursテーブル
 |Column|Type|Options|
@@ -188,7 +191,7 @@ shop_admin_id|string|null: false|
 |satur_end_at|string|
 
 ### Association
-- has_one :shipping_info, dependent: :destroy
+- belongs_to :shop_admin
 
 ## shop_commitmentsテーブル
 |Column|Type|Options|
@@ -197,4 +200,5 @@ shop_admin_id|string|null: false|
 |shop_admin_id|string|null: false|
 
 ### Association
-- has_one :shipping_info, dependent: :destroy
+- belongs_to :shop_admin
+- has_one :photo

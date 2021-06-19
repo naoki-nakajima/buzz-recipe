@@ -92,13 +92,13 @@
 # commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|caption|string|null: false|
-|user_id|string|null: false|
-|shop_admin_id|string|null: false|
+|comment|text|null: false|
+|user_id|string|foreign_key: true, null: false|
+|shop_admin_id|string|foreign_key: true, null: false|
 
 ### Association
 - belongs_to :user
-- belongs :shop_admin
+- belongs_to :shop_admin
 
 # likesテーブル
 |Column|Type|Options|

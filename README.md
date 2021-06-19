@@ -76,7 +76,7 @@
 - テスト機能
   - 実際の業務を想定して、テストコードを実装したいと考えています。バックエンドエンジニアとして業務に携わりたいので、APIの深掘りを強化したいです。
 
-## usersテーブル
+# usersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
@@ -89,7 +89,7 @@
 - has_many :comments, dependent: :destroy
 - has_many :likes, dependent: :destroy
 
-## commentsテーブル
+# commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |comment|text|null: false|
@@ -100,7 +100,7 @@
 - belongs_to :user
 - belongs_to :shop_admin
 
-## likesテーブル
+# likesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |post_id|string|foreign_key: true, null: false|
@@ -112,7 +112,7 @@
 - belongs_to :user
 - belongs_to :shop_admin
 
-## shop_adminsテーブル
+# shop_adminsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |email|string|null: false, unique: true|
@@ -127,8 +127,20 @@
 - has_many :shop_commitments: :dependent: :destroy
 - has_one :photo, dependent: :destroy
 
+# usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|nickname|string|null: false|
+|email|string|null: false, unique: true|
+|encrypted_password|string|null: false|
+|icon|string|
 
-## postsテーブル
+### Association
+- has_many :comments, dependent: :destroy
+- has_many :likes, dependent: :destroy
+
+# postsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |title|string|null: false|
@@ -142,7 +154,7 @@
 - has_many :likes, dependent: :destroy
 - has_many :comments, dependent: :destroy
 
-## photosテーブル
+# photosテーブル
 |Column|Type|Options|
 |------|----|-------|
 |image|string|null: false|
@@ -156,7 +168,7 @@
 - belongs_to :post
 - belongs_to :shop_commitment
 
-## shop_infosテーブル
+# shop_infosテーブル
 |Column|Type|Options|
 |------|----|-------|
 |store_name|string|null: false|
@@ -169,7 +181,7 @@
 ### Association
 - belongs_to :shop_admin
 
-## shop_hoursテーブル
+# shop_hoursテーブル
 |Column|Type|Options|
 |------|----|-------|
 |sun|string|
@@ -197,7 +209,7 @@
 ### Association
 - belongs_to :shop_admin
 
-## shop_commitmentsテーブル
+# shop_commitmentsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |commitment|text|null: false|

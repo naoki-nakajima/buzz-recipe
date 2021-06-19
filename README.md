@@ -86,26 +86,31 @@
 |icon|string|
 
 ### Association
-- has_one :shipping_info, dependent: :destroy
+- has_many :comments, dependent: :destroy
+- has_many :likes, dependent: :destroy
 
 # commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |caption|string|null: false|
-|post_id|string|null: false|
 |user_id|string|null: false|
+|shop_admin_id|string|null: false|
 
 ### Association
-- has_one :shipping_info, dependent: :destroy
+- belongs_to :user
+- belongs :shop_admin
 
 # likesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|post_id|string|null: false|
-|user_id|string|null: false|
+|post_id|string|foreign_key: true, null: false|
+|user_id|string|foreign_key: true, null: false|
+|shop_admin_id|string|foreign_key: true, null: false|
 
 ### Association
-- has_one :shipping_info, dependent: :destroy
+- belongs_to :post
+- belongs_to :user
+- belongs_to :shop_admin
 
 # shop_adminsテーブル
 |Column|Type|Options|
@@ -114,7 +119,13 @@
 |encrypted_password|string|null: false|
 
 ### Association
-- has_one :shipping_info, dependent: :destroy
+- has_many :posts, dependent: :destroy
+- has_many :comments, dependent: :destroy
+- has_many :likes
+- has_many :shop_infos, dependent: :destroy
+- has_many :shop_hours, dependent: :destroy
+- has_many :shop_commitments: :dependent: :destroy
+- has_one :photo, dependent: :destroy
 
 # usersテーブル
 |Column|Type|Options|
@@ -126,42 +137,49 @@
 |icon|string|
 
 ### Association
-- has_one :shipping_info, dependent: :destroy
+- has_many :comments, dependent: :destroy
+- has_many :likes, dependent: :destroy
 
 # postsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |title|string|null: false|
-|caption|string|null: false|
-|price|string|null: false, unique: true|
+|caption|string|
+|price|string|
 |shop_admin_id|string|null: false|
 
 ### Association
-- has_one :shipping_info, dependent: :destroy
+- belongs_to :shop_admin
+- has_many :photos, dependent: :destroy
+- has_many :likes, dependent: :destroy
+- has_many :comments, dependent: :destroy
 
 # photosテーブル
 |Column|Type|Options|
 |------|----|-------|
 |image|string|null: false|
-|post_id|null: false|
-|user-id|string|null: false, unique: true|
-|shop_admin_id|string|null: false|
-
+|post_id|string|foreign_key: true, null: false|
+|user-id|string|foreign_key: true, null: false|
+|shop_admin_id|string|foreign_key: true, null: false|
+|shop_commitment_id|string|foreign_key: true, null: false|
 ### Association
-- has_one :shipping_info, dependent: :destroy
+- belongs_to :user
+- belongs_to :shop_admin
+- belongs_to :post
+- belongs_to :shop_commitment
 
 # shop_infosテーブル
 |Column|Type|Options|
 |------|----|-------|
 |store_name|string|null: false|
-|address|string|null: false|
-|email|string|null: false, unique: true|
-|phone_number|string|null: false|
+|address|string|
+|email|string|
+|phone_number|
 |caption|string|
-shop_admin_id|string|null: false|
+|shop_admin_id|string|foreign_key: true, null: false|
 
 ### Association
-- has_one :shipping_info, dependent: :destroy
+- belongs_to :shop_admin
 
 # shop_hoursテーブル
 |Column|Type|Options|
@@ -187,15 +205,16 @@ shop_admin_id|string|null: false|
 |thurs_end_at|string|
 |fri_end_at|string|
 |satur_end_at|string|
-
+|shop_admin_id|string|foreign_key: true, null: false|
 ### Association
-- has_one :shipping_info, dependent: :destroy
+- belongs_to :shop_admin
 
 # shop_commitmentsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|commnet|string|null: false|
-|shop_admin_id|string|null: false|
+|commitment|text|null: false|
+|shop_admin_id|string|foreign_key: true, null: false|
 
 ### Association
-- has_one :shipping_info, dependent: :destroy
+- belongs_to :shop_admin
+- has_one :photo,dependent: :destroy

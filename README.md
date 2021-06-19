@@ -92,8 +92,9 @@
 ## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|post_id|string|null: false|
-|user_id|string|null: false|
+|comment|text|null: false|
+|post_id|string|foreign_key: true, null: false|
+|user_id|string|foreign_key: true, null: false|
 
 ### Association
 - belongs_to :user
@@ -102,10 +103,12 @@
 ## likesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|post_id|string|null: false|
-|user_id|string|null: false|
+|post_id|string|foreign_key: true, null: false|
+|user_id|string|foreign_key: true, null: false|
+|shop_admin_id|string|foreign_key: true, null: false|
 
 ### Association
+- belongs_to :post
 - belongs_to :user
 - belongs_to :shop_admin
 
@@ -143,14 +146,15 @@
 |Column|Type|Options|
 |------|----|-------|
 |image|string|null: false|
-|post_id|null: false|
-|user-id|string|null: false|
-|shop_admin_id|string|null: false|
-|shop_commitment_id|string|null: false|
+|post_id|string|foreign_key: true, null: false|
+|user-id|string|foreign_key: true, null: false|
+|shop_admin_id|string|foreign_key: true, null: false|
+|shop_commitment_id|string|foreign_key: true, null: false|
 ### Association
-- belongs_to :shop_admin
 - belongs_to :user
+- belongs_to :shop_admin
 - belongs_to :post
+- belongs_to :shop_commitment
 
 ## shop_infosテーブル
 |Column|Type|Options|
@@ -160,7 +164,7 @@
 |email|string|
 |phone_number|
 |caption|string|
-shop_admin_id|string|null: false|
+|shop_admin_id|string|foreign_key: true, null: false|
 
 ### Association
 - belongs_to :shop_admin
@@ -189,16 +193,16 @@ shop_admin_id|string|null: false|
 |thurs_end_at|string|
 |fri_end_at|string|
 |satur_end_at|string|
-
+|shop_admin_id|string|foreign_key: true, null: false|
 ### Association
 - belongs_to :shop_admin
 
 ## shop_commitmentsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|commnet|string|null: false|
-|shop_admin_id|string|null: false|
+|commitment|text|null: false|
+|shop_admin_id|string|foreign_key: true, null: false|
 
 ### Association
 - belongs_to :shop_admin
-- has_one :photo
+- has_one :photo,dependent: :destroy

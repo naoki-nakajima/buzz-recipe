@@ -93,12 +93,12 @@
 |Column|Type|Options|
 |------|----|-------|
 |comment|text|null: false|
-|post_id|string|foreign_key: true, null: false|
 |user_id|string|foreign_key: true, null: false|
+|shop_admin_id|string|foreign_key: true, null: false|
 
 ### Association
 - belongs_to :user
-- belongs :shop_admin
+- belongs_to :shop_admin
 
 ## likesテーブル
 |Column|Type|Options|

@@ -104,12 +104,10 @@
 # likesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|post_id|string|foreign_key: true, null: false|
 |user_id|string|foreign_key: true, null: false|
 |shop_admin_id|string|foreign_key: true, null: false|
 
 ### Association
-- belongs_to :post
 - belongs_to :user
 - belongs_to :shop_admin
 
@@ -128,19 +126,6 @@
 - has_many :shop_commitments: :dependent: :destroy
 - has_one :photo, dependent: :destroy
 
-# usersテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false|
-|nickname|string|null: false|
-|email|string|null: false, unique: true|
-|encrypted_password|string|null: false|
-|icon|string|
-
-### Association
-- has_many :comments, dependent: :destroy
-- has_many :likes, dependent: :destroy
-
 # postsテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -151,7 +136,7 @@
 
 ### Association
 - belongs_to :shop_admin
-- has_many :photos, dependent: :destroy
+- has_one :photo, dependent: :destroy
 - has_many :likes, dependent: :destroy
 - has_many :comments, dependent: :destroy
 

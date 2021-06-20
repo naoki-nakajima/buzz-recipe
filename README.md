@@ -93,6 +93,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |comment|text|null: false|
+|evaluation|float|
 |user_id|string|foreign_key: true, null: false|
 |shop_admin_id|string|foreign_key: true, null: false|
 

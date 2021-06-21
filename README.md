@@ -132,7 +132,7 @@
 |title|string|null: false|
 |caption|string|
 |price|string|
-|shop_admin_id|string|null: false|
+|shop_admin_id|string|foreign_key: true,　null: false|
 
 ### Association
 - belongs_to :shop_admin

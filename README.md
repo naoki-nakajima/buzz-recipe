@@ -94,8 +94,8 @@
 |------|----|-------|
 |comment|text|null: false|
 |evaluation|float|
-|user_id|string|foreign_key: true, null: false|
-|shop_admin_id|string|foreign_key: true, null: false|
+|user_id|references|foreign_key: true, null: false|
+|shop_admin_id|references|foreign_key: true, null: false|
 
 ### Association
 - belongs_to :user
@@ -104,8 +104,8 @@
 # likesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|string|foreign_key: true, null: false|
-|shop_admin_id|string|foreign_key: true, null: false|
+|user_id|references|foreign_key: true, null: false|
+|shop_admin_id|references|foreign_key: true, null: false|
 
 ### Association
 - belongs_to :user
@@ -132,7 +132,7 @@
 |title|string|null: false|
 |caption|string|
 |price|string|
-|shop_admin_id|string|foreign_key: true,　null: false|
+|shop_admin_id|references|foreign_key: true,　null: false|
 
 ### Association
 - belongs_to :shop_admin
@@ -144,10 +144,10 @@
 |Column|Type|Options|
 |------|----|-------|
 |image|string|null: false|
-|post_id|string|foreign_key: true, null: false|
-|user-id|string|foreign_key: true, null: false|
-|shop_admin_id|string|foreign_key: true, null: false|
-|shop_commitment_id|string|foreign_key: true, null: false|
+|post_id|references|foreign_key: true, null: false|
+|user_id|references|foreign_key: true, null: false|
+|shop_admin_id|references|foreign_key: true, null: false|
+|shop_commitment_id|references|foreign_key: true, null: false|
 ### Association
 - belongs_to :user
 - belongs_to :shop_admin
@@ -162,7 +162,7 @@
 |email|string|
 |phone_number|
 |caption|string|
-|shop_admin_id|string|foreign_key: true, null: false|
+|shop_admin_id|references|foreign_key: true, null: false|
 
 ### Association
 - belongs_to :shop_admin
@@ -191,7 +191,7 @@
 |thurs_end_at|string|
 |fri_end_at|string|
 |satur_end_at|string|
-|shop_admin_id|string|foreign_key: true, null: false|
+|shop_admin_id|references|foreign_key: true, null: false|
 ### Association
 - belongs_to :shop_admin
 
@@ -199,7 +199,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |commitment|text|null: false|
-|shop_admin_id|string|foreign_key: true, null: false|
+|shop_admin_id|references|foreign_key: true, null: false|
 
 ### Association
 - belongs_to :shop_admin

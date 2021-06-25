@@ -13,8 +13,6 @@ class ShopAdmins::PostsController < ShopAdmins::ApplicationController
   def new
     @post = Post.new
     @post.photos.build
-
-    @shop_info = ShopInfo.new
   end
 
   def create
@@ -26,13 +24,6 @@ class ShopAdmins::PostsController < ShopAdmins::ApplicationController
     else
       redirect_to root_path
       flash[:alert] = "投稿に失敗しました"
-    end
-
-    @shop_info = ShopInfo.new(shop_info_params)
-    if @shop_info.save
-      redirect_to root_path
-    else
-      redirect_to post_shop_admins_posts_path
     end
   end
 
@@ -82,7 +73,7 @@ class ShopAdmins::PostsController < ShopAdmins::ApplicationController
     end
 
     def shop_info_params
-      params.require(:shop_info).permit(:store_name, :address, :email, :phone_number, :caption)
+      params.require(:shop_info).permit(:store_name, :address, :email, :phone_number, :caption).merge(shop_admin_id: current_shop_admin.id)
     end
     
     def set_post

@@ -5,4 +5,5 @@ class ShopAdmin < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
   has_many :posts, dependent: :destroy
+  has_many :shop_infos, dependent: :destroy
 end

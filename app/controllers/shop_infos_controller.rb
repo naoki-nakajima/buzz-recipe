@@ -1,5 +1,5 @@
-class ShopAdmins::ShopInfosController < ShopAdmins::ApplicationController
-  before_action :authenticate_shop_admin!, only: %i(new create edit update shoe delete)
+class ShopInfosController < ApplicationController
+  before_action :authenticate_shop_admin!, only: %i(new create edit update show delete)
 
   def new
     @shop_info = ShopInfo.new
@@ -28,6 +28,6 @@ class ShopAdmins::ShopInfosController < ShopAdmins::ApplicationController
 
   private
     def shop_info_params
-      params.require(:shop_info).permit(:store_name, :address, :email, :phone_number, :caption)
+      params.require(:shop_info).permit(:store_name, :address, :email, :phone_number, :caption).merge(shop_admin_id: current_shop_admin.id)
     end
 end

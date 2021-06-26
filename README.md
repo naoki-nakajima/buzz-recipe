@@ -168,7 +168,7 @@
 ### Association
 - belongs_to :shop_admin
 
-# business_dateテーブル
+# business_datesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |sunday|string|
@@ -181,19 +181,14 @@
 |shop_admin_id|references|foreign_key: true, null: false|
 ### Association
 - belongs_to :shop_admin
+- has_one :business_times
 
-# Business_timeテーブル
+# Business_timesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |start_time|time|
 |end_time|time|
-|sunday_id|references|foreign_key: true, null: false|
-|monday_id|references|foreign_key: true, null: false|
-|tuesday_id|references|foreign_key: true, null: false|
-|wedensday_id|references|foreign_key: true, null: false|
-|thursday_id|references|foreign_key: true, null: false|
-|friyday_id|references|foreign_key: true, null: false|
-|saturday_id|references|foreign_key: true, null: false|
+|business_date_id|references|foreign_key: true, null: false|
 ### Association
 - belongs_to :business_date
 

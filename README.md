@@ -122,7 +122,8 @@
 - has_many :comments, dependent: :destroy
 - has_many :likes
 - has_many :shop_infos, dependent: :destroy
-- has_many :shop_hours, dependent: :destroy
+- has_many :business_date, dependent: :destroy
+- has_many :business_time, dependent: :destroy
 - has_many :shop_commitments: :dependent: :destroy
 - has_one :photo, dependent: :destroy
 
@@ -160,40 +161,42 @@
 |store_name|string|null: false|
 |address|string|
 |email|string|
-|phone_number|
+|phone_number|string|
 |caption|string|
 |shop_admin_id|references|foreign_key: true, null: false|
 
 ### Association
 - belongs_to :shop_admin
 
-# shop_hoursテーブル
+# business_dateテーブル
 |Column|Type|Options|
 |------|----|-------|
-|sun|string|
-|mon|string|
-|tues|string|
-|wedens|string|
-|thurs|string|
-|fri|string|
-|satur|string|
-|sun_start_at|string|
-|mon_start_at|string|
-|tues_start_at|string|
-|wedens_start_at|string|
-|thurs_start_at|string|
-|fri_start_at|string|
-|satur_start_at|string|
-|sun_start_at|string|
-|mon_end_at|string|
-|tues_end_at|string|
-|wedens_end_at|string|
-|thurs_end_at|string|
-|fri_end_at|string|
-|satur_end_at|string|
+|sunday|string|
+|monday|string|
+|tuesday|string|
+|wedensday|string|
+|thursday|string|
+|friday|string|
+|saturday|string|
 |shop_admin_id|references|foreign_key: true, null: false|
 ### Association
 - belongs_to :shop_admin
+
+# Business_timeテーブル
+|Column|Type|Options|
+|------|----|-------|
+|start_time|time|
+|end_time|time|
+|sunday_id|references|foreign_key: true, null: false|
+|monday_id|references|foreign_key: true, null: false|
+|tuesday_id|references|foreign_key: true, null: false|
+|wedensday_id|references|foreign_key: true, null: false|
+|thursday_id|references|foreign_key: true, null: false|
+|friyday_id|references|foreign_key: true, null: false|
+|saturday_id|references|foreign_key: true, null: false|
+### Association
+- belongs_to :business_date
+
 
 # shop_commitmentsテーブル
 |Column|Type|Options|

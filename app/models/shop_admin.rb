@@ -6,4 +6,5 @@ class ShopAdmin < ApplicationRecord
   
   has_many :posts, dependent: :destroy
   has_many :shop_infos, dependent: :destroy
+  has_many :business_date, dependent: :destroy
 end

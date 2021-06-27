@@ -183,7 +183,7 @@
 - belongs_to :shop_admin
 - has_one :business_times
 
-# Business_timesテーブル
+# business_timesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |start_time|time|

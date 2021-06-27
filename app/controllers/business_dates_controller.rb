@@ -1,0 +1,2 @@
+class BusinessDatesController < ApplicationController
+end

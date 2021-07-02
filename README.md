@@ -188,5 +188,8 @@
 |shop_admin_id|references|foreign_key: true, null: false|
 
 ### Association
+- has_one :photo
+
+### Association
 - belongs_to :shop_admin
 - has_one :photo,dependent: :destroy

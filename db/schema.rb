@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_02_002541) do
+ActiveRecord::Schema.define(version: 2021_07_02_063621) do
 
   create_table "business_dates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "monday"
@@ -71,7 +71,9 @@ ActiveRecord::Schema.define(version: 2021_07_02_002541) do
     t.bigint "post_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "shop_commitment_id", null: false
     t.index ["post_id"], name: "index_photos_on_post_id"
+    t.index ["shop_commitment_id"], name: "index_photos_on_shop_commitment_id"
   end
 
   create_table "post_hashtag_relations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -145,6 +147,7 @@ ActiveRecord::Schema.define(version: 2021_07_02_002541) do
   add_foreign_key "likes", "posts"
   add_foreign_key "likes", "users"
   add_foreign_key "photos", "posts"
+  add_foreign_key "photos", "shop_commitments"
   add_foreign_key "post_hashtag_relations", "hashtags"
   add_foreign_key "post_hashtag_relations", "posts"
   add_foreign_key "posts", "shop_admins"

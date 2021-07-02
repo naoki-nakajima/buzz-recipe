@@ -1,7 +1,6 @@
 class BusinessDatesController < ApplicationController
   before_action :authenticate_shop_admin!, only: %i(new create edit update shoe delete)
   def index
-    @business_date = BusinessDate.new
   end
 
   def new

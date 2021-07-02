@@ -39,6 +39,12 @@ Rails.application.routes.draw do
     end
   end
   
+  resources :shop_admin do
+    resources :shop_commitments do 
+      resources :photos
+    end
+  end
+  
   resources :users, only: %i(index show edit)
   
   get '/photo/hashtag/:name', to: 'posts#hashtag'

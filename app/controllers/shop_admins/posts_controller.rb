@@ -10,6 +10,8 @@ class ShopAdmins::PostsController < ShopAdmins::ApplicationController
     @shop_info = ShopInfo.new
 
     @business_date = BusinessDate.new
+
+    @shop_commitment = ShopCommitment.new
   end
 
   def new

@@ -1,0 +1,2 @@
+class ShopCommitmentsController < ApplicationController
+end

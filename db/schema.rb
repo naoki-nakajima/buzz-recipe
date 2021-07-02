@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_01_120954) do
+ActiveRecord::Schema.define(version: 2021_07_02_002541) do
 
   create_table "business_dates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "monday"
@@ -106,6 +106,14 @@ ActiveRecord::Schema.define(version: 2021_07_01_120954) do
     t.index ["reset_password_token"], name: "index_shop_admins_on_reset_password_token", unique: true
   end
 
+  create_table "shop_commitments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "text", null: false
+    t.bigint "shop_admin_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["shop_admin_id"], name: "index_shop_commitments_on_shop_admin_id"
+  end
+
   create_table "shop_infos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "store_name"
     t.string "address"
@@ -140,5 +148,6 @@ ActiveRecord::Schema.define(version: 2021_07_01_120954) do
   add_foreign_key "post_hashtag_relations", "hashtags"
   add_foreign_key "post_hashtag_relations", "posts"
   add_foreign_key "posts", "shop_admins"
+  add_foreign_key "shop_commitments", "shop_admins"
   add_foreign_key "shop_infos", "shop_admins"
 end

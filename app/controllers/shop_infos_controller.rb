@@ -10,7 +10,7 @@ class ShopInfosController < ApplicationController
     if @shop_info.save
       redirect_to root_path
     else
-      redirect_to post_shop_admins_posts_path
+      redirect_to  shop_admins_path
     end
   end
 
@@ -28,6 +28,6 @@ class ShopInfosController < ApplicationController
 
   private
     def shop_info_params
-      params.require(:shop_info).permit(:store_name, :address, :email, :phone_number, :caption).merge(shop_admin_id: current_shop_admin.id)
+      params..permit(:store_name, :address, :email, :phone_number, :caption).merge(shop_admin_id: current_shop_admin.id)
     end
 end

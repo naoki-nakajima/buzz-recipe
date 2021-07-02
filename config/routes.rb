@@ -15,36 +15,18 @@ Rails.application.routes.draw do
   
   root "posts#index"
 
-  resources :posts do
-    namespace :shop_admins do
-      resources :posts
+  resources :shop_admins do
+    resources :posts do
+      resources :photos
     end
-    resources :photos, only: %i(create)
-    resources :likes, only: %i(create destroy)
-    resources :comments, only: %i(create destroy)
-    collection do
-      get :search
-    end
-  end
-
-  resources :shop_infos do
-    namespace :shop_admins do
-      resources :shop_infos
-    end
-  end
-
-  resources :business_dates do
-    namespace :shop_admins do
-      resources :business_dates
-    end
-  end
-  
-  resources :shop_admin do
-    resources :shop_commitments do 
+    resources :shop_infos
+    resources :business_dates
+    resources :shop_commitments do
       resources :photos
     end
   end
-  
+  resources :likes, only: %i(create destroy)
+  resources :comments, only: %i(create destroy)
   resources :users, only: %i(index show edit)
   
   get '/photo/hashtag/:name', to: 'posts#hashtag'

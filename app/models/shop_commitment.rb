@@ -1,6 +1,6 @@
 class ShopCommitment < ApplicationRecord
   belongs_to :shop_admin
-  has_many :photos
+  has_one :photo, dependent: :destroy
 
-  accepts_nested_attributes_for :photos
+  accepts_nested_attributes_for :photo
 end

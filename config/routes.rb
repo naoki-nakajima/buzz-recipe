@@ -32,6 +32,12 @@ Rails.application.routes.draw do
       resources :shop_infos
     end
   end
+
+  resources :business_dates do
+    namespace :shop_admins do
+      resources :business_dates
+    end
+  end
   
   resources :users, only: %i(index show edit)
   

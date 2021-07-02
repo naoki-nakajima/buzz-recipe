@@ -181,7 +181,7 @@
 |shop_admin_id|references|foreign_key: true, null: false|
 ### Association
 - belongs_to :shop_admin
-- has_one :business_times
+- has_one :business_time
 
 # business_timesテーブル
 |Column|Type|Options|

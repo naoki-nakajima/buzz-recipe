@@ -1,5 +1,5 @@
 class ShopInfosController < ApplicationController
-  before_action :authenticate_shop_admin!, only: %i(new create edit update show delete)
+  before_action :authenticate_shop_admin!, only: %i(new create edit update show destroy)
 
   def new
     @shop_info = ShopInfo.new

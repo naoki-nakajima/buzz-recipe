@@ -8,6 +8,8 @@ class ShopAdmins::PostsController < ShopAdmins::ApplicationController
     @post.photos.build
 
     @shop_info = ShopInfo.new
+
+    @business_date = BusinessDate.new
   end
 
   def new
@@ -68,15 +70,15 @@ class ShopAdmins::PostsController < ShopAdmins::ApplicationController
   end
 
   private
+    def set_post
+      @post = Post.find_by(id: params[:id])
+    end
+
     def post_params
       params.permit(:title, :price, :caption, photos_attributes: [:id, :image]).merge(shop_admin_id: current_shop_admin.id)
     end
 
     def shop_info_params
       params.require(:shop_info).permit(:store_name, :address, :email, :phone_number, :caption).merge(shop_admin_id: current_shop_admin.id)
-    end
-    
-    def set_post
-      @post = Post.find_by(id: params[:id])
     end
 end

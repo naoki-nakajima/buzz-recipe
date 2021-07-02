@@ -10,29 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_27_120847) do
+ActiveRecord::Schema.define(version: 2021_07_01_120954) do
 
   create_table "business_dates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "sunday"
     t.string "monday"
     t.string "tuesday"
     t.string "wedensday"
     t.string "thursday"
     t.string "friday"
     t.string "saturday"
+    t.string "sunday"
+    t.time "monday_opening_time"
+    t.time "monday_closing_time"
+    t.time "tuesday_opening_time"
+    t.time "tuesday_closing_time"
+    t.time "wedensday_opening_time"
+    t.time "wedensday_closing_time"
+    t.time "thursday_opening_time"
+    t.time "thursday_closing_time"
+    t.time "friday_opening_time"
+    t.time "friday_closing_time"
+    t.time "saturday_opening_time"
+    t.time "saturday_closing_time"
+    t.time "sunday_opening_time"
+    t.time "sunday_closing_time"
     t.bigint "shop_admin_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["shop_admin_id"], name: "index_business_dates_on_shop_admin_id"
-  end
-
-  create_table "business_times", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.time "opening_time"
-    t.time "closing_time"
-    t.bigint "business_date_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["business_date_id"], name: "index_business_times_on_business_date_id"
   end
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -127,7 +132,6 @@ ActiveRecord::Schema.define(version: 2021_06_27_120847) do
   end
 
   add_foreign_key "business_dates", "shop_admins"
-  add_foreign_key "business_times", "business_dates"
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
   add_foreign_key "likes", "posts"

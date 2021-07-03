@@ -28,6 +28,6 @@ class ShopInfosController < ApplicationController
 
   private
     def shop_info_params
-      params..permit(:store_name, :address, :email, :phone_number, :caption).merge(shop_admin_id: current_shop_admin.id)
+      params.permit(:store_name, :address, :email, :phone_number, :caption).merge(shop_admin_id: current_shop_admin.id)
     end
 end

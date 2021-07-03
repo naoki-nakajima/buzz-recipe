@@ -7,7 +7,7 @@
       <p>営業日</p>
     </div>
     <div class="shop_hour_right">
-      <%= form_with(model: @business_date, local: true) do |f| %>
+      <%= form_with(model: @business_date, url: shop_admin_business_dates_path(current_shop_admin.id), local: true) do |f| %>
         <ul>
           <li>
             <%= f.check_box :monday %>

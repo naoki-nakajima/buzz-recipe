@@ -11,9 +11,7 @@
           <div class="left_content">
             <div class="like_content">
               <div class="like_btn">
-                <div id="like-icon-post-<%= @post.id.to_s %>">
-                  <!-----------posts/likeをrenderする------>
-                </div>
+                
               </div>
             </div>
             <div class="shop_tit">
@@ -50,9 +48,7 @@
               <li class="menu_detail show">
                 <% @posts.each do |post| %>
                   <div class="menu_detail_container">
-                    <div class="menu_photo">
-                      <%= image_tag post.photos.first.image.url %>
-                    </div>
+                    <!-------イメージタグでポストに紐づくフォト、イメージを記述する--------->
                     <div class="menu_tit">
                       <%= post.title %>
                     </div>

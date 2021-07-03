@@ -23,10 +23,10 @@
       <% unless user_signed_in?%>
         <% if shop_admin_signed_in?%>
           <li>
-            <%= link_to "店舗ページ", post_shop_admins_post_path(@get_post.id, @get_post) %>
+            <%= link_to "店舗ページ",  shop_admin_path(current_shop_admin) %>
           </li>
           <li>
-            <%= link_to "管理画面",  post_shop_admins_posts_path(current_shop_admin) %>
+            <%= link_to "管理画面", shop_admins_path(current_shop_admin) %>
           </li>
           <li>
             <%= link_to "店舗ログアウト", destroy_shop_admin_session_path, method: :delete %>

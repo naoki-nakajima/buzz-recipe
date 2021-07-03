@@ -1,0 +1,2 @@
+module ShopCommitmentsHelper
+end

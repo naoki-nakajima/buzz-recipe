@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i(edit update destroy search)
   
   def index
-    @posts = Post.includes(:photos, :shop_admin).order('created_at DESC').page(params[:page]).per(5)
+    @posts = Post.includes(:photo, :shop_admin).order('created_at DESC').page(params[:page]).per(5)
     @post = Post.find_by(params[:post_id])
     @get_post = Post.find_by(params[:post_id])
   end
@@ -15,8 +15,8 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    if @post.photos.present?
-      @post.save
+    if @post.save!
+      
       redirect_to root_path
     else
       redirect_to root_path
@@ -62,7 +62,7 @@ class PostsController < ApplicationController
 
   private
     def post_params
-      params.require(:post).permit(:title, :caption, :price, :post_comment, photos_attributes: [:id, :image]).merge(shop_admin_id: current_shop_admin.id)
+      params.require(:post).permit(:title, :caption, :price, photos_attributes: [:id, :image]).merge(shop_admin_id: current_shop_admin.id)
     end
 
     def set_post

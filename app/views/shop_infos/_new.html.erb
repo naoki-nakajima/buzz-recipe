@@ -1,5 +1,5 @@
 <div class="shop_basic">
-  <%= form_with  model: @shop_info do |f| %>
+  <%= form_with  model: @shop_info, url: shop_admin_shop_infos_path(current_shop_admin.id), local: true do |f| %>
     <ul>
       <li>
         <p>基本情報</p>

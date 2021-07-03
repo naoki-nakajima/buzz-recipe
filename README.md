@@ -122,8 +122,7 @@
 - has_many :comments, dependent: :destroy
 - has_many :likes
 - has_many :shop_infos, dependent: :destroy
-- has_many :business_date, dependent: :destroy
-- has_many :business_time, dependent: :destroy
+- has_one :business_date, dependent: :destroy
 - has_many :shop_commitments: :dependent: :destroy
 - has_one :photo, dependent: :destroy
 
@@ -181,23 +180,15 @@
 |shop_admin_id|references|foreign_key: true, null: false|
 ### Association
 - belongs_to :shop_admin
-- has_one :business_time
-
-# business_timesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|start_time|time|
-|end_time|time|
-|business_date_id|references|foreign_key: true, null: false|
-### Association
-- belongs_to :business_date
-
 
 # shop_commitmentsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |commitment|text|null: false|
 |shop_admin_id|references|foreign_key: true, null: false|
+
+### Association
+- has_one :photo
 
 ### Association
 - belongs_to :shop_admin

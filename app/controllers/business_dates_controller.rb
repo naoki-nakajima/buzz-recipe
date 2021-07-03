@@ -12,7 +12,7 @@ class BusinessDatesController < ApplicationController
     if @business_date.save
       redirect_to root_path
     else
-      render :new
+      redirect_to root_path
     end
   end
 
@@ -30,6 +30,6 @@ class BusinessDatesController < ApplicationController
 
   private
   def business_date_params
-    params.require(:business_date).permit(:monday, :tuesday, :wedensday, :thursday, :friday, :saturday, :sunday, :monday_opening_time, :monday_closing_time, :tuesday_opening_time, :tuesday_closing_time, :wedensday_opening_time, :wedensday_closing_time, :thursday_opening_time, :thursday_closing_time, :friday_opening_time, :friday_closing_time, :saturday_opening_time, :saturday_closing_time, :sunday_opening_time, :sunday_closing_time).merge(shop_admin_id: current_shop_admin.id)
+    params.permit(:monday, :tuesday, :wedensday, :thursday, :friday, :saturday, :sunday, :monday_opening_time, :monday_closing_time, :tuesday_opening_time, :tuesday_closing_time, :wedensday_opening_time, :wedensday_closing_time, :thursday_opening_time, :thursday_closing_time, :friday_opening_time, :friday_closing_time, :saturday_opening_time, :saturday_closing_time, :sunday_opening_time, :sunday_closing_time).merge(shop_admin_id: current_shop_admin.id)
   end
 end

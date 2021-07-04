@@ -3,6 +3,7 @@ class ShopCommitmentsController < ApplicationController
 
   def new
     @shop_commitment = ShopCommitment.new
+    @shop_commitment.photo_build
   end
 
   def create

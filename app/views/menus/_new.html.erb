@@ -1,0 +1,83 @@
+<div class="shop_menu_lists">
+  <%= form_with(model: @menu, url: shop_admin_menus_path(current_shop_admin.id), local: true) do |f| %>
+    <ul>
+      <li>
+        <p>メニューの追加</p>
+      </li>
+      <li>
+        <div class="shop_menu_title">
+          写真を選ぶ
+        </div>
+        <%= f.fields_for :photo do |photo_form| %>
+          <%= photo_form.file_field :image, class: "shop_menu_input"%>
+        <% end %>
+      </li>
+      <li>
+        <div class="shop_menu_title">
+          メニュー名
+        </div>
+        <%= f.text_field :title, class: "shop_menu_input" %>
+      </li>
+      <li>
+        <div class="shop_menu_title">
+          値段
+        </div>
+        <%= f.text_field :price, class: "shop_menu_input" %>
+      </li>
+      <li>
+        <div class="shop_menu_title">
+          商品説明
+        </div>
+        <%= f.text_area :caption, class: "shop_menu_input" %>
+      </li>
+    </ul>
+    <div class="shop_menu_submit">
+      <%= f.submit "保存する", class: "shop_menu_btn" %>
+    </div>
+  <% end %>
+</div>
+</div>
+
+<div class="shop_management_right" >
+<div class="shop_menu_index">
+  <div class="shop_menu_index_tit">
+    <p>メニュー  一覧</p>
+      <ul class="shop_menu_lists">
+      <% @menus.each do |menu|%>
+        <li class="shop_menu_list">
+          <div class="shop_menu_index_main">
+            <div class="img">
+              
+            </div>
+            <div class="index_right">
+              <div class="text_box">
+                <div class="tit">
+                  <%= menu.title %>
+                </div>
+                <div class="price">
+                  <%= menu.price %>               
+                </div>
+                <div class="text">
+                  <div class="text_tit">
+                    コメント
+                  </div>
+                  <div class="text_main">
+                    <%= menu.caption %>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="edit_box">
+              <div class="edit">
+                <%= link_to "編集", edit_shop_admin_menu_path(@shop_admin.id, @menu.id), remote: true %>
+              </div>
+              <div class="delete">
+                <%= link_to "削除",  shop_admin_menu_path(@shop_admin.id, @menu.id), method: :delete, data: { confirm: '本当に削除しますか？' } %>
+              </div>
+            </div>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

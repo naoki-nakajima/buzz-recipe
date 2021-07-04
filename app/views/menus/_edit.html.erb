@@ -1,6 +1,6 @@
 <div id="shop_management_right_post_edit" >
   <div class="shop_menu_edit_lists">
-    <%= form_with model: @post do |f| %>
+    <%= form_with model: @post, url: shop_admin_post_path(@post) do |f| %>
       <ul>
         <li>
           <p>メニューの編集</p>

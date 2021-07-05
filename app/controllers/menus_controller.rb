@@ -1,8 +1,8 @@
 class MenusController < ApplicationController
 
   def new
-    @menu = Menu.new
-    @post.build_photo
+    @new_menu = Menu.new
+    @new_menu.photos.build
   end
 
   def create
@@ -15,10 +15,11 @@ class MenusController < ApplicationController
   end
 
   def edit
-    @menu = Menu.find_by(params[id: params[:id]])
+    @menu = Menu.find(params[:id])
   end
 
   def update
+    @menu = Menu.find(params[:id])
     if @menu.update(menu_params)
       redirect_to root_path
     else
@@ -27,13 +28,13 @@ class MenusController < ApplicationController
   end
 
   def destroy
-    @menu = Menu.find_by(params[:menu_id])
+    @menu = Menu.find(params[:id])
     @menu.destroy
     redirect_to root_path
   end
 
   private
     def menu_params
-      params.require(:menu).permit(:name, :price, :caption).merge(shop_admin_id: current_shop_admin.id)
+      params.require(:menu).permit(:name, :price, :caption, photo_attributes: [:id, :image]).merge(shop_admin_id: current_shop_admin.id)
     end
 end

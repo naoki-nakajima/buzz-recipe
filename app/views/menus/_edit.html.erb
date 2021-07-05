@@ -1,6 +1,6 @@
 <div id="shop_management_right_post_edit" >
   <div class="shop_menu_edit_lists">
-    <%= form_with model: @post, url: shop_admin_post_path(@post) do |f| %>
+    <%= form_with model: @menu, url: shop_admin_menu_path(@menu) do |f| %>
       <ul>
         <li>
           <p>メニューの編集</p>
@@ -9,15 +9,15 @@
           <div class="shop_menu_title">
             写真を選ぶ
           </div>
-          <%= f.fields_for :photos do |i| %>
-            <%= i.file_field :image, class: "shop_menu_input"%>
+          <%= f.fields_for :photo do |photo_form| %>
+            <%= photo_form.file_field :image, class: "shop_menu_input"%>
           <% end %>
         </li>
         <li>
           <div class="shop_menu_title">
             メニュー名
           </div>
-          <%= f.text_field :title, class: "shop_menu_input" %>
+          <%= f.text_field :name, class: "shop_menu_input" %>
         </li>
         <li>
           <div class="shop_menu_title">

@@ -3,11 +3,11 @@ class ShopCommitmentsController < ApplicationController
 
   def new
     @shop_commitment = ShopCommitment.new
-    @shop_commitment.photo_build
+    @shop_commitment.build_commitment_photo
   end
 
   def create
-    @shop_commitment = ShopCommitment.new(shop_commitment_params)
+    @shop_commitment = ShopCommitment.create(shop_commitment_params)
     if @shop_commitment.save!
       redirect_to root_path
     else
@@ -27,6 +27,6 @@ class ShopCommitmentsController < ApplicationController
 
   private
     def shop_commitment_params
-      params.require(:shop_commitment).permit(:id, :text, photos_attributes: [:id, :image]).merge(shop_admin_id: current_shop_admin.id)
+      params.require(:shop_commitment).permit(:id, :text, commitment_photo_attributes: [:id, :image]).merge(shop_admin_id: current_shop_admin.id)
     end
 end

@@ -1,7 +1,7 @@
 <%= form_with(model: @shop_commitment, url: shop_admin_shop_commitments_path(current_shop_admin.id), local: true)  do |f| %>
   <%= f.text_field :text %>
-  <%= f.fields_for :photos do |sc| %>
-    <%= sc.file_field :image %>
+  <%= f.fields_for :commitment_photo, @shop_commitment.build_commitment_photo do |photo_from| %>
+    <%= photo_from.file_field :image %>
   <% end %>
   <%= f.submit %>
 <% end %>

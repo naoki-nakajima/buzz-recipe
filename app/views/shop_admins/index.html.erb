@@ -32,57 +32,15 @@
       </div>
       
       <div class="shop_management_right" >
-        <div class="shop_menu_lists">
-          <%= form_with(model: @post, local: true) do |f| %>
-            <ul>
-              <li>
-                <p>メニューの追加</p>
-              </li>
-              <li>
-                <div class="shop_menu_title">
-                  写真を選ぶ
-                </div>
-                <%= f.fields_for :photos do |i| %>
-                  <%= i.file_field :image, class: "shop_menu_input"%>
-                <% end %>
-              </li>
-              <li>
-                <div class="shop_menu_title">
-                  メニュー名
-                </div>
-                <%= f.text_field :title, class: "shop_menu_input" %>
-              </li>
-              <li>
-                <div class="shop_menu_title">
-                  値段
-                </div>
-                <%= f.text_field :price, class: "shop_menu_input" %>
-              </li>
-              <li>
-                <div class="shop_menu_title">
-                  商品説明
-                </div>
-                <%= f.text_area :caption, class: "shop_menu_input" %>
-              </li>
-            </ul>
-            <div class="shop_menu_submit">
-              <%= f.submit "保存する", class: "shop_menu_btn" %>
-            </div>
-          <% end %>
-        </div>
+        <%= render partial: "menus/new" %>
       </div>
-      
       <div class="shop_management_right" >
-        <div class="shop_menu_index">
-          <div class="shop_menu_index_tit">
-            <p>メニュー  一覧</p>
-          </div>
-          
+        <%= render partial: "menus/index" %>
+      </div>
 
       <div class="shop_management_right" >
         <%= render partial: "shop_commitments/new" %>
       </div>
     </div>
-
   </div>
 </div>

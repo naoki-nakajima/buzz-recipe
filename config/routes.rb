@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   root "posts#index"
 
   resources :shop_admins do
-    resources :posts do
+    resources :menus do
       resources :photos
     end
     resources :shop_infos
@@ -25,9 +25,10 @@ Rails.application.routes.draw do
       resources :photos
     end
   end
+
   resources :likes, only: %i(create destroy)
   resources :comments, only: %i(create destroy)
-  resources :users, only: %i(index show edit)
+  resources :users, only: %i(index show edit) 
   
   get '/photo/hashtag/:name', to: 'posts#hashtag'
 end

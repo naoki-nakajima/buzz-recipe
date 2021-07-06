@@ -1,0 +1,39 @@
+<div class="shop_menu_lists">
+  <%= form_with(model: @new_menu, url: shop_admin_menus_path(current_shop_admin.id), local: true) do |f| %>
+    <ul>
+      <li>
+        <p>メニューの追加</p>
+      </li>
+      <li>
+        <div class="shop_menu_title">
+          写真を選ぶ
+        </div>
+        <%= f.fields_for :photo, @new_menu.build_photo do |photo_form| %>
+          <%= photo_form.file_field :image, class: "shop_menu_input"%>
+        <% end %>
+      </li>
+      <li>
+        <div class="shop_menu_title">
+          メニュー名
+        </div>
+        <%= f.text_field :name, class: "shop_menu_input" %>
+      </li>
+      <li>
+        <div class="shop_menu_title">
+          値段
+        </div>
+        <%= f.text_field :price, class: "shop_menu_input" %>
+      </li>
+      <li>
+        <div class="shop_menu_title">
+          商品説明
+        </div>
+        <%= f.text_area :caption, class: "shop_menu_input" %>
+      </li>
+    </ul>
+    <div class="shop_menu_submit">
+      <%= f.submit "保存する", class: "shop_menu_btn" %>
+    </div>
+  <% end %>
+</div>
+

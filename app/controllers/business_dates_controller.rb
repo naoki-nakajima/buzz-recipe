@@ -1,8 +1,6 @@
 class BusinessDatesController < ApplicationController
   before_action :authenticate_shop_admin!, only: %i(new create edit update shoe delete)
-  def index
-  end
-
+  
   def new
     @business_date = BusinessDate.new
   end
@@ -22,14 +20,11 @@ class BusinessDatesController < ApplicationController
   def update
   end
 
-  def show
-  end
-
   def destroy
   end
 
   private
   def business_date_params
-    params.permit(:monday, :tuesday, :wedensday, :thursday, :friday, :saturday, :sunday, :monday_opening_time, :monday_closing_time, :tuesday_opening_time, :tuesday_closing_time, :wedensday_opening_time, :wedensday_closing_time, :thursday_opening_time, :thursday_closing_time, :friday_opening_time, :friday_closing_time, :saturday_opening_time, :saturday_closing_time, :sunday_opening_time, :sunday_closing_time).merge(shop_admin_id: current_shop_admin.id)
+    params.require(:business_date).permit(:monday, :tuesday, :wedensday, :thursday, :friday, :saturday, :sunday, :monday_opening_time, :monday_closing_time, :tuesday_opening_time, :tuesday_closing_time, :wedensday_opening_time, :wedensday_closing_time, :thursday_opening_time, :thursday_closing_time, :friday_opening_time, :friday_closing_time, :saturday_opening_time, :saturday_closing_time, :sunday_opening_time, :sunday_closing_time).merge(shop_admin_id: current_shop_admin.id)
   end
 end

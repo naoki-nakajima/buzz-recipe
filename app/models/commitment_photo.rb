@@ -1,0 +1,2 @@
+class CommitmentPhoto < ApplicationRecord
+end

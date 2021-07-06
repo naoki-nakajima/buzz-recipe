@@ -1,0 +1,42 @@
+<div class="shop_menu_index">
+  <div class="shop_menu_index_tit">
+    <p>メニュー  一覧</p>
+      <ul class="shop_menu_lists">
+        <% @shop_admin_menus.each do |menu|%>
+          <li class="shop_menu_list">
+            <div class="shop_menu_index_main">
+              <div class="img">
+                
+              </div>
+              <div class="index_right">
+                <div class="text_box">
+                  <div class="tit">
+                    <%= menu.name %>
+                  </div>
+                  <div class="price">
+                    <%= menu.price %>               
+                  </div>
+                  <div class="text">
+                    <div class="text_tit">
+                      コメント
+                    </div>
+                    <div class="text_main">
+                      <%= menu.caption %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="edit_box">
+                <div class="edit">
+                  <%= link_to "編集", edit_shop_admin_menu_path(@shop_admin.id, menu.id), remote: true %>
+                </div>
+                <div class="delete">
+                  <%= link_to "削除",  shop_admin_menu_path(@shop_admin.id, menu.id), method: :delete, data: { confirm: '本当に削除しますか？' } %>
+                </div>
+              </div>
+            </div>
+          </li>
+        <% end %>
+    </ul>
+  </div>
+</div>

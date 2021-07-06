@@ -2,12 +2,13 @@ class MenusController < ApplicationController
 
   def new
     @new_menu = Menu.new
-    @new_menu.photos.build
+    @new_menu.build_photo
   end
 
   def create
-    @menu = Menu.new(menu_params)
-    if @menu.save!
+    @menu = Menu.create(menu_params)
+    if @menu.photo.present?
+      @menu.save
       redirect_to root_path
     else
       redirect_to root_path

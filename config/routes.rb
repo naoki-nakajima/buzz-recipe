@@ -19,9 +19,6 @@ Rails.application.routes.draw do
     resources :menus do
       resources :photos
     end
-    resources :posts do
-      resources :photos
-    end
     resources :shop_infos
     resources :business_dates
     resources :shop_commitments do

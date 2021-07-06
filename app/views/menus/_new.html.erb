@@ -8,7 +8,7 @@
         <div class="shop_menu_title">
           写真を選ぶ
         </div>
-        <%= f.fields_for :photo do |photo_form| %>
+        <%= f.fields_for :photo, @new_menu.build_photo do |photo_form| %>
           <%= photo_form.file_field :image, class: "shop_menu_input"%>
         <% end %>
       </li>

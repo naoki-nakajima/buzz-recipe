@@ -1,7 +1,7 @@
 class ShopAdmins::PostsController < ShopAdmins::ApplicationController
   before_action :authenticate_shop_admin!, only: %i(new create edit update shoe delete)
   def index
-    @posts = Post.includes(:shop_admin).order('created_at DESC').page(params[:page]).per(5)
+    @menus = Menu.includes(:shop_admin, :photo).order('created_at DESC').page(params[:page]).per(10)
   end
 
   def new

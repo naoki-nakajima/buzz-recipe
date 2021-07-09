@@ -1,0 +1,131 @@
+<div class="shop_management_hour">
+  <div class="shop_management_hour_tit">
+    <p>営業日時・時間</p>
+  </div>
+  <div class="shop_hour_main">
+    <div class="shop_hour_left">
+      <p>営業日</p>
+    </div>
+    <div class="shop_hour_right">
+      <%= form_with(model: @business_date, url:  shop_admin_business_date_path(current_shop_admin.id, @business_date.id), local: true) do |f| %>
+        <ul>
+          <li>
+            <%= f.check_box :monday %>
+            <p>月曜日</p>
+            <div id="toggle_box">
+              <div class="block"></div>
+            </div>
+            <div class=shop_management_hour_detail>
+              <div class="shop_hour_detail_in">
+                <%= f.time_select :monday_opening_time, prompt: true, ignore_data: true %>
+              </div>
+              ~
+              <div class="shop_hour_detail_out">
+                <%= f.time_select :monday_closing_time, prompt: true, ignore_data: true %>
+              </div>
+            </div>
+          </li>
+          <li>
+            <%= f.check_box :tuesday %>
+            <p>火曜日</p>
+            <div id="toggle_box">
+              <div class="block"></div>
+            </div>
+            <div class=shop_management_hour_detail>
+              <div class="shop_hour_detail_in">
+                <%= f.time_select :tuesday_opening_time, prompt: true, ignore_data: true  %>
+              </div>
+              ~
+              <div class="shop_hour_detail_out">
+                <%= f.time_select :tuesday_closing_time, prompt: true, ignore_data: true  %>
+              </div>
+            </div>
+          </li>
+          <li>
+            <%= f.check_box :wedensday %>
+            <p>水曜日</p>
+            <div id="toggle_box">
+              <div class="block"></div>
+            </div>
+            <div class=shop_management_hour_detail>
+              <div class="shop_hour_detail_in">
+                <%= f.time_select :wedensday_opening_time, prompt: true, ignore_data: true  %>
+              </div>
+              ~
+              <div class="shop_hour_detail_out">
+                <%= f.time_select :wedensday_closing_time, prompt: true, ignore_data: true  %>
+              </div>
+            </div>
+          </li>
+          <li>
+            <%= f.check_box :thursday %>
+            <p>木曜日</p>
+            <div id="toggle_box">
+              <div class="block"></div>
+            </div>
+            <div class=shop_management_hour_detail>
+              <div class="shop_hour_detail_in">
+                <%= f.time_select :thursday_opening_time, prompt: true, ignore_data: true  %>
+              </div>
+              ~
+              <div class="shop_hour_detail_out">
+                <%= f.time_select :thursday_closing_time, prompt: true, ignore_data: true  %>
+              </div>
+            </div>
+          </li>
+          <li>
+            <%= f.check_box :friday %>
+            <p>金曜日</p>
+            <div id="toggle_box">
+              <div class="block"></div>
+            </div>
+            <div class=shop_management_hour_detail>
+              <div class="shop_hour_detail_in">
+                <%= f.time_select :friday_opening_time, prompt: true, ignore_data: true  %>
+              </div>
+              ~
+              <div class="shop_hour_detail_out">
+                <%= f.time_select :friday_closing_time, prompt: true, ignore_data: true  %>
+              </div>
+            </div>
+          </li>
+          <li>
+            <%= f.check_box :saturday %>
+            <p>土曜日</p>
+            <div id="toggle_box">
+              <div class="block"></div>
+            </div>
+            <div class=shop_management_hour_detail>
+              <div class="shop_hour_detail_in">
+                <%= f.time_select :saturday_opening_time, prompt: true, ignore_date: true  %>
+              </div>
+              ~
+              <div class="shop_hour_detail_out">
+                <%= f.time_select :saturday_closing_time, prompt: true, ignore_data: true  %>
+              </div>
+            </div>
+          </li>
+          <li>
+            <%= f.check_box :sunday %>
+            <p>日曜日</p>
+            <div id="toggle_box">
+              <div class="block"></div>
+            </div>
+            <div class=shop_management_hour_detail>
+              <div class="shop_hour_detail_in">
+                <%= f.time_select :sunday_opening_time, prompt: true, ignore_data: true  %>
+              </div>
+              ~
+              <div class="shop_hour_detail_out">
+                <%= f.time_select :sunday_closing_time, prompt: true, ignore_data: true  %>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="shop_hour_submit">
+          <%= f.submit "保存する", class: "shop_hour_btn" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

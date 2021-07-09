@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   
   def index
-    @posts = Post.includes(:shop_admin).order('created_at DESC').page(params[:page]).per(5)
+    @shop_infos = ShopInfo.includes(:shop_admin).page(params[:page]).per(5)
   end
 
   def new

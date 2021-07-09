@@ -5,28 +5,27 @@
     </div>
     <div id="content_container">
       <div id="show_content">
-        <div class="top_photo">
-        </div>
-        <div class="top_content">
-          <div class="left_content">
-            <div class="like_content">
-              <div class="like_btn">
-                
+        <% @shop_infos.each do |shop_info|%>
+          <div class="top_photo">
+          </div>
+          <div class="top_content">
+            <div class="left_content">
+              <div class="like_content">
+                <div class="like_btn">
+                  <%= link_to "編集",  edit_shop_admin_shop_info_path(current_shop_admin.id, shop_info.id), local: true %>
+                </div>
+              </div>
+              <div class="shop_tit">
+                <%= shop_info.store_name%>
+              </div>
+              <div class="shop_address">
+                <%= shop_info.address%>
+              </div>
+              <div class="shop_text">
+                <%= shop_info.caption %>
               </div>
             </div>
-            <div class="shop_tit">
-              中華一番
-            </div>
-            <div class="shop_address">
-              渋谷区渋谷町1-12-5
-            </div>
-            <div class="shop_text">
-               test test test test test test test test test
-               test test test test test test test test test
-               test test test test test test test test test
-               test test test test test test test test test
-            </div>
-          </div>
+          <% end %>
           <div class="right_content">
             <%= render partial: "posts/scroll_menu"%>
           </div>
@@ -46,45 +45,36 @@
             </ul>
             <ul class="menu_details">
               <li class="menu_detail show">
-                <% @posts.each do |post| %>
+                <% @menus.each do |menu| %>
                   <div class="menu_detail_container">
-                    <!-------イメージタグでポストに紐づくフォト、イメージを記述する--------->
+                    <%= image_tag menu.photo.image.url %>
                     <div class="menu_tit">
-                      <%= post.title %>
+                      <%= menu.name %>
                     </div>
                     <div class="menu_price">
-                      <%= post.price %>
+                      <%= menu.price %>
                     </div>
                     <div class="menu_word">
-                      <%= post.caption %>
+                      <%= menu.caption %>
                     </div>
                   </div>
                 <% end %>
               </li>
               <li class="menu_detail">
-                <div class="shop_commnet_container">
-                  <div class="comment_tit">
-                    こだわり
-                  </div>
-                  <div class="comment_main">
-                    <div class="comment_photo">
-
+                <% @shop_commitments.each do |shop_commitment| %>
+                  <div class="shop_commnet_container">
+                    <div class="comment_tit">
+                      こだわり
                     </div>
-                    <div class="comment">
-                      あいうえお　あいうえお　あいうえお　あいうえお　あいうえお　あいうえお　あいうえお　あいうえお　あいうえお　あいうえお　
+                    <div class="comment_main">
+                      <div class="comment_photo">
+                        <%= image_tag shop_commitment.commitment_photo.image.url %>
+                      </div>
+                      <div class="comment">
+                        <%= shop_commitment.text%>
+                      </div>
                     </div>
-                  </div>
-                  <div class="comment_tit">
-                    こだわり
-                  </div>
-                  <div class="comment_main">
-                    <div class="comment_photo">
-
-                    </div>
-                    <div class="comment">
-                      あいうえお　あいうえお　あいうえお　あいうえお　あいうえお　あいうえお　あいうえお　あいうえお　あいうえお　あいうえお　あいうえお　あいうえお　あいうえお　あいうえお　あいうえお　あいうえお　あいうえお　あいうえお　あいうえお　あいうえお　あいうえお　あいうえお　あいうえお　あいうえお
-                    </div>
-                  </div>
+                  <% end%>
                 </div>
               </li>
 

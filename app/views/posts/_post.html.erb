@@ -5,7 +5,7 @@
   <div class="block"></div>
 </div>
 <ul id="index_top_images" >
-  <% @posts.each do |post| %>
+  <% @shop_infos.each do |shop_info| %>
     <li>
       <div class="image_container">
         <p class="img">
@@ -14,10 +14,10 @@
       </div>
       <div class="recipe_txt_box">
         <div class="title">
-          <%= post.title %>
+          <%= shop_info.store_name %>
         </div>
       </div>
     </li>
   <% end %>
 </ul>
-<%= paginate @posts, remote: true %>
+<%= paginate @shop_infos, remote: true %>

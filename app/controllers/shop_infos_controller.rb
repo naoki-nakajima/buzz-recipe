@@ -15,15 +15,24 @@ class ShopInfosController < ApplicationController
   end
 
   def edit
+    @shop_info = ShopInfo.find(params[:id])
   end
 
   def update
+    @shop_info = ShopInfo.find(params[:id])
+    if @shop_info.update(shop_info_params)
+      redirect_to root_path
+    else
+      redirect_to root_path
+    end
   end
 
   def show
   end
 
   def destroy
+    @shop_info = ShopInfo.find(params[:id])
+    @shop_info.destroy
   end
 
   private

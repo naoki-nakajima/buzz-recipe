@@ -16,13 +16,23 @@ class ShopCommitmentsController < ApplicationController
   end
 
   def edit
+    @shop_commitment = ShopCommitment.find(params[:id])
   end
 
-  def updated
+  def update
+    @shop_commitment = ShopCommitment.find(params[:id])
+    if @shop_commitment.update(shop_commitment_params)
+      redirect_to root_path
+    else
+      redirect_to root_path
+    end
   end
   
 
   def destroy
+    @shop_commitment = ShopCommitment.find(params[:id])
+    @shop_commitment.destroy
+    redirect_to root_path
   end
 
   private

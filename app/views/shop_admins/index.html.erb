@@ -14,6 +14,7 @@
           <li class="shop_management_list">メニューの編集</li>
           <li class="list_header"> <p>お店のこだわり</p> </li>
           <li class="shop_management_list">こだわり・想い</li>
+          <li class="shop_management_list">こだわり・想いの編集</li>
         </ul>
         <ul class="shop_account_management">
           <li><%= link_to "パスワードの再設定"%></li>
@@ -40,6 +41,9 @@
 
       <div class="shop_management_right" >
         <%= render partial: "shop_commitments/new" %>
+      </div>
+      <div class="shop_management_right" >
+        <%= render partial: "shop_commitments/index" %>
       </div>
     </div>
   </div>

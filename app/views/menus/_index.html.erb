@@ -2,11 +2,13 @@
   <div class="shop_menu_index_tit">
     <p>メニュー  一覧</p>
       <ul class="shop_menu_lists">
-        <% @shop_admin_menus.each do |menu|%>
+        <% @shop_admin_menus.each do |menu| %>
           <li class="shop_menu_list">
             <div class="shop_menu_index_main">
               <div class="img">
-                
+                <% if menu.photo %>
+                  <%= image_tag menu.photo.image.url %>
+                <% end %>
               </div>
               <div class="index_right">
                 <div class="text_box">

@@ -1,5 +1,5 @@
 class MenusController < ApplicationController
-
+  
   def new
     @new_menu = Menu.new
     @new_menu.build_photo

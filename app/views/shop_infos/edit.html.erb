@@ -1,0 +1,42 @@
+<div class="shop_basic">
+  <%= form_with  model: @shop_info, url:  shop_admin_shop_info_path(current_shop_admin.id, @shop_info.id), local: true do |f| %>
+    <ul>
+      <li>
+        <p>基本情報</p>
+      </li>
+      <li>
+        <div class="shop_basic_title">
+          店舗名
+        </div>
+        <%= f.text_field :store_name, class: "shop_basic_input" %>
+      </li>
+      <li>
+        <div class="shop_basic_title">
+          住所
+        </div>
+        <%= f.text_field :address, class: "shop_basic_input" %>
+      </li>
+      <li>
+        <div class="shop_basic_title">
+          メールアドレス
+        </div>
+        <%= f.text_field :email, class: "shop_basic_input" %>
+      </li>
+      <li>
+        <div class="shop_basic_title">
+          電話番号
+        </div>
+        <%= f.text_field :phone_number, class: "shop_basic_input" %>
+      </li>
+      <li>
+        <div class="shop_basic_title">
+          お店の説明
+        </div>
+        <%= f.text_area :caption, class: "shop_basic_input" %>
+      </li>
+    </ul>
+    <div class="shop_basic_submit">
+      <%= f.submit "保存する", class: "shop_basic_btn" %>
+    </div>
+  <% end %>
+</div>

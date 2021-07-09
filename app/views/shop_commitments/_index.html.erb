@@ -1,0 +1,14 @@
+<div class="shop_commitment_index">
+  <% @shop_commitments.each do |shop_commitment| %>
+    <%= shop_commitment.text %>
+    <% if shop_commitment.commitment_photo %>
+      <%= image_tag shop_commitment.commitment_photo.image.url %>
+    <% end %>
+    <div class="edit">
+      <%= link_to "編集",  edit_shop_admin_shop_commitment_path(@shop_admin.id, shop_commitment), local: true %>
+    </div>
+    <div class="delete">
+      <%= link_to "削除",  shop_admin_shop_commitment_path(@shop_admin.id, shop_commitment), method: :delete, data: { confirm: '本当に削除しますか？' } %>
+    </div>
+  <% end %> 
+</div>

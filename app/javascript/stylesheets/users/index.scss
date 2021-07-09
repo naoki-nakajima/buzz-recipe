@@ -268,7 +268,10 @@
             .img {
               width: 20%;
               height: 15vh;
-              background: red;
+              .menu_img {
+                width: 100%;
+                height: 15vh;
+              }
             }
             .index_right {
               width: 80%;

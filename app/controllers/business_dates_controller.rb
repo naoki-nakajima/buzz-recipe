@@ -15,12 +15,21 @@ class BusinessDatesController < ApplicationController
   end
 
   def edit
+    @business_date = BusinessDate.find(params[:id])
   end
   
   def update
+    @business_date = BusinessDate.find(params[:id])
+    if @business_date = BusinessDate.update(business_date_params)
+      redirect_to root_path
+    else
+      redirect_to root_path
+    end
   end
 
   def destroy
+    @business_date = BusinessDate.find(params[:id])
+    @business_date.destroy
   end
 
   private

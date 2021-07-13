@@ -87,6 +87,9 @@
             li {
               list-style: none;
               .image_container {
+                width: 150px;
+                height: 150px;
+                border: 1px #aaa solid;
                 p.img {
                   .img_top {
                     width: 150px;

@@ -47,7 +47,9 @@
               <li class="menu_detail show">
                 <% @menus.each do |menu| %>
                   <div class="menu_detail_container">
-                    <%= image_tag menu.photo.image.url %>
+                    <% if menu.photo %>
+                      <%= image_tag menu.photo.image.url %>
+                    <% end %>
                     <div class="menu_tit">
                       <%= menu.name %>
                     </div>
@@ -68,7 +70,9 @@
                     </div>
                     <div class="comment_main">
                       <div class="comment_photo">
-                        <%= image_tag shop_commitment.commitment_photo.image.url %>
+                        <% if shop_commitment.commitment_photo %>
+                          <%= image_tag shop_commitment.commitment_photo.image.url %>
+                        <% end %>
                       </div>
                       <div class="comment">
                         <%= shop_commitment.text%>

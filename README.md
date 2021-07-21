@@ -18,7 +18,7 @@
 
 
 # URL
- https://buzz-recipe.herokuapp.com/users/sign_in
+ https://buzz-recipe.herokuapp.com
  <br >~
 画面中部のゲストログインボタンから、メールアドレスとパスワードを入力せずにログインできます。
 # 使用技術

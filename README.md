@@ -18,9 +18,7 @@
 
 
 # URL
- https://buzz-recipe.herokuapp.com/users/sign_in
- <br >~
-画面中部のゲストログインボタンから、メールアドレスとパスワードを入力せずにログインできます。
+ https://buzz-recipe.herokuapp.com
 # 使用技術
 - Ruby 2.7.2
 - Ruby on Rails 6.0.3.5
